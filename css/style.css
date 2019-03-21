@@ -236,4 +236,17 @@ Version: 1.0
   }
   .icon-font-linkedin2:before {
     content: "\eaca";
-  }  
+  }
+  
+  /* 2.4. Typograpghy */
+    /* Main font */
+    body {
+      font: 16px/1.6 'Lato', 'Opens Sans', sans-serif;
+      color: #1c1a19;
+    }
+
+    /* Second font */
+    .section__description,
+    .custom-btn {
+      font-family: 'Open Sans', sans-serif;
+    }

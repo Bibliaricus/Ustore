@@ -1,1 +1,12 @@
-Вирізати картинки на головний бан тоді, як буду його робити. Але перед цим подумати і рішити, як все ж його реалізувати. 
+# Вирізати картинки на головний бан тоді, як буду його робити. Але перед цим подумати і рішити, як все ж його реалізувати. 
+
+Змінні: 
+--productGray: #f8f8f8
+--sectionDescriptionGray: #a4a4a4
+
+Головні класи: 
+.section__title - (Labo Black) fz: 40px, ls: 20, main-color - заголовки секцій. 
+.section__description - (Open Sans) fz: 15, a4a4a4 - опис секцій. 
+.banner__category - (Lato Black) fz: 14px, ls: 200 - на головному бані та категоріях знизу. 
+.banner__title - (Lato Black) #fff, ls: 20
+.custom-btn - (Open Sans Bold) fz: 14px ls: 15ps
