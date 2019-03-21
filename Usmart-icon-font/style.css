@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Usmart-icon-font';
+  src:
+    url('fonts/Usmart-icon-font.ttf?2bftyo') format('truetype'),
+    url('fonts/Usmart-icon-font.woff?2bftyo') format('woff'),
+    url('fonts/Usmart-icon-font.svg?2bftyo#Usmart-icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-font-"], [class*=" icon-font-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Usmart-icon-font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font-angle-arrow-pointing-to-right:before {
+  content: "\e911";
+}
+.icon-font-angle-pointing-to-left:before {
+  content: "\e912";
+}
+.icon-font-envelope-of-white-paper:before {
+  content: "\e913";
+}
+.icon-font-cancel:before {
+  content: "\e914";
+}
+.icon-font-substract:before {
+  content: "\e915";
+}
+.icon-font-add:before {
+  content: "\e916";
+}
+.icon-font-check-mark:before {
+  content: "\e910";
+}
+.icon-font-bag:before {
+  content: "\e907";
+}
+.icon-font-heart-solid:before {
+  content: "\e900";
+}
+.icon-font-right-straight-arrow:before {
+  content: "\e901";
+}
+.icon-font-tag-black-shape:before {
+  content: "\e902";
+}
+.icon-font-angle-arrow-down:before {
+  content: "\e903";
+}
+.icon-font-baseline-today-24px:before {
+  content: "\e904";
+}
+.icon-font-star-regular:before {
+  content: "\e905";
+}
+.icon-font-star-solid:before {
+  content: "\e906";
+}
+.icon-font-angle-left-solid:before {
+  content: "\e908";
+}
+.icon-font-angle-right-solid:before {
+  content: "\e909";
+}
+.icon-font-caret-down-solid:before {
+  content: "\e90a";
+}
+.icon-font-facebook-f-brands:before {
+  content: "\e90b";
+}
+.icon-font-google-plus-logo:before {
+  content: "\e90c";
+}
+.icon-font-heart-regular:before {
+  content: "\e90d";
+}
+.icon-font-search-solid:before {
+  content: "\e90e";
+}
+.icon-font-twitter-brands:before {
+  content: "\e90f";
+}
+.icon-font-eye:before {
+  content: "\e9ce";
+}
+.icon-font-cart:before {
+  content: "\e93a";
+}
+.icon-font-bubble:before {
+  content: "\e96b";
+}
+.icon-font-instagram:before {
+  content: "\ea92";
+}
+.icon-font-linkedin2:before {
+  content: "\eaca";
+}

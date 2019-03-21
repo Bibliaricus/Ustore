@@ -1,0 +1,71 @@
+/*
+Site name: Ustore
+Site URL: localhost
+Author: Web-lem
+Author URL: http://web-lem.com
+Description: Ustore - super smart shop.
+Text-domain: ustore
+Version: 1.0
+*/
+
+/*-----------------------------------------------------------------
+[Table of contents] 
+1. Content of external CSS-files
+2. Body, fonts and typography
+3. Tags settings
+4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.)
+  4.# Text in banners
+  4.# Buttons
+  4.#. General styles of product items
+  4.#. Section titles and descriptions
+  4.#. Quick popup
+  4.#. Hover buttons
+  4.#. Off-canvas
+5. Custom styles
+  5.0. Custom containters (Bootstrap 4)
+  5.1. Active slide in category slider (Bootstrap slider) 
+  5.2. Slick slider in categories (Slick)
+  5.3. Tabs in product categories (reassignment Bootstrap 4 tabs properties)
+6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
+  6.1. Header
+    6.1.1. Header-top
+    6.1.2. Header-bottom
+  6.2. Top banners
+    6.2.1. Main banner
+    6.2.2. Second banners
+  6.3. Categories
+  6.4. Main
+    6.4.1. Sidebar
+      6.4.1.1. Categories
+      6.4.1.2. Sale
+      6.4.1.3. Tags
+      6.4.1.4. Promo
+    6.4.2. Content
+      6.4.2.1. Product categories
+      6.4.2.2. Popular products
+    6.4.3. Bottom banners
+      6.4.3.1. Second banners
+      6.4.3.2. Main banner
+    6.4.4. New products
+    6.4.5. Latest news
+  6.5. Footer
+7. Responsive - index.html (indicate Responsive in this form for each page)
+  7.1 Min-width: 1200px
+  7.2 Max-width: 1200px
+  7.3 Max-width: 992px
+  7.4 Max-width: 768px
+  7.5 Max-width: 576px
+  7.6 Max-width: 480px
+  7.7 Min-width: 320px and max-width: 400px
+-----------------------------------------------------------------*/
+
+/* 1. Content of external CSS-files */
+
+/* 2. Body, fonts and typography */
+  /* 2.1. Variables */
+
+  /* 2.2. Universal styles */
+
+  /* 2.3. Fonts */
+
+  
