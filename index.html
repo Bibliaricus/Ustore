@@ -20,7 +20,173 @@
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/style.css">  
 </head>
-<body> 
+<body style="background-color: coral"> 
+  <header class="container-fluid page-header">
+    <div class="header-top row px-3">
+      <div class="header-top__left col-6 d-flex align-items-center">
+        <div class="dropdown header-top__language-list">
+          <button class="dropdown-toggle header-top__language-button header-top__language-link lang-en pr-2" id="language-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose your language">English</button>
+          <div class="dropdown-menu" aria-labelledby="language-dropdown-button">
+            <a href="#" class="dropdown-item header-top__language-link lang-en">English</a>
+            <a href="#" class="dropdown-item header-top__language-link lang-fr">French</a>
+            <a href="#" class="dropdown-item header-top__language-link lang-ger">German</a>
+            <a href="#" class="dropdown-item header-top__language-link lang-it">Italian</a>
+            <a href="#" class="dropdown-item header-top__language-link lang-ua">Ukrain</a>
+          </div>
+        </div>
+        <div class="dropdown header-top__currency-list">
+          <button class="dropdown-toggle header-top__currency-button pl-3 mr-2" id="currency-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose desired currency">Eur / €</button>
+          <div class="dropdown-menu" aria-labelledby="currency-dropdown-button">
+            <a href="#" class="dropdown-item header-top__currency-link">Eur / €</a>
+            <a href="#" class="dropdown-item header-top__currency-link">Gbp / £</a>
+            <a href="#" class="dropdown-item header-top__currency-link">Chf / ₣</a>
+            <a href="#" class="dropdown-item header-top__currency-link">Jpy / ¥</a>
+          </div>
+        </div>
+        <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
+      </div>      
+      <div class="header-top__right col-6">
+        <a class="header-top__modal-btn" data-toggle="modal" data-target="#subscribe-popup">
+            Sign in or create an account
+        </a>
+        <div class="modal fade subscribe-popup" id="subscribe-popup" tabindex="-1" role="dialog" aria-labelledby="subscribe-popup-title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="subsribe-popup-wrap">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="subscribe-popup__title" id="subscribe-popup-title">Join our newsletter</h5>
+                <p>Powerful, sleek template that is easy to cinfigure and 
+                    focused on presenting all your product in best way.</p>
+                <form action="#" method="GET">
+                  <input type="email" placeholder="Email address...">
+                  <button>Sign In</button>
+                </form>
+                <span>*Don’t worry, we won’t spam our customers mailboxes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="header-bottom row justify-content-between align-items-center">
+      <div class="header-bottom__logo navbar-brand col-6 col-lg-2">
+        <img src="img/header-logo.jpg" alt="Header logo">
+      </div>
+      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-responsive-menu" aria-controls="header-responsive-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="header-responsive-menu">
+          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-end">
+            <li class="nav-item mr-2 active">
+              <a class="nav-link" href="#">Home Page</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Ecommerce</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+            <span class="navbar-text ml-auto">
+              <a href="#" class="buy-theme">BUY THIS THEMEUs</a>
+            </span>
+        </div>
+      </nav>
+      <div class="header-bottom__search col-12 col-lg-7 order-1 mt-3 order-lg-0 mt-lg-0">
+        <form class="form-inline row align-items-stretch justify-content-center justify-content-lg-end" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
+          <input class="search__input form-control input-group-prepend col-6 col-md-7 col-lg-6 col-xl-7" type="search" placeholder="Search for product..." aria-label="Search">
+          <select class="search__select form-control col-4 col-xl-3" id="search-select">
+            <option value="all">All categories</option>
+            <option value="notebook">Notebook</option>
+            <option value="tablet">Tablet</option>
+            <option value="e-books">Electronic books</option>
+            <option value="computers">Computers</option>
+            <option value="components">Components</option>
+            <option value="office equip">Office equipment</option>
+            <option value="games">Games</option>
+            <option value="network equip">Network equipment</option>
+            <option value="accessories">Accessories</option>
+          </select>
+          <button class="search__button btn icon-font-search-solid col-auto" type="submit"></button>
+        </form>
+      </div>
+      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-6 col-lg-3">
+        <a href="#" class="header-bottom__icon-item icon-font-heart-regular" onclick="openNav()" title="Open vish list"></a>
+        <div class="vish-list sidenav" id="vish-list-off-canvas">
+          <div class="vish-list__header">
+            <span class="vish-list__title">Wishlist</span>
+          </div>
+          <div class="vish-list__item-list">
+            <div class="vish-list__item">
+              <img src="img/product_image-2.jpg" alt="Description of product" class="vish-list__item-image" width="50" height="50">
+              <div class="vish-list__item-description">
+                <a href="#" class="vish-list__item-name">Pure cosmetic</a>
+                <span class="vish-list__item-delete-btn">x</span>
+              </div>
+            </div>              
+          </div>
+          <div class="vish-list__footer">              
+            <a href="#" class="vish-list__vish-list-button vish-list__btn">Viev wishlist</a>
+          </div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <a href="#" class="header-bottom__icon-item icon-font-bag" onclick="openNav2()" title="Open shopping cart"></a>
+        <div class="shoping-cart sidenav" id="shoping-cart-off-canvas">          
+          <div class="shopping-cart__item-list">
+            <div class="shopping-cart__item">
+              <img src="img/product_image-2.jpg" alt="Description of product" class="shopping-cart__item-image" width="50" height="50">
+              <div class="shopping-cart__item-description">
+                <a href="#" class="shopping-cart__item-name">Pure cosmetic</a>
+                <span class="shopping-cart__item-quantity">1</span>
+                <span class="shopping-cart__item-price">$199.00</span>
+                <span class="shopping-cart__item-delete-btn">x</span>
+              </div>
+            </div>
+            <div class="shopping-cart__item">
+              <img src="img/product_image-3.jpg" alt="Description of product" class="shopping-cart__item-image" width="50" height="50">
+              <div class="shopping-cart__item-description">
+                <a href="#" class="shopping-cart__item-name">Pure cosmetic</a>
+                <span class="shopping-cart__item-quantity">1</span>
+                <span class="shopping-cart__item-price">$199.00</span>
+                <span class="shopping-cart__item-delete-btn">x</span>
+              </div>
+            </div>
+            <div class="shopping-cart__item">
+              <img src="img/product_image-4.jpg" alt="Description of product" class="shopping-cart__item-image" width="50" height="50">
+              <div class="shopping-cart__item-description">
+                <a href="#" class="shopping-cart__item-name">Pure cosmetic</a>
+                <span class="shopping-cart__item-quantity">1</span>
+                <span class="shopping-cart__item-price">$199.00</span>
+                <span class="shopping-cart__item-delete-btn">x</span>
+              </div>
+            </div>
+          </div>
+          <div class="shopping-cart__footer">
+            <div class="shopping-cart__total-price">
+              <span class="shopping-cart__total-quantity">Shoping cart (<span class="shopping-cart__total-quantity-number">3</span>)</span>
+              <span class="shopping-cart__subtotal-price">Subtotal: £<span class="shopping-cart__subtotal-price-number">523.00</span></span>
+            </div>
+            <a href="#" class="shopping-cart__checkout-button shopping-cart__btn">Checkout</a>
+          </div>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+        </div>
+        <span class="header-bottom__total-price" title="Total price">$259.99</span>
+      </div>
+    </div>
+  </header>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>

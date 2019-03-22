@@ -63,6 +63,11 @@ Version: 1.0
 
 /* 2. Body, fonts and typography */
   /* 2.1. Variables */
+  :root {
+    --main-red: #e74948;
+    --text-gray: #a4a4a4;
+    --main-gray: #e6e6e6;
+  }
 
   /* 2.2. Universal styles */
 
@@ -249,4 +254,229 @@ Version: 1.0
     .section__description,
     .custom-btn {
       font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Colors - Gray */
+    .section__description,
+    .item__price,
+    .item__category,
+    footer p,
+    footer a,
+    footer span,
+    .latest-posts__date,
+    .latest-posts__comment,
+    .tags__item,
+    .icon-font-star-regular {
+      color: #a4a4a4;
+    }
+
+    /* Colors - Red */
+    .prod-categories__tab:hover,
+    .prod-categories__tab:focus,
+    .icon-font-star-solid,
+    .item__price--new {
+      color: #e74948;
+    }
+
+    /* Colors - White */
+    .header-bottom,
+    .main-banner,
+    .banners,
+    .insta-title,
+    .product-categories,
+    .subscribe__title,
+    .footer__contacts,
+    .footer__column-title,
+    .subscribe-popup,
+    .subscribe-popup input,
+    .subscribe-popup button {
+      color: #ffffff;
+    }
+
+
+    /* Colors - White with opacity */
+    .header-top {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Font weight - 900 */
+    .subscribe-popup__title {
+      font-weight: 900;
+    }
+
+    /* Font weight - 700 */
+
+    /* Upper case */
+    .subscribe-popup__title,
+    .subscribe-popup button {
+      text-transform: uppercase;
+    }
+
+/* 3. Tags settings */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href^="tel"] {
+    transition: .2s ease;
+  }
+
+  a[href^="tel"]:hover {
+    color: #000;
+  }
+
+/* 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.) */
+  /* 4.1. Subscribe popup */
+  .subscribe-popup .modal-dialog {
+    max-width: 100%;
+  }
+
+  .subsribe-popup-wrap {
+    padding: 4rem 4rem;
+    width: 70%;
+  }
+
+
+
+  .subscribe-popup .modal-content {    
+    background: var(--main-red) url('../img/login-popup_obrizka.jpg') no-repeat ;
+    max-width: 40.5vw;
+    margin: 0 auto 0;
+    border: none;
+  }
+
+  .subscribe-popup__title {
+    font-size: 3rem;
+    letter-spacing: 0.06rem;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .subscribe-popup p {
+    font-weight: 300;
+  }
+
+  .subscribe-popup form {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }   
+
+  .subscribe-popup input::-webkit-input-placeholder,
+  .subscribe-popup input::placeholder {
+    color: #fff;
+  }  
+
+  .subscribe-popup input {
+    background-color: #ed7776;
+    font-size: 0.813rem;
+    border: none;
+    padding: 0.7rem 1rem;
+    width: 55%;
+  }
+
+  .subscribe-popup button {
+    background-color: #000000;
+    font-size: 0.875rem;
+    letter-spacing: 0.022rem;
+    border: none;
+    padding: 0rem 1.5rem;
+  }
+
+  .subscribe-popup .close {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    text-shadow: none;
+    transition: .3s ease;
+  }
+
+  .subscribe-popup form + span {
+    font-size: 0.75rem;
+    color: #ffcccc;
+  }
+
+/* 5. Custom styles */
+
+/* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
+  /* 6.1. Header */
+    /* 6.1.1. Header-top */
+    .header-top {
+      border-bottom: 1px solid var(--main-gray);
+    }
+    
+    .header-top__left {
+      font-size: 0.75rem;
+    }
+
+    .header-top__number-line {
+      font-size: 0.688rem;
+      letter-spacing: 0.034rem;
+    }
+
+    .header-top__language-list,
+    .header-top__currency-list {
+      height: 100%;
+    }
+    
+    .header-top__language-button,
+    .header-top__currency-button {
+      height: 100%;
+      padding: 0;
+      color: inherit;
+      text-transform: uppercase;
+      line-height: 1;
+      background-color: transparent;
+      border: none;
+      border-right: 1px solid var(--main-gray);
+    }
+
+    .header-top__language-button::after,
+    .header-top__currency-button::after {
+      margin-right: 1rem;
+      margin-left: 1rem;  
+    }
+
+    .header-top__left .dropdown-item {
+      font-size: 0.75rem;
+    }
+
+    .dropdown-item.header-top__language-link::before,
+    .header-top__language-button.header-top__language-link::before {
+      content: '';
+      background-image: url('../img/Ustore_flags_and_payments_sprite.png');
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 5px;
+      background-position-y: 65%;
+      vertical-align: middle;
+    }
+
+    .lang-en::before {
+      background-position-x: 2%;
+    }
+
+    .lang-fr::before {
+      background-position-x: 15%;
+    }
+
+    .lang-ger::before {
+      background-position-x: 28%;
+    }
+
+    .lang-it::before {
+      background-position-x: 149.2%;
+    }
+
+    .lang-ua::before {
+      background-position-x: 161%;
     }
