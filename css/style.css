@@ -340,15 +340,15 @@ Version: 1.0
   .subsribe-popup-wrap {
     padding: 4rem 4rem;
     width: 70%;
-  }
-
-
+  }  
 
   .subscribe-popup .modal-content {    
     background: var(--main-red) url('../img/login-popup_obrizka.jpg') no-repeat ;
     max-width: 40.5vw;
     margin: 0 auto 0;
     border: none;
+    background-size: cover;
+    background-position: center;
   }
 
   .subscribe-popup__title {
