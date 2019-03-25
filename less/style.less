@@ -1,4 +1,3 @@
-/*! Super! !*/
 /*
 Site name: Ustore
 Site URL: localhost
@@ -13,8 +12,20 @@ Version: 1.0
 [Table of contents] 
 1. Content of external CSS-files
 2. Body, fonts and typography
+  2.1. Variables
+    2.1.1. Colors
+    2.1.2. Fonts
+    2.1.3. Breackpoints
+  2.2. Mixines
+    2.2.1. Typography
+    2.2.2. Responsive
+  2.2. Universal selector styles (* {})
+  2.3. Fonts
+  2.4. Typograpghy
 3. Tags settings
 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.)
+  4.1. Subscribe popup
+
   4.# Text in banners
   4.# Buttons
   4.#. General styles of product items
@@ -71,8 +82,7 @@ Version: 1.0
 
     /* 2.1.2. Fonts */
     @font-lato: 'Lato';
-    @font-open-sans: 'Open Sans';
-
+    @font-open-sans: 'Open Sans';      
 
   /* 2.2. Mixines */
     /* 2.2.1. Typography */
@@ -81,8 +91,13 @@ Version: 1.0
       font-weight: @weight;
     }
 
-  /* 2.2. Universal styles */
+    /* 2.2.2. Responsive */      
 
+  /* 2.2. Universal selector styles (* {}) */  
+  * {
+    outline: none;
+  }
+  
   /* 2.3. Fonts */
 
   /* Lato (latin) - 300 (Web-font) */
@@ -299,7 +314,6 @@ Version: 1.0
       color: #ffffff;
     }
 
-
     /* Colors - White with opacity */
     .header-top {
       color: rgba(255, 255, 255, 0.6);
@@ -346,7 +360,7 @@ Version: 1.0
   }
 
   .subsribe-popup-wrap {
-    padding: 4rem 4rem;
+    padding: calc(2.5vw + 1rem);
     width: 70%;
   }  
 
@@ -512,3 +526,43 @@ Version: 1.0
     .lang-ua::before {
       background-position-x: 161%;
     }
+
+    .test {position: fixed; top: 10px; right: 10px; color: tomato; z-index: 99999999;}
+
+/* 7. Responsive - index.html (indicate Responsive in this form for each page) */
+  /* 7.1 Min-width: 1200px */
+
+  @media only screen and (min-width: 1200px){
+      .test:after  { content: '@media (min-width: 1200px [col-xl]) >>>';} 
+
+  }
+
+  @media only screen and (max-width: 1199.98px){
+      .test:after  { content: '@media (max-width: 1200px [col-lg])';}   
+      
+  }
+
+  @media only screen and (max-width: 991.98px){
+      .test:after  { content: '@media (max-width: 992px [col-md])';}  
+      
+  }
+
+  @media only screen and (max-width: 767.98px){
+      .test:after  { content: '@media (max-width: 768px [col-sm])';}  
+
+  }
+
+  @media only screen and (max-width: 575.98px){
+      .test:after  { content: '@media (max-width: 576px [col-])';}  
+
+  }
+
+  @media only screen  and (max-width: 480px) {
+      .test:after  { content: '@media (max-width: 480px)';}  
+
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 400px) {
+      .test:after { content: '@media min-width: 320px and @max-width: 400px)';}
+      
+  }
