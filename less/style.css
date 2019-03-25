@@ -319,6 +319,7 @@ a[href^="tel"]:hover {
 .subsribe-popup-wrap {
   padding: calc(3.5vw);
   width: 70%;
+  z-index: 1;
 }
 .subscribe-popup .modal-content {
   background: #e74948 url('../img/login-popup_obrizka.jpg') no-repeat;
@@ -436,15 +437,16 @@ a[href^="tel"]:hover {
 .lang-ua::before {
   background-position-x: 161%;
 }
+/* 7. Responsive - index.html (indicate Responsive in this form for each page) */
+/* 7.1 Min-width: 1200px */
 .test {
   position: fixed;
   top: 10px;
-  right: 10px;
+  left: 10px;
   color: tomato;
   z-index: 99999999;
+  pointer-events: none;
 }
-/* 7. Responsive - index.html (indicate Responsive in this form for each page) */
-/* 7.1 Min-width: 1200px */
 @media only screen and (min-width: 1200px) {
   .test:after {
     content: '@media (min-width: 1200px [col-xl]) >>>';
@@ -454,29 +456,57 @@ a[href^="tel"]:hover {
   .test:after {
     content: '@media (max-width: 1200px [col-lg])';
   }
+  .subscribe-popup .modal-content {
+    max-width: 60vw;
+  }
 }
 @media only screen and (max-width: 991.98px) {
   .test:after {
     content: '@media (max-width: 992px [col-md])';
+  }
+  .subscribe-popup .modal-content {
+    max-width: 70vw;
   }
 }
 @media only screen and (max-width: 767.98px) {
   .test:after {
     content: '@media (max-width: 768px [col-sm])';
   }
+  .subscribe-popup .modal-content {
+    max-width: 80vw;
+  }
 }
 @media only screen and (max-width: 575.98px) {
   .test:after {
     content: '@media (max-width: 576px [col-])';
+  }
+  .subscribe-popup .modal-content {
+    max-width: 90vw;
   }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
     content: '@media (max-width: 480px)';
   }
+  .subscribe-popup__title {
+    font-size: 2.5rem;
+  }
+  .subsribe-popup-wrap {
+    width: 100%;
+  }
+  .subscribe-popup .modal-content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 400px) {
   .test:after {
     content: '@media min-width: 320px and @max-width: 400px)';
+  }
+  .subscribe-popup .modal-content {
+    background-position: 65%;
   }
 }
