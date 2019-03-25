@@ -1,3 +1,4 @@
+/*! Super! !*/
 /*
 Site name: Ustore
 Site URL: localhost
@@ -63,11 +64,22 @@ Version: 1.0
 
 /* 2. Body, fonts and typography */
   /* 2.1. Variables */
-  :root {
-    --main-red: #e74948;
-    --text-gray: #a4a4a4;
-    --main-gray: #e6e6e6;
-  }
+    /* 2.1.1. Colors */
+    @main-red: #e74948;
+    @text-gray: #a4a4a4;
+    @main-gray: #e6e6e6;  
+
+    /* 2.1.2. Fonts */
+    @font-lato: 'Lato';
+    @font-open-sans: 'Open Sans';
+
+
+  /* 2.2. Mixines */
+    /* 2.2.1. Typography */
+    .font-face-mixin(@weight) {
+      font-style: normal;
+      font-weight: @weight;
+    }
 
   /* 2.2. Universal styles */
 
@@ -75,45 +87,40 @@ Version: 1.0
 
   /* Lato (latin) - 300 (Web-font) */
   @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
+    font-family: @font-lato;
+    .font-face-mixin(300);
     src: url('../fonts/lato-300-normal.woff2') format('woff2'), 
          url('../fonts/lato-300-normal.woff') format('woff');
   }
   
   /* Lato (latin) - 400 (Web-font) */
   @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
+    font-family: @font-lato;
+    .font-face-mixin(400);
     src: url('../fonts/lato-v14-latin-regular.woff2') format('woff2'),
          url('../fonts/lato-v14-latin-regular.woff') format('woff');
   }
 
   /* Lato (latin) - 700 (Web-font) */
   @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
+    font-family: @font-lato;
+    .font-face-mixin(700);
     src: url('../fonts/lato-v14-latin-700.woff2') format('woff2'),
          url('../fonts/lato-v14-latin-700.woff') format('woff');
   }
 
   /* Lato (latin) - 900 (Web-font) */
   @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 900;
+    font-family: @font-lato;
+    .font-face-mixin(900);
     src: url('../fonts/lato-v14-latin-900.woff2') format('woff2'), 
          url('../fonts/lato-v14-latin-900.woff') format('woff');
   }
 
   /* Open sans (latin) - 400 (Web-font) */
   @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
+    font-family: @font-open-sans;
+    .font-face-mixin(400);
     src: local('Open Sans Regular'), local('OpenSans-Regular'),
           url('../fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
           url('../fonts/open-sans-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -121,9 +128,8 @@ Version: 1.0
 
   /* Open sans (latin) - 700 (Web-font) */
   @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
+    font-family: @font-open-sans;
+    .font-face-mixin(700);
     src: local('Open Sans Bold'), local('OpenSans-Bold'),
           url('../fonts/open-sans-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
           url('../fonts/open-sans-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -246,14 +252,14 @@ Version: 1.0
   /* 2.4. Typograpghy */
     /* Main font */
     body {
-      font: 16px/1.6 'Lato', 'Opens Sans', sans-serif;
+      font: 16px/1.6 @font-lato, @font-open-sans, sans-serif;
       color: #1c1a19;
     }
 
     /* Second font */
     .section__description,
     .custom-btn {
-      font-family: 'Open Sans', sans-serif;
+      font-family: @font-open-sans, sans-serif;
     }
 
     /* Colors - Gray */
@@ -267,7 +273,7 @@ Version: 1.0
     .latest-posts__comment,
     .tags__item,
     .icon-font-star-regular {
-      color: #a4a4a4;
+      color: @text-gray;
     }
 
     /* Colors - Red */
@@ -275,7 +281,7 @@ Version: 1.0
     .prod-categories__tab:focus,
     .icon-font-star-solid,
     .item__price--new {
-      color: #e74948;
+      color: @main-red;
     }
 
     /* Colors - White */
@@ -333,8 +339,10 @@ Version: 1.0
 
 /* 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.) */
   /* 4.1. Subscribe popup */
-  .subscribe-popup .modal-dialog {
-    max-width: 100%;
+  .subscribe-popup {    
+    .modal-dialog {
+      max-width: 100%;
+    }
   }
 
   .subsribe-popup-wrap {
@@ -342,13 +350,15 @@ Version: 1.0
     width: 70%;
   }  
 
-  .subscribe-popup .modal-content {    
-    background: var(--main-red) url('../img/login-popup_obrizka.jpg') no-repeat ;
-    max-width: 40.5vw;
-    margin: 0 auto 0;
-    border: none;
-    background-size: cover;
-    background-position: center;
+  .subscribe-popup {    
+    .modal-content {    
+      background: @main-red url('../img/login-popup_obrizka.jpg') no-repeat ;
+      max-width: 40.5vw;
+      margin: 0 auto 0;
+      border: none;
+      background-size: cover;
+      background-position: center;
+    }
   }
 
   .subscribe-popup__title {
@@ -358,45 +368,55 @@ Version: 1.0
     margin-bottom: 1.2rem;
   }
 
-  .subscribe-popup p {
-    font-weight: 300;
+  .subscribe-popup {
+    p {
+      font-weight: 300;
+    }
   }
 
-  .subscribe-popup form {
-    display: flex;
-    margin-bottom: 1.5rem;
-  }   
+  .subscribe-popup {
+    form {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }   
+  }
 
   .subscribe-popup input::-webkit-input-placeholder,
   .subscribe-popup input::placeholder {
     color: #fff;
   }  
 
-  .subscribe-popup input {
-    background-color: #ed7776;
-    font-size: 0.813rem;
-    border: none;
-    padding: 0.7rem 1rem;
-    width: 55%;
+  .subscribe-popup {
+    input {
+      background-color: #ed7776;
+      font-size: 0.813rem;
+      border: none;
+      padding: 0.7rem 1rem;
+      width: 55%;
+    }
   }
 
-  .subscribe-popup button {
-    background-color: #000000;
-    font-size: 0.875rem;
-    letter-spacing: 0.022rem;
-    border: none;
-    padding: 0rem 1.5rem;
+  .subscribe-popup {
+    button {
+      background-color: #000000;
+      font-size: 0.875rem;
+      letter-spacing: 0.022rem;
+      border: none;
+      padding: 0rem 1.5rem;
+    }
   }
 
-  .subscribe-popup .close {
-    font-size: 30px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    text-shadow: none;
-    transition: .3s ease;
+  .subscribe-popup {
+    .close {
+      font-size: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      text-shadow: none;
+      transition: .3s ease;
+    }
   }
 
   .subscribe-popup form + span {
@@ -410,43 +430,55 @@ Version: 1.0
   /* 6.1. Header */
     /* 6.1.1. Header-top */
     .header-top {
-      border-bottom: 1px solid var(--main-gray);
+      border-bottom: 1px solid @main-gray;
     }
     
+    .header-top {
+      &__left {
+        font-size: 0.75rem;
+      }
+    }
+
+    .header-top {
+      &__number-line {
+        font-size: 0.688rem;
+        letter-spacing: 0.034rem;
+      }
+    }
+
+    .header-top {
+      &__language-list,
+      &__currency-list {
+        height: 100%;
+      }
+    }
+    
+    .header-top {
+      &__language-button,
+      &__currency-button {
+        height: 100%;
+        padding: 0;
+        color: inherit;
+        text-transform: uppercase;
+        line-height: 1;
+        background-color: transparent;
+        border: none;
+        border-right: 1px solid @main-gray;
+      }
+    }
+
+    .header-top {
+      &__language-button::after,
+      &__currency-button::after {
+        margin-right: 1rem;
+        margin-left: 1rem;  
+      }
+    }
+
     .header-top__left {
-      font-size: 0.75rem;
-    }
-
-    .header-top__number-line {
-      font-size: 0.688rem;
-      letter-spacing: 0.034rem;
-    }
-
-    .header-top__language-list,
-    .header-top__currency-list {
-      height: 100%;
-    }
-    
-    .header-top__language-button,
-    .header-top__currency-button {
-      height: 100%;
-      padding: 0;
-      color: inherit;
-      text-transform: uppercase;
-      line-height: 1;
-      background-color: transparent;
-      border: none;
-      border-right: 1px solid var(--main-gray);
-    }
-
-    .header-top__language-button::after,
-    .header-top__currency-button::after {
-      margin-right: 1rem;
-      margin-left: 1rem;  
-    }
-
-    .header-top__left .dropdown-item {
-      font-size: 0.75rem;
+      .dropdown-item {
+        font-size: 0.75rem;
+      }
     }
 
     .dropdown-item.header-top__language-link::before,

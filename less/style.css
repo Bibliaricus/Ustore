@@ -1,0 +1,423 @@
+/*! Super! !*/
+/*
+Site name: Ustore
+Site URL: localhost
+Author: Web-lem
+Author URL: http://web-lem.com
+Description: Ustore - super smart shop.
+Text-domain: ustore
+Version: 1.0
+*/
+/*-----------------------------------------------------------------
+[Table of contents] 
+1. Content of external CSS-files
+2. Body, fonts and typography
+3. Tags settings
+4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.)
+  4.# Text in banners
+  4.# Buttons
+  4.#. General styles of product items
+  4.#. Section titles and descriptions
+  4.#. Quick popup
+  4.#. Hover buttons
+  4.#. Off-canvas
+5. Custom styles
+  5.0. Custom containters (Bootstrap 4)
+  5.1. Active slide in category slider (Bootstrap slider) 
+  5.2. Slick slider in categories (Slick)
+  5.3. Tabs in product categories (reassignment Bootstrap 4 tabs properties)
+6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
+  6.1. Header
+    6.1.1. Header-top
+    6.1.2. Header-bottom
+  6.2. Top banners
+    6.2.1. Main banner
+    6.2.2. Second banners
+  6.3. Categories
+  6.4. Main
+    6.4.1. Sidebar
+      6.4.1.1. Categories
+      6.4.1.2. Sale
+      6.4.1.3. Tags
+      6.4.1.4. Promo
+    6.4.2. Content
+      6.4.2.1. Product categories
+      6.4.2.2. Popular products
+    6.4.3. Bottom banners
+      6.4.3.1. Second banners
+      6.4.3.2. Main banner
+    6.4.4. New products
+    6.4.5. Latest news
+  6.5. Footer
+7. Responsive - index.html (indicate Responsive in this form for each page)
+  7.1 Min-width: 1200px
+  7.2 Max-width: 1200px
+  7.3 Max-width: 992px
+  7.4 Max-width: 768px
+  7.5 Max-width: 576px
+  7.6 Max-width: 480px
+  7.7 Min-width: 320px and max-width: 400px
+-----------------------------------------------------------------*/
+/* 1. Content of external CSS-files */
+/* 2. Body, fonts and typography */
+/* 2.1. Variables */
+/* 2.1.1. Colors */
+/* 2.1.2. Fonts */
+/* 2.2. Mixines */
+/* 2.2.1. Typography */
+/* 2.2. Universal styles */
+/* 2.3. Fonts */
+/* Lato (latin) - 300 (Web-font) */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/lato-300-normal.woff2') format('woff2'), url('../fonts/lato-300-normal.woff') format('woff');
+}
+/* Lato (latin) - 400 (Web-font) */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lato-v14-latin-regular.woff2') format('woff2'), url('../fonts/lato-v14-latin-regular.woff') format('woff');
+}
+/* Lato (latin) - 700 (Web-font) */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/lato-v14-latin-700.woff2') format('woff2'), url('../fonts/lato-v14-latin-700.woff') format('woff');
+}
+/* Lato (latin) - 900 (Web-font) */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/lato-v14-latin-900.woff2') format('woff2'), url('../fonts/lato-v14-latin-900.woff') format('woff');
+}
+/* Open sans (latin) - 400 (Web-font) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v15-latin-regular.woff') format('woff');
+  
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* Open sans (latin) - 700 (Web-font) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('../fonts/open-sans-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/open-sans-v15-latin-700.woff') format('woff');
+  
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* Icon font */
+@font-face {
+  font-family: 'Usmart-icon-font';
+  src: url('../fonts/Usmart-icon-font.ttf?2bftyo') format('truetype'), url('../fonts/Usmart-icon-font.woff?2bftyo') format('woff'), url('../fonts/Usmart-icon-font.svg?2bftyo#Usmart-icon-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Styles for icon font */
+[class^="icon-font-"],
+[class*=" icon-font-"] {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-font-"]::before,
+[class*=" icon-font-"]::before,
+[class^="icon-font-"]::after,
+[class*=" icon-font-"]::after {
+  font-family: 'Usmart-icon-font' !important;
+  line-height: 1;
+}
+.icon-font-angle-arrow-pointing-to-right:before {
+  content: "\e911";
+}
+.icon-font-angle-pointing-to-left:before {
+  content: "\e912";
+}
+.icon-font-envelope-of-white-paper:before {
+  content: "\e913";
+}
+.icon-font-cancel:before {
+  content: "\e914";
+}
+.icon-font-substract:before {
+  content: "\e915";
+}
+.icon-font-add:before {
+  content: "\e916";
+}
+.icon-font-check-mark:before {
+  content: "\e910";
+}
+.icon-font-bag:before {
+  content: "\e907";
+}
+.icon-font-heart-solid:before {
+  content: "\e900";
+}
+.icon-font-right-straight-arrow:before {
+  content: "\e901";
+}
+.icon-font-tag-black-shape:before {
+  content: "\e902";
+}
+.icon-font-angle-arrow-down:before {
+  content: "\e903";
+}
+.icon-font-baseline-today-24px:before {
+  content: "\e904";
+}
+.icon-font-star-regular:before {
+  content: "\e905";
+}
+.icon-font-star-solid:before {
+  content: "\e906";
+}
+.icon-font-angle-left-solid:before {
+  content: "\e908";
+}
+.icon-font-angle-right-solid:before {
+  content: "\e909";
+}
+.icon-font-caret-down-solid:before {
+  content: "\e90a";
+}
+.icon-font-facebook-f-brands:before {
+  content: "\e90b";
+}
+.icon-font-google-plus-logo:before {
+  content: "\e90c";
+}
+.icon-font-heart-regular:before {
+  content: "\e90d";
+}
+.icon-font-search-solid:before {
+  content: "\e90e";
+}
+.icon-font-twitter-brands:before {
+  content: "\e90f";
+}
+.icon-font-eye:before {
+  content: "\e9ce";
+}
+.icon-font-cart:before {
+  content: "\e93a";
+}
+.icon-font-bubble:before {
+  content: "\e96b";
+}
+.icon-font-instagram:before {
+  content: "\ea92";
+}
+.icon-font-linkedin2:before {
+  content: "\eaca";
+}
+/* 2.4. Typograpghy */
+/* Main font */
+body {
+  font: 16px/1.6 'Lato', 'Open Sans', sans-serif;
+  color: #1c1a19;
+}
+/* Second font */
+.section__description,
+.custom-btn {
+  font-family: 'Open Sans', sans-serif;
+}
+/* Colors - Gray */
+.section__description,
+.item__price,
+.item__category,
+footer p,
+footer a,
+footer span,
+.latest-posts__date,
+.latest-posts__comment,
+.tags__item,
+.icon-font-star-regular {
+  color: #a4a4a4;
+}
+/* Colors - Red */
+.prod-categories__tab:hover,
+.prod-categories__tab:focus,
+.icon-font-star-solid,
+.item__price--new {
+  color: #e74948;
+}
+/* Colors - White */
+.header-bottom,
+.main-banner,
+.banners,
+.insta-title,
+.product-categories,
+.subscribe__title,
+.footer__contacts,
+.footer__column-title,
+.subscribe-popup,
+.subscribe-popup input,
+.subscribe-popup button {
+  color: #ffffff;
+}
+/* Colors - White with opacity */
+.header-top {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* Font weight - 900 */
+.subscribe-popup__title {
+  font-weight: 900;
+}
+/* Font weight - 700 */
+/* Upper case */
+.subscribe-popup__title,
+.subscribe-popup button {
+  text-transform: uppercase;
+}
+/* 3. Tags settings */
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a[href^="tel"] {
+  transition: .2s ease;
+}
+a[href^="tel"]:hover {
+  color: #000;
+}
+/* 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.) */
+/* 4.1. Subscribe popup */
+.subscribe-popup .modal-dialog {
+  max-width: 100%;
+}
+.subsribe-popup-wrap {
+  padding: 4rem 4rem;
+  width: 70%;
+}
+.subscribe-popup .modal-content {
+  background: #e74948 url('../img/login-popup_obrizka.jpg') no-repeat;
+  max-width: 40.5vw;
+  margin: 0 auto 0;
+  border: none;
+  background-size: cover;
+  background-position: center;
+}
+.subscribe-popup__title {
+  font-size: 3rem;
+  letter-spacing: 0.06rem;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+.subscribe-popup p {
+  font-weight: 300;
+}
+.subscribe-popup form {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.subscribe-popup input::-webkit-input-placeholder,
+.subscribe-popup input::placeholder {
+  color: #fff;
+}
+.subscribe-popup input {
+  background-color: #ed7776;
+  font-size: 0.813rem;
+  border: none;
+  padding: 0.7rem 1rem;
+  width: 55%;
+}
+.subscribe-popup button {
+  background-color: #000000;
+  font-size: 0.875rem;
+  letter-spacing: 0.022rem;
+  border: none;
+  padding: 0rem 1.5rem;
+}
+.subscribe-popup .close {
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  text-shadow: none;
+  transition: .3s ease;
+}
+.subscribe-popup form + span {
+  font-size: 0.75rem;
+  color: #ffcccc;
+}
+/* 5. Custom styles */
+/* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
+/* 6.1. Header */
+/* 6.1.1. Header-top */
+.header-top {
+  border-bottom: 1px solid #e6e6e6;
+}
+.header-top__left {
+  font-size: 0.75rem;
+}
+.header-top__number-line {
+  font-size: 0.688rem;
+  letter-spacing: 0.034rem;
+}
+.header-top__language-list,
+.header-top__currency-list {
+  height: 100%;
+}
+.header-top__language-button,
+.header-top__currency-button {
+  height: 100%;
+  padding: 0;
+  color: inherit;
+  text-transform: uppercase;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid #e6e6e6;
+}
+.header-top__language-button::after,
+.header-top__currency-button::after {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.header-top__left .dropdown-item {
+  font-size: 0.75rem;
+}
+.dropdown-item.header-top__language-link::before,
+.header-top__language-button.header-top__language-link::before {
+  content: '';
+  background-image: url('../img/Ustore_flags_and_payments_sprite.png');
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  background-position-y: 65%;
+  vertical-align: middle;
+}
+.lang-en::before {
+  background-position-x: 2%;
+}
+.lang-fr::before {
+  background-position-x: 15%;
+}
+.lang-ger::before {
+  background-position-x: 28%;
+}
+.lang-it::before {
+  background-position-x: 149.2%;
+}
+.lang-ua::before {
+  background-position-x: 161%;
+}
