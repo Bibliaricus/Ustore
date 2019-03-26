@@ -318,7 +318,8 @@ a:hover {
 a[href^="tel"] {
   transition: .2s ease;
 }
-a[href^="tel"]:hover {
+a[href^="tel"]:hover,
+a[href^="tel"]:focus {
   color: #000;
 }
 /* 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.) */
@@ -542,6 +543,9 @@ a[href^="tel"]:hover {
   border: 1px solid rgba(230, 230, 230, 0.2);
   padding: 0.5rem 0.8rem;
   font-size: 0.75rem;
+}
+.header-top__social a:focus {
+  color: initial;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
