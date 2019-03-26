@@ -556,8 +556,8 @@ a[href^="tel"]:focus {
   margin-top: 1.2rem;
 }
 .header-bottom__logo {
-  margin-left: 2rem;
   pointer-events: none;
+  margin: 0;
 }
 .header-bottom .navbar-nav .nav-item .nav-link {
   position: relative;
