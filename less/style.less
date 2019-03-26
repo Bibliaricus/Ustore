@@ -339,13 +339,17 @@ Version: 1.0
     }
 
     /* Font weight - 700 */
+    .header-bottom .nav-link {
+      font-weight: 700;
+    }
 
     /* Upper case */
     .subscribe-popup__title,
     .subscribe-popup button,
     .header-top__number-line,
     .header-top__login,
-    .login-popup__button {
+    .login-popup__button,
+    .header-bottom .nav-link {
       text-transform: uppercase;
     }
 
@@ -670,7 +674,31 @@ Version: 1.0
         margin-left: 2rem;
         pointer-events: none;
       }
-    }
+      .navbar-nav .nav-item .nav-link { // So long heavy selector for overwrite default color of Bootstrap
+        position: relative;
+        color: #ffffff;
+        font-size: 0.8125rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0.2rem;
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;          
+          width: 0;
+          height: 2px;
+          background-color: #fff;
+          transition: .3s ease;
+        }
+        &:hover, &:focus {
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }   
     
   /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
     /* 7.1 Min-width: 1200px */
