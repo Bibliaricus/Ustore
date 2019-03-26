@@ -100,7 +100,7 @@
       <a href="#" class="header-bottom__logo navbar-brand col-6 col-lg-2" tabindex="-1">        
         <img src="img/header-logo.png" alt="Header logo">
       </a>
-      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light">
+      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-12 col-lg-8">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-responsive-menu" aria-controls="header-responsive-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -124,31 +124,15 @@
             <li class="nav-item mx-2">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
-          </ul>
-            <span class="navbar-text ml-auto">
-              <a href="#" class="buy-theme">BUY THIS THEMEUs</a>
-            </span>
+          </ul>            
         </div>
       </nav>
-      <div class="header-bottom__search col-12 col-lg-7 order-1 mt-3 order-lg-0 mt-lg-0">
-        <form class="form-inline row align-items-stretch justify-content-center justify-content-lg-end" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
-          <input class="search__input form-control input-group-prepend col-6 col-md-7 col-lg-6 col-xl-7" type="search" placeholder="Search for product..." aria-label="Search">
-          <select class="search__select form-control col-4 col-xl-3" id="search-select">
-            <option value="all">All categories</option>
-            <option value="notebook">Notebook</option>
-            <option value="tablet">Tablet</option>
-            <option value="e-books">Electronic books</option>
-            <option value="computers">Computers</option>
-            <option value="components">Components</option>
-            <option value="office equip">Office equipment</option>
-            <option value="games">Games</option>
-            <option value="network equip">Network equipment</option>
-            <option value="accessories">Accessories</option>
-          </select>
-          <button class="search__button btn icon-font-search-solid col-auto" type="submit"></button>
-        </form>
-      </div>
-      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-6 col-lg-3">
+      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-6 col-lg-2">
+        <span class="user-buttons__item search-field__button icon-font-search-solid" tabindex="0"></span>
+        <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
+          <input class="search-field__area" type="search" placeholder="Search for product..." aria-label="Search">          
+          <button class="search-field__popup-button icon-font-search-solid" type="submit"></button>
+        </form>        
         <a href="#" class="header-bottom__icon-item icon-font-heart-regular" onclick="openNav()" title="Open vish list"></a>
         <div class="vish-list sidenav" id="vish-list-off-canvas">
           <div class="vish-list__header">

@@ -655,3 +655,8 @@ a[href^="tel"]:focus {
     background-position: 65%;
   }
 }
+.vish-list,
+.shoping-cart,
+.search-field__toolip {
+  display: none;
+}
