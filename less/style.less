@@ -342,7 +342,8 @@ Version: 1.0
     /* Upper case */
     .subscribe-popup__title,
     .subscribe-popup button,
-    .header-top__number-line {
+    .header-top__number-line,
+    .header-top__login {
       text-transform: uppercase;
     }
 
@@ -355,6 +356,11 @@ Version: 1.0
   a {
     color: inherit;
     text-decoration: none;
+    transition: .3s ease;
+    &:hover {
+      color: initial;
+      text-decoration: none;
+    }
   }
 
   a[href^="tel"] {
@@ -542,6 +548,30 @@ Version: 1.0
       background-position-x: 161%;
     }
 
+    /* Header-top right */
+    .header-top__login {
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
+    }
+
+    .header-top__right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    .header-top__social { 
+      list-style: none;
+      display: flex;
+      margin: 0 -1rem 0 1.4rem;
+      padding: 0;
+      a {
+        display: block;
+        border: 1px solid @main-gray-opacity;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+      }
+    }
     
   /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
     /* 7.1 Min-width: 1200px */
