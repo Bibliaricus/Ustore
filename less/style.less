@@ -25,6 +25,7 @@ Version: 1.0
 3. Tags settings
 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.)
   4.1. Subscribe popup
+  4.2. Login hover popup
 
   4.# Text in banners
   4.# Buttons
@@ -343,7 +344,8 @@ Version: 1.0
     .subscribe-popup__title,
     .subscribe-popup button,
     .header-top__number-line,
-    .header-top__login {
+    .header-top__login,
+    .login-popup__button {
       text-transform: uppercase;
     }
 
@@ -457,6 +459,90 @@ Version: 1.0
   .subscribe-popup form + span {
     font-size: 0.75rem;
     color: #ffcccc;
+  }
+
+  /* 4.2. Login hover popup */
+  /* Login popup */
+  .login-popup {
+    border: 1px solid @main-gray;
+    padding: 2em 2em 2em 2em;
+    position: absolute;
+    top: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    color: initial;
+    background-color: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+    z-index: 3;
+  }    
+
+  .user-links_log-in-form:hover,
+  .user-links_log-in-form:focus {
+    transition: .2s ease;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+    /* Opening of login popup */
+    .header-top__login:hover ~ .login-popup,
+    .header-top__login:focus ~ .login-popup,
+    .login-popup:hover,
+    .login-popup:focus-within {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  .login-popup__text-input {
+    padding: 0.3em 1em 0.3em 1em;
+    margin-bottom: 1rem;
+    border: 1px solid @main-gray;
+    transition: .3s ease;
+  }
+
+  .login-popup__text-input:active,
+  .login-popup__text-input:focus {
+    border: 1px solid #000000;
+  }
+
+  .checkbox-field {
+    margin-bottom: 1rem;
+  }
+
+  [name="remember-me"]:focus {
+    outline: auto;
+  }
+
+  .login-popup__link {
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+
+  .login-popup__link:focus {
+    background-color: lightgray;
+  }
+
+  .login-popup__button {
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 1em 2.7em 0.8em 2.5em;
+    font-size: 0.75rem;
+    background-color: @main-red;
+    color: #ffffff;
+    border: none;
+    transition: .3s ease;
+    cursor: pointer;
+    &:hover, &:focus {
+      color: #ffffff;
+      background-color: #000000;
+    }
+  }
+
+  .login-popup__button + span {
+    text-align: center;
   }
 
 /* 5. Custom styles */
