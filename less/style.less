@@ -78,7 +78,8 @@ Version: 1.0
     /* 2.1.1. Colors */
     @main-red: #e74948;
     @text-gray: #a4a4a4;
-    @main-gray: #e6e6e6;  
+    @main-gray: #e6e6e6;
+    @main-gray-opacity: rgba(230, 230, 230, 0.2);
 
     /* 2.1.2. Fonts */
     @font-lato: 'Lato';
@@ -458,7 +459,7 @@ Version: 1.0
   /* 6.1. Header */
     /* 6.1.1. Header-top */
     .header-top {
-      border-bottom: 1px solid @main-gray;
+      border-bottom: 1px solid @main-gray-opacity;
     }
     
     .header-top {
@@ -491,7 +492,7 @@ Version: 1.0
         line-height: 1;
         background-color: transparent;
         border: none;
-        border-right: 1px solid @main-gray;
+        border-right: 1px solid @main-gray-opacity;
       }
     }
 

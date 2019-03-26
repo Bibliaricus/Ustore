@@ -381,7 +381,7 @@ a[href^="tel"]:hover {
 /* 6.1. Header */
 /* 6.1.1. Header-top */
 .header-top {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.2);
 }
 .header-top__left {
   font-size: 0.75rem;
@@ -403,7 +403,7 @@ a[href^="tel"]:hover {
   line-height: 1;
   background-color: transparent;
   border: none;
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid rgba(230, 230, 230, 0.2);
 }
 .header-top__language-button::after,
 .header-top__currency-button::after {
