@@ -21,6 +21,29 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body style="background-color: #d64444"> 
+  <!-- Modals -->
+    <!-- Subscribe modal popup -->
+    <div class="modal fade subscribe-popup" id="subscribe-popup" tabindex="-1" role="dialog" aria-labelledby="subscribe-popup-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="subsribe-popup-wrap">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="subscribe-popup__title" id="subscribe-popup-title">Join our newsletter</h5>
+            <p>Powerful, sleek template that is easy to cinfigure and 
+                focused on presenting all your product in best way.</p>
+            <form action="#" method="GET">
+              <input type="email" placeholder="Email address...">
+              <button>Sign In</button>
+            </form>
+            <span>*Don’t worry, we won’t spam our customers mailboxes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ## Subscribe modal popup -->
+  <!-- ## Modals -->
   <div class="test"></div>
   <header class="container-fluid page-header">
     <div class="header-top row">
@@ -47,28 +70,7 @@
         <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
       </div>      
       <div class="header-top__right col-6">
-        <a class="header-top__modal-btn" data-toggle="modal" data-target="#subscribe-popup">
-            Sign in or create an account
-        </a>
-        <div class="modal fade subscribe-popup" id="subscribe-popup" tabindex="-1" role="dialog" aria-labelledby="subscribe-popup-title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="subsribe-popup-wrap">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="subscribe-popup__title" id="subscribe-popup-title">Join our newsletter</h5>
-                <p>Powerful, sleek template that is easy to cinfigure and 
-                    focused on presenting all your product in best way.</p>
-                <form action="#" method="GET">
-                  <input type="email" placeholder="Email address...">
-                  <button>Sign In</button>
-                </form>
-                <span>*Don’t worry, we won’t spam our customers mailboxes</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a href="#" class="header-top__modal-btn">Sign in or create an account</a>        
       </div>
       <hr>
     </div>
