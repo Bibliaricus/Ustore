@@ -220,8 +220,8 @@ Version: 1.0
 .icon-font-heart-regular:before {
   content: "\e90d";
 }
-.icon-font-search-solid:before {
-  content: "\e90e";
+.icon-font-search:before {
+  content: "\e986";
 }
 .icon-font-twitter-brands:before {
   content: "\e90f";
