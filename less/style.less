@@ -26,6 +26,7 @@ Version: 1.0
 4. General styles (general styles for every repeat (and not repeat) element in the site. Not include paddings, margins etc.)
   4.1. Subscribe popup
   4.2. Login hover popup
+  4.3. Wishlist and shopping cart popups
 
   4.# Text in banners
   4.# Buttons
@@ -559,6 +560,214 @@ Version: 1.0
     text-align: center;
   }
 
+  /* 4.3. Wishlist and shopping cart popups */
+  /* Main styles */     
+    
+  .shoping-cart a,
+  .vish-list a {
+    text-decoration: none;
+    transition: .2s ease;
+  }
+
+  .vish-list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0.7em;
+    text-transform: uppercase;
+    color: initial;
+  }
+
+  .shopping-cart__title,    
+  .vish-list__title {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .shopping-cart__item-list,
+  .vish-list__item-list {
+    padding: 10px 0;
+    border-top: none;
+    border-bottom: 1px solid #eaeaea;
+    max-height: 40vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .shopping-cart__item-list::-webkit-scrollbar,
+  .vish-list__item-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+  }
+
+  .shopping-cart__item-list::-webkit-scrollbar-track,
+  .vish-list__item-list::-webkit-scrollbar-track {
+    background-color: #e1e1e1;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .shopping-cart__item-list::-webkit-scrollbar-thumb,
+  .vish-list__item-list::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+  .shopping-cart__item,    
+  .vish-list__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.5em 3em 1.5em 1.5em;
+  }
+
+  .shopping-cart__item-image,
+  .vish-list__item-image {
+    float: left;
+    margin: 0 0.5em;
+  }
+
+  .shopping-cart__item-description,
+  .vish-list__item-description {
+    text-align: left;
+    margin-left: 1em;
+    font-size: 1rem;
+  }
+
+  .shopping-cart__item-name,
+  .vish-list__item-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: initial;
+  }
+
+  .shopping-cart__item-delete-btn,
+  .vish-list__item-delete-btn {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    cursor: pointer;
+    color: initial;
+  }
+
+  .shopping-cart__footer,    
+  .vish-list__footer {
+    padding: 5px 10px;
+    text-align: center;      
+  }
+
+  .shopping-cart__checkout-button,
+  .vish-list__vish-list-button {
+    background-color: @main-red;
+    border-color: 1px solid @main-red;
+    color: #ffffff;
+  }
+  
+  .shopping-cart__btn,
+  .vish-list__btn {
+    display: block;
+    margin: 5px 0;
+    padding: 0.6rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+    transition: .2s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .shopping-cart__item-quantity {
+    color: #737373;
+    font-size: 0.9rem;
+  }
+
+  .shopping-cart__item-quantity::after {
+    content: 'x';
+    margin-left: 0.2rem;      
+  }
+
+  .shopping-cart__item-price {
+    color: #737373;
+  }
+
+  .shopping-cart__total-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    color: initial;
+  }
+
+  .shopping-cart__total-quantity {
+    font-size: 1rem;
+  }
+
+  .shopping-cart__subtotal-price {
+    font-size: 1rem;
+  }
+
+  /* Hover effects */
+  .shopping-cart__item-name:hover,
+  .vish-list__item-name:hover,
+  .shopping-cart__item-name:focus,
+  .vish-list__item-name:focus {
+    text-decoration: underline;
+  }
+
+  .shopping-cart__checkout-button:hover,
+  .vish-list__vish-list-button:hover,
+  .shopping-cart__checkout-button:focus,
+  .vish-list__vish-list-button:focus {
+    background-color: lighten(@main-red, 10%);
+    color: #fff;
+  }
+
+  .header__middle .user-links__icon:focus, 
+  .header__middle .vish-list__btn:focus,
+  .header__middle .shopping-cart__btn:focus {
+    text-decoration: none;
+  }  
+
+  /* 4.#. Off-canvas */
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    max-width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    padding: 60px 0 0 0;
+    box-shadow: inset 1px 0 0 0px black;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 1;
+  }  
+
+  .sidenav .closebtn:hover,
+  .sidenav .closebtn:focus {
+    color: var(--main-blue);
+  }
+
+  .off-canvas-open {
+    max-width: 30vw;
+    padding: 60px 3rem 0.5rem 1.5rem;
+    width: 100%;
+}
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+  }
+
 /* 5. Custom styles */
 
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
@@ -724,6 +933,14 @@ Version: 1.0
     .subscribe-popup .modal-content {
       max-width: 60vw;
     }
+
+    .sidenav {
+      margin-top: 3.5rem;
+    }
+  
+    .off-canvas-open {
+      max-width: 40vw;
+    }
   }
 
   @media only screen and (max-width: 991.98px){
@@ -772,11 +989,9 @@ Version: 1.0
     .subscribe-popup .modal-content {
       background-position: 65%;
     }   
-  }
+  }  
 
   // Temp
-  .vish-list,
-  .shoping-cart,
   .search-field__toolip {
     display: none;
   }
