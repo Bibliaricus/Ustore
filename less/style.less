@@ -483,6 +483,15 @@ Version: 1.0
     opacity: 0;
     transition: .3s ease;
     z-index: 3;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3%;
+      width: calc(100% + 15%);
+      height: 20px;
+      left: -15%;
+      z-index: -1;
+    }
   }    
 
   .user-links_log-in-form:hover,

@@ -407,6 +407,15 @@ a[href^="tel"]:focus {
   transition: .3s ease;
   z-index: 3;
 }
+.login-popup::before {
+  content: '';
+  position: absolute;
+  top: -3%;
+  width: calc(115%);
+  height: 20px;
+  left: -15%;
+  z-index: -1;
+}
 .user-links_log-in-form:hover,
 .user-links_log-in-form:focus {
   transition: .2s ease;
