@@ -674,6 +674,11 @@ a[href^="tel"]:focus {
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: .3s ease;
+}
+.search-field__button:hover,
+.search-field__button:focus {
+  color: initial;
 }
 .search-field__button::after {
   content: '';
@@ -706,7 +711,7 @@ a[href^="tel"]:focus {
   content: '';
   position: absolute;
   top: -11px;
-  left: 28%;
+  left: 32%;
   width: 0;
   height: 0;
   border: 10px solid #ffffff;
