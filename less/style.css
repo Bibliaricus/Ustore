@@ -807,6 +807,12 @@ a[href^="tel"]:focus {
   border: none;
   border-right: 1px solid rgba(230, 230, 230, 0.2);
 }
+.header-top__language-button:hover,
+.header-top__currency-button:hover,
+.header-top__language-button:focus,
+.header-top__currency-button:focus {
+  outline: none;
+}
 .header-top__language-button::after,
 .header-top__currency-button::after {
   margin-right: 1rem;
