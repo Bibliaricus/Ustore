@@ -726,6 +726,27 @@ Version: 1.0
     text-decoration: none;
   }  
 
+  /* Composite icon to shoping cart */
+  .header-bottom__icons-list .shoping-cart-composite-icon {
+    position: relative;
+    font-size: 1.2rem;
+    &::after {
+    content: '5';
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    color: @main-red;
+    font-size: 0.85rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    transform: translate(-50%, -50%);    
+    transition: .3s ease; 
+    }
+    &:hover::after, &:focus::after {
+      color: #ffffff;      
+    }
+  }
+
   /* The side navigation menu */
   .sidenav {
     height: 100%; /* 100% Full-height */
