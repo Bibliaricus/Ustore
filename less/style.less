@@ -45,25 +45,7 @@ Version: 1.0
   6.1. Header
     6.1.1. Header-top
     6.1.2. Header-bottom
-  6.2. Top banners
-    6.2.1. Main banner
-    6.2.2. Second banners
-  6.3. Categories
-  6.4. Main
-    6.4.1. Sidebar
-      6.4.1.1. Categories
-      6.4.1.2. Sale
-      6.4.1.3. Tags
-      6.4.1.4. Promo
-    6.4.2. Content
-      6.4.2.1. Product categories
-      6.4.2.2. Popular products
-    6.4.3. Bottom banners
-      6.4.3.1. Second banners
-      6.4.3.2. Main banner
-    6.4.4. New products
-    6.4.5. Latest news
-  6.5. Footer
+  6.2. Main banner
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -1047,7 +1029,20 @@ Version: 1.0
           }
         }
       }
-    }   
+    } 
+    .page-header {position: absolute; top: 0;}
+  /* 6.2. Main banner */
+  .main-banner {
+    height: 100vh;    
+    &__slide {
+      height: 100%;
+      background-color: @main-red;
+      background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: left bottom, right bottom, center top;
+      background-size: 76vh, 70vh, contain;
+    }
+  }
     
   /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
     /* 7.1 Min-width: 1200px */
