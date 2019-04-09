@@ -907,9 +907,9 @@ a[href^="tel"]:focus {
 .main-banner__slide {
   height: 100%;
   background-color: #e74948;
-  background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1nn.png');
+  background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 76vh, 70vh, contain;
+  background-size: 70vh, 65vh, contain;
   animation: main-banner 1s ease forwards;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
