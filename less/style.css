@@ -37,10 +37,7 @@ Version: 1.0
   4.#. Hover buttons
   4.#. Off-canvas
 5. Custom styles
-  5.0. Custom containters (Bootstrap 4)
-  5.1. Active slide in category slider (Bootstrap slider) 
-  5.2. Slick slider in categories (Slick)
-  5.3. Tabs in product categories (reassignment Bootstrap 4 tabs properties)
+  5.1. Custom display for active slide in main banner slider (Bootstrap 4)
 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
   6.1. Header
     6.1.1. Header-top
@@ -904,9 +901,15 @@ a[href^="tel"]:focus {
 .page-header {
   position: absolute;
   top: 0;
+  z-index: 2;
 }
 /* 6.2. Main banner */
-.main-banner {
+.main-banner .carousel-item-next,
+.main-banner .carousel-item-prev,
+.main-banner .carousel-item.active {
+  display: flex;
+}
+.main-banner .carousel-inner {
   height: 100vh;
 }
 .main-banner .slide1 {
@@ -918,7 +921,6 @@ a[href^="tel"]:focus {
 .main-banner__slide {
   height: 100%;
   animation: main-banner 1s ease forwards;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;

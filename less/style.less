@@ -38,10 +38,7 @@ Version: 1.0
   4.#. Hover buttons
   4.#. Off-canvas
 5. Custom styles
-  5.0. Custom containters (Bootstrap 4)
-  5.1. Active slide in category slider (Bootstrap slider) 
-  5.2. Slick slider in categories (Slick)
-  5.3. Tabs in product categories (reassignment Bootstrap 4 tabs properties)
+  5.1. Custom display for active slide in main banner slider (Bootstrap 4)
 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
   6.1. Header
     6.1.1. Header-top
@@ -888,7 +885,7 @@ Version: 1.0
     box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
   }
 
-/* 5. Custom styles */
+/* 5. Custom styles */  
 
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
   /* 6.1. Header */
@@ -1042,10 +1039,18 @@ Version: 1.0
         }
       }
     } 
-    .page-header {position: absolute; top: 0;}
+    .page-header {position: absolute; top: 0; z-index: 2;}
   /* 6.2. Main banner */
   .main-banner {
-    height: 100vh;   
+    // height: 100vh;
+    .carousel-item-next,
+    .carousel-item-prev,
+    .carousel-item.active {
+     display: flex;
+    }
+    .carousel-inner {
+      height: 100vh;
+    }
     .slide1 {
       background-color: @main-red;            
       background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');      
@@ -1055,7 +1060,7 @@ Version: 1.0
     &__slide {
       height: 100%;
       animation: main-banner 1s ease forwards;
-      display: flex;
+      // display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;      
