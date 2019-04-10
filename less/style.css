@@ -912,6 +912,11 @@ a[href^="tel"]:focus {
 .main-banner .carousel-inner {
   height: 100vh;
 }
+.main-banner .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 .main-banner .slide1 {
   background-color: #e74948;
   background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');
