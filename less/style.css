@@ -232,7 +232,8 @@ body {
 }
 /* Second font */
 .section__description,
-.custom-btn {
+.custom-btn,
+.banner__description {
   font-family: 'Open Sans', sans-serif;
 }
 /* Colors - Gray */
@@ -274,7 +275,9 @@ footer span,
   color: rgba(255, 255, 255, 0.6);
 }
 /* Font weight - 900 */
-.subscribe-popup__title {
+.subscribe-popup__title,
+.banner__category,
+.banner__title {
   font-weight: 900;
 }
 /* Font weight - 700 */
@@ -287,7 +290,9 @@ footer span,
 .header-top__number-line,
 .header-top__login,
 .login-popup__button,
-.header-bottom .nav-link {
+.header-bottom .nav-link,
+.banner__category,
+.banner__title {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -296,7 +301,7 @@ footer span,
     background-position: -50% bottom, 150% bottom, center -30rem;
   }
   to {
-    background-position: left bottom, right bottom, center top;
+    background-position: -10% bottom, 110% bottom, center top;
   }
 }
 /* 3. Tags settings */
@@ -911,6 +916,23 @@ a[href^="tel"]:focus {
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 70vh, 65vh, contain;
   animation: main-banner 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-banner__slide .banner__category {
+  font-size: 0.875rem;
+  letter-spacing: 0.175em;
+}
+.main-banner__slide .banner__title {
+  font-size: 5.875rem;
+  letter-spacing: 0.1175rem;
+}
+.main-banner__slide .banner__description {
+  opacity: .8;
+  width: 45%;
+  text-align: center;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
