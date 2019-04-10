@@ -909,12 +909,14 @@ a[href^="tel"]:focus {
 .main-banner {
   height: 100vh;
 }
-.main-banner__slide {
-  height: 100%;
+.main-banner .slide1 {
   background-color: #e74948;
   background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 70vh, 65vh, contain;
+}
+.main-banner__slide {
+  height: 100%;
   animation: main-banner 1s ease forwards;
   display: flex;
   flex-direction: column;
