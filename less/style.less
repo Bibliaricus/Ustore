@@ -348,9 +348,14 @@ Version: 1.0
     }
 
     /* 2.5. Animations */
-    @keyframes main-banner {
+    @keyframes main-banner_slide1 {
       from {background-position: -50% bottom, 150% bottom,center -30rem;}
       to {background-position:  -10% bottom, 110% bottom,center top;}
+    }
+
+    @keyframes main-banner_slide2 {      
+      from {background-position: -170% bottom, -210vh bottom, -100% bottom;}      
+      to {background-position: 130% bottom, -10vh bottom, 0% bottom;}
     }
 
 /* 3. Tags settings */
@@ -1169,10 +1174,18 @@ Version: 1.0
       background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');      
       background-repeat: no-repeat, no-repeat, no-repeat;      
       background-size: 70vh, 65vh, contain;      
-    } 
+      animation: main-banner_slide1 1s ease forwards;      
+    }
+    .slide2 {
+      background: #da824f;
+      background-image: url('../img/main_banner_bg_2-3.png'), url('../img/main_banner_bg_2-2n.png'), url('../img/main_banner_bg_2-1.png');
+      background-repeat: no-repeat;
+      background-size: 90vh, 161vh, contain;
+      animation: main-banner_slide2 1.5s forwards;  
+      transition: .3s ease;    
+    }
     &__slide {
       height: 100%;
-      animation: main-banner 1s ease forwards;      
       flex-direction: column;
       align-items: center;
       justify-content: center;      
