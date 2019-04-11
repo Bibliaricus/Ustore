@@ -28,7 +28,8 @@ Version: 1.0
   4.1. Subscribe popup
   4.2. Login hover popup
   4.3. Wishlist and shopping cart popups
-  4.4. Search field  
+  4.4. Search field
+  4.5. General settings for product items (item__*)
 
   4.# Text in banners
   4.# Buttons
@@ -59,6 +60,7 @@ Version: 1.0
 /* 2. Body, fonts, typography and animations */
   /* 2.1. Variables */
     /* 2.1.1. Colors */
+    @baseFontColor: #1c1a19;
     @main-red: #e74948;
     @text-gray: #a4a4a4;
     @main-gray: #e6e6e6;
@@ -264,7 +266,7 @@ Version: 1.0
     /* Main font */
     body {
       font: 16px/1.6 @font-lato, @font-open-sans, sans-serif;
-      color: #1c1a19;
+      color: @baseFontColor;
     }
 
     /* Second font */
@@ -284,7 +286,8 @@ Version: 1.0
     .latest-posts__date,
     .latest-posts__comment,
     .tags__item,
-    .icon-font-star-regular {
+    .icon-font-star-regular,
+    .item__category {
       color: @text-gray;
     }
 
@@ -319,7 +322,9 @@ Version: 1.0
     /* Font weight - 900 */
     .subscribe-popup__title,
     .banner__category,
-    .banner__title {
+    .banner__title,
+    .item__category,
+    .item__title {
       font-weight: 900;
     }
 
@@ -336,7 +341,9 @@ Version: 1.0
     .login-popup__button,
     .header-bottom .nav-link,
     .banner__category,
-    .banner__title {
+    .banner__title,
+    .item__category,
+    .item__title {
       text-transform: uppercase;
     }
 
@@ -356,8 +363,7 @@ Version: 1.0
     color: inherit;
     text-decoration: none;
     transition: .3s ease;
-    &:hover {
-      color: initial;
+    &:hover {      
       text-decoration: none;
     }
   }
@@ -885,10 +891,34 @@ Version: 1.0
     box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
   }
 
+  /* 4.5. General settings for product items (item__*) */
+  .item{    
+    &__category {
+      letter-spacing: 0.125rem;
+      font-size: 0.625rem; 
+      &:hover, &:focus {
+        color: @text-gray;
+      } 
+    }
+    &__title {
+      color: @baseFontColor;
+      letter-spacing: 0.015rem;
+      font-size: 0.75rem;      
+      &:hover, &:focus {
+        color: @baseFontColor;
+      }
+    }
+  }
+
 /* 5. Custom styles */  
 
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
   /* 6.1. Header */
+    header {
+      a:hover {
+        color: initial;
+      }
+    }
     /* 6.1.1. Header-top */
     .header-top {
       border-bottom: 1px solid @main-gray-opacity;
@@ -1058,6 +1088,55 @@ Version: 1.0
         border-radius: 50%;
       }
     }
+    .main-banner-arrow-prev,
+    .main-banner-arrow-next {
+      position: absolute;
+      top: 45%;
+      bottom: 0;
+      width: 5%;
+      height: 75px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+      transition: .3s ease;
+      transform: translateY(-50%);
+      z-index: 1;
+      &:hover, &:focus {
+        color: #000000;
+        background-color: #fff;
+      }
+    }
+    .main-banner-arrow-prev {
+      left: 4%;
+    }
+    .main-banner-arrow-next {
+      right: 4%;
+    }
+    .mousehover {
+      position: absolute;
+      top: 45%;
+      display: flex;
+      z-index: 3;
+      transform: translateY(-50%);
+      left: calc(4% + 5%);    
+      background-color: #fff;
+      .mousehover__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
     .slide1 {
       background-color: @main-red;            
       background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');      
@@ -1066,8 +1145,7 @@ Version: 1.0
     } 
     &__slide {
       height: 100%;
-      animation: main-banner 1s ease forwards;
-      // display: flex;
+      animation: main-banner 1s ease forwards;      
       flex-direction: column;
       align-items: center;
       justify-content: center;      
