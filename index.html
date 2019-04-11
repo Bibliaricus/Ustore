@@ -155,7 +155,12 @@
         </div>
         <span class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-5" tabindex="0"></span>        
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
-          <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search">          
+          <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
+          <datalist id="search-list">
+            <option value="Telephones"></option>
+            <option value="Mobiles"></option>
+            <option value="And many other things..."></option>       
+          </datalist>          
           <button class="search-field__popup-button icon-font-search" type="submit"></button>
         </form>
         <a href="#" class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon ml-3" onclick="openNav2()" title="Open shopping cart"></a>
