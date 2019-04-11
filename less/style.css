@@ -927,7 +927,7 @@ header a:hover {
 .page-header {
   position: absolute;
   top: 0;
-  z-index: 2;
+  z-index: 100;
 }
 /* 6.2. Main banner */
 .main-banner .carousel-item-next,
@@ -942,6 +942,12 @@ header a:hover {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+.main-banner .main-banner__arrow-wrapper:hover .main-banner-arrow-prev,
+.main-banner .main-banner__arrow-wrapper:focus .main-banner-arrow-prev,
+.main-banner .main-banner__arrow-wrapper:hover .main-banner-arrow-next,
+.main-banner .main-banner__arrow-wrapper:focus .main-banner-arrow-next {
+  color: #000000;
 }
 .main-banner .main-banner-arrow-prev,
 .main-banner .main-banner-arrow-next {
@@ -959,31 +965,24 @@ header a:hover {
   color: #fff;
   font-size: 1.5rem;
   text-align: center;
-  transition: .3s ease;
+  transition: .2s ease;
   transform: translateY(-50%);
-  z-index: 1;
-}
-.main-banner .main-banner-arrow-prev:hover,
-.main-banner .main-banner-arrow-next:hover,
-.main-banner .main-banner-arrow-prev:focus,
-.main-banner .main-banner-arrow-next:focus {
-  color: #000000;
-  background-color: #fff;
-}
-.main-banner .main-banner-arrow-prev {
-  left: 4%;
-}
-.main-banner .main-banner-arrow-next {
-  right: 4%;
+  z-index: 4;
 }
 .main-banner .mousehover {
   position: absolute;
   top: 45%;
   display: flex;
   z-index: 3;
-  transform: translateY(-50%);
-  left: calc(9%);
+  transform: translateY(-50%) scaleX(0);
+  transition: .3s ease;
   background-color: #fff;
+  opacity: 0;
+}
+.main-banner .mousehover:hover,
+.main-banner .mousehover:focus-within {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
 }
 .main-banner .mousehover .mousehover__links {
   display: flex;
@@ -992,8 +991,37 @@ header a:hover {
   justify-content: center;
   padding: 1rem;
 }
-.main-banner .mousehover .mousehover__links a:hover {
+.main-banner .mousehover .mousehover__links a:hover,
+.main-banner .mousehover .mousehover__links a:focus {
   text-decoration: underline;
+}
+.main-banner .main-banner-arrow-prev {
+  left: 4%;
+}
+.main-banner .main-banner-arrow-prev + .mousehover {
+  transform-origin: left;
+  left: calc(9%);
+  margin-left: -5%;
+  padding-left: 5%;
+}
+.main-banner .main-banner-arrow-prev:hover + .mousehover,
+.main-banner .main-banner-arrow-prev:focus-within + .mousehover {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
+}
+.main-banner .main-banner-arrow-next {
+  right: 4%;
+}
+.main-banner .main-banner-arrow-next + .mousehover {
+  transform-origin: right;
+  right: calc(9%);
+  margin-right: -5%;
+  padding-right: 5%;
+}
+.main-banner .main-banner-arrow-next:hover + .mousehover,
+.main-banner .main-banner-arrow-next:focus-within + .mousehover {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
 }
 .main-banner .slide1 {
   background-color: #e74948;

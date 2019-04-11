@@ -1069,7 +1069,7 @@ Version: 1.0
         }
       }
     } 
-    .page-header {position: absolute; top: 0; z-index: 2;}
+    .page-header {position: absolute; top: 0; z-index: 100;}
   /* 6.2. Main banner */
   .main-banner {
     // height: 100vh;
@@ -1088,6 +1088,12 @@ Version: 1.0
         border-radius: 50%;
       }
     }
+    .main-banner__arrow-wrapper {
+      &:hover .main-banner-arrow-prev , &:focus .main-banner-arrow-prev,
+      &:hover .main-banner-arrow-next , &:focus .main-banner-arrow-next {
+        color: #000000;
+      }
+    }
     .main-banner-arrow-prev,
     .main-banner-arrow-next {
       position: absolute;
@@ -1104,39 +1110,60 @@ Version: 1.0
       color: #fff;
       font-size: 1.5rem;
       text-align: center;
-      transition: .3s ease;
+      transition: .2s ease;
       transform: translateY(-50%);
-      z-index: 1;
-      &:hover, &:focus {
-        color: #000000;
-        background-color: #fff;
-      }
-    }
-    .main-banner-arrow-prev {
-      left: 4%;
-    }
-    .main-banner-arrow-next {
-      right: 4%;
+      z-index: 4;      
     }
     .mousehover {
       position: absolute;
       top: 45%;
       display: flex;
       z-index: 3;
-      transform: translateY(-50%);
-      left: calc(4% + 5%);    
+      transform: translateY(-50%) scaleX(0);      
+      transition: .3s ease;         
       background-color: #fff;
+      opacity: 0;
+      &:hover, &:focus-within {
+        transform: translateY(-50%) scaleX(1); 
+        opacity: 1;
+      }
       .mousehover__links {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
-        a:hover {
+        padding: 1rem;        
+        a:hover, a:focus {
           text-decoration: underline;
         }
       }
     }
+    .main-banner-arrow-prev {
+      left: 4%;
+      & + .mousehover {
+        transform-origin: left;
+        left: calc(4% + 5%);
+        margin-left: -5%;
+        padding-left: 5%;
+      }
+      &:hover + .mousehover, &:focus-within + .mousehover {
+        transform: translateY(-50%) scaleX(1);
+        opacity: 1;      
+      }
+    }
+    .main-banner-arrow-next {
+      right: 4%;
+      & + .mousehover {
+        transform-origin: right;
+        right: calc(4% + 5%);
+        margin-right: -5%;
+        padding-right: 5%;
+      }
+      &:hover + .mousehover, &:focus-within + .mousehover {
+        transform: translateY(-50%) scaleX(1); 
+        opacity: 1;         
+      }
+    }    
     .slide1 {
       background-color: @main-red;            
       background-image: url('../img/main_banner_bg_1-2.png'), url('../img/main_banner_bg_1-3.png'), url('../img/main_banner_bg_1-1.png');      
