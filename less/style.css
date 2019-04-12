@@ -647,7 +647,7 @@ a[href^="tel"]:focus {
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #e74948;
+  color: #808080;
   font-size: 0.85rem;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
