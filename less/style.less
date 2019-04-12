@@ -358,6 +358,11 @@ Version: 1.0
       to {background-position: 130% bottom, -10vh bottom, 0% bottom;}
     }
 
+    @keyframes main-banner_slide3 {
+      from {background-position: -150vh bottom, 200vh bottom;}      
+      to {background-position: left bottom, right bottom;}
+    }
+
 /* 3. Tags settings */
   img {
     max-width: 100%;
@@ -1177,12 +1182,19 @@ Version: 1.0
       animation: main-banner_slide1 1s ease forwards;      
     }
     .slide2 {
-      background: #da824f;
+      background-color: #da824f;
       background-image: url('../img/main_banner_bg_2-3.png'), url('../img/main_banner_bg_2-2n.png'), url('../img/main_banner_bg_2-1.png');
       background-repeat: no-repeat;
       background-size: 90vh, 161vh, contain;
-      animation: main-banner_slide2 1.5s forwards;  
-      transition: .3s ease;    
+      animation: main-banner_slide2 1.5s forwards;
+    }
+    .slide3 {
+      background-color: #88a17a;
+      background-image: url('../img/main_banner_bg_3-1nn.png'), url('../img/main_banner_bg_3-2n.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: main-banner_slide3 1.5s forwards;
+
     }
     &__slide {
       height: 100%;
@@ -1200,10 +1212,10 @@ Version: 1.0
         animation-delay: .5s;
       }
       .banner__description {
-        opacity: .8;
+        filter: opacity(0.8);
         width: 45%;
         text-align: center;  
-        animation-delay: .6s;      
+        animation-delay: .6s;              
       }
     }
   }
