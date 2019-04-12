@@ -323,6 +323,14 @@ footer span,
     background-position: left bottom, right bottom;
   }
 }
+@keyframes main-banner_slide4 {
+  from {
+    background-position: 100vw bottom;
+  }
+  to {
+    background-position: 150% bottom;
+  }
+}
 /* 3. Tags settings */
 img {
   max-width: 100%;
@@ -1059,6 +1067,18 @@ header a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   animation: main-banner_slide3 1.5s forwards;
+}
+.main-banner .slide4 {
+  background-color: #e75857;
+  background-image: url('../img/main_banner_bg_4-1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: main-banner_slide4 1.5s forwards;
+}
+.main-banner .slide4 .banner__category,
+.main-banner .slide4 .banner__title,
+.main-banner .slide4 .banner__description {
+  margin-left: -30%;
 }
 .main-banner__slide {
   height: 100%;
