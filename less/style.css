@@ -1028,8 +1028,7 @@ header a:hover {
   margin-left: -5%;
   padding-left: 5%;
 }
-.main-banner .main-banner-arrow-prev:hover + .mousehover,
-.main-banner .main-banner-arrow-prev:focus-within + .mousehover {
+.main-banner .main-banner-arrow-prev:hover + .mousehover {
   transform: translateY(-50%) scaleX(1);
   opacity: 1;
 }
@@ -1042,8 +1041,7 @@ header a:hover {
   margin-right: -5%;
   padding-right: 5%;
 }
-.main-banner .main-banner-arrow-next:hover + .mousehover,
-.main-banner .main-banner-arrow-next:focus-within + .mousehover {
+.main-banner .main-banner-arrow-next:hover + .mousehover {
   transform: translateY(-50%) scaleX(1);
   opacity: 1;
 }
