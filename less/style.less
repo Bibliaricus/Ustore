@@ -47,6 +47,7 @@ Version: 1.0
     6.1.2. Header-bottom
   6.2. Main banner
   6.3. Second banners
+  6.4. Top interesting
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -1324,12 +1325,14 @@ Version: 1.0
         text-align: right;
       }
     }
-
   }
+
+  /* 6.4. Top interesting */
+  
     
-  /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
-    /* 7.1 Min-width: 1200px */
-    .test {position: fixed; top: 10px; left: 10px; color: tomato; z-index: 99999999; pointer-events: none;}
+/* 7. Responsive - index.html (indicate Responsive in this form for each page) */
+  /* 7.1 Min-width: 1200px */
+  .test {position: fixed; top: 10px; left: 10px; color: tomato; z-index: 99999999; pointer-events: none;}
 
   @media only screen and (min-width: 1200px){
     .test:after  { content: '@media (min-width: 1200px [col-xl]) >>>';} 

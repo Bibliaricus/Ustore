@@ -46,6 +46,7 @@ Version: 1.0
     6.1.2. Header-bottom
   6.2. Main banner
   6.3. Second banners
+  6.4. Top interesting
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -1169,6 +1170,7 @@ header a:hover {
   padding-left: 1.5rem;
   text-align: right;
 }
+/* 6.4. Top interesting */
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {
