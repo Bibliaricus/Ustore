@@ -14,7 +14,7 @@ Version: 1.0
   2.1. Variables
     2.1.1. Colors
     2.1.2. Fonts
-    2.1.3. Breackpoints
+    2.1.3. Sizes
   2.2. Mixines
     2.2.1. Typography
     2.2.2. Responsive
@@ -29,6 +29,7 @@ Version: 1.0
   4.3. Wishlist and shopping cart popups
   4.4. Search field
   4.5. General settings for product items (item__*)
+  4.6. Buttons
 
   4.# Text in banners
   4.# Buttons
@@ -44,6 +45,7 @@ Version: 1.0
     6.1.1. Header-top
     6.1.2. Header-bottom
   6.2. Main banner
+  6.3. Second banners
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -58,6 +60,7 @@ Version: 1.0
 /* 2.1. Variables */
 /* 2.1.1. Colors */
 /* 2.1.2. Fonts */
+/* 2.1.3. Sizes */
 /* 2.2. Mixines */
 /* 2.2.1. Typography */
 /* 2.2.2. Utilits */
@@ -282,7 +285,8 @@ footer span,
   font-weight: 900;
 }
 /* Font weight - 700 */
-.header-bottom .nav-link {
+.header-bottom .nav-link,
+.custom-btn {
   font-weight: 700;
 }
 /* Upper case */
@@ -295,7 +299,8 @@ footer span,
 .banner__category,
 .banner__title,
 .item__category,
-.item__title {
+.item__title,
+.custom-btn {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -819,6 +824,20 @@ a[href^="tel"]:focus {
 .item__title:focus {
   color: #1c1a19;
 }
+/* 4.6. Buttons */
+.custom-btn {
+  letter-spacing: 0.13125em;
+  font-size: 0.875rem;
+  border: none;
+  background-color: #fff;
+  padding: 0.7rem 1.1rem;
+  transition: .3s ease;
+}
+.custom-btn:hover,
+.custom-btn:focus {
+  background-color: #000000;
+  color: #ffffff;
+}
 /* 5. Custom styles */
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
 /* 6.1. Header */
@@ -1090,7 +1109,7 @@ header a:hover {
   animation-delay: .4s;
 }
 .main-banner__slide .banner__title {
-  font-size: 5.875rem;
+  font-size: calc(4.105263157894737vw + 16px);
   letter-spacing: 0.1175rem;
   animation-delay: .5s;
 }
@@ -1099,6 +1118,56 @@ header a:hover {
   width: 45%;
   text-align: center;
   animation-delay: .6s;
+}
+/* 6.3. Second banners */
+.second-banners__list .second-banners__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  padding: 3rem 0 3rem 0;
+  height: 20.42105263157895vw;
+}
+.second-banners__list .second-banners__item a:hover,
+.second-banners__list .second-banners__item a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.second-banners__list .second-banners__item .banner__category {
+  font-size: 0.875rem;
+  letter-spacing: 0.175em;
+}
+.second-banners__list .second-banners__item .banner__title {
+  font-size: calc(1.0526315789473684vw + 16px);
+  margin-bottom: 0.5rem;
+}
+.second-banners__list .second-banners__item .banner__description {
+  font-size: 0.875rem;
+}
+.second-banners__list .second-banners__item .custom-btn {
+  margin-top: 2.5rem;
+}
+.second-banners__list .second-banners__item:nth-child(1) {
+  background: url(../img/categories-1.jpg) no-repeat #8998bc;
+  background-size: contain;
+  align-items: flex-start;
+  padding-left: 5.5rem;
+  padding-right: 1.5rem;
+}
+.second-banners__list .second-banners__item:nth-child(2) {
+  background: url('../img/categories-2.jpg') no-repeat #86c8db;
+  background-size: contain;
+  align-items: center;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+.second-banners__list .second-banners__item:nth-child(3) {
+  background: url('../img/categories-3.jpg') no-repeat #f4df7b;
+  background-size: contain;
+  align-items: flex-end;
+  padding-right: 5.5rem;
+  padding-left: 1.5rem;
+  text-align: right;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
