@@ -1361,6 +1361,22 @@ Version: 1.0
       .top-interes__tabs {
         justify-content: center;
         margin-bottom: 2rem;
+        .nav-link {
+          position: relative;
+          &:hover,&:focus {
+            color: @main-red;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 50%;
+              bottom: 15%;
+              width: calc(~'100% - 32px');
+              height: 2px;
+              background-color: @main-red;
+              transform: translateX(-50%);
+            }
+          }
+        }
       }
     }
   }

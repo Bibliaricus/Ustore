@@ -1212,6 +1212,24 @@ header a:hover {
   justify-content: center;
   margin-bottom: 2rem;
 }
+.top-interes .row .top-interes__tabs .nav-link {
+  position: relative;
+}
+.top-interes .row .top-interes__tabs .nav-link:hover,
+.top-interes .row .top-interes__tabs .nav-link:focus {
+  color: #e74948;
+}
+.top-interes .row .top-interes__tabs .nav-link:hover::after,
+.top-interes .row .top-interes__tabs .nav-link:focus::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  width: calc(100% - 32px);
+  height: 2px;
+  background-color: #e74948;
+  transform: translateX(-50%);
+}
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {
