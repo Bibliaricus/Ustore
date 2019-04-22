@@ -987,6 +987,10 @@ Version: 1.0
   /* 4.8. General styles for products */
   .product__item {
     display: inline-block;
+    @media only screen and (max-width: 991.98px) {
+      padding-bottom: 2rem;
+      margin-bottom: 1.5rem; 
+    }
     &--sale::before {
       content: 'sale';          
       position: absolute;
@@ -1000,6 +1004,69 @@ Version: 1.0
       font-size: 0.875rem;
       border-radius: 50%;
       transform: translate(-15%, -15%);
+    }
+    .hover-buttons {
+      &__list {
+        position: absolute;
+        top: 27%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;  
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: .3s ease;
+        pointer-events: none;
+        @media only screen and (max-width: 991.98px) {
+          top: inherit;
+          bottom: 0;
+          opacity: 1;          
+          justify-content: center;
+          background-color: #1c1a19;
+          transform: translateY(0);
+          pointer-events: auto;
+          border-top: 1px solid var(--main-gray);
+          border-bottom: 1px solid var(--main-gray);
+          width: calc(~'100% - 30px');
+          margin: 0 auto 0;
+        }
+      }      
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: #1c1a19;
+        color: #fff;
+        border-radius: 50%;
+        border: 1px solid #1c1a19;
+        transition: .3s ease; 
+        &:hover, &:focus {
+          color: #1c1a19;
+          text-decoration: none;
+          background-color: #fff;
+          outline: none;  
+        }
+        @media only screen and (max-width: 991.98px) {
+          flex-grow: 1;
+          width: 30px;
+          height: 30px;
+          margin-left: -1px;
+          border-top: none;
+          border-bottom: none;
+          border-left: 1px solid var(--main-gray);
+          border-right: 1px solid var(--main-gray);
+          border-radius: 0;
+          &:first-child {
+            border-left: none;
+            margin-left: 0;
+          }
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }      
     }
     .product__description {
       display: flex;
@@ -1035,6 +1102,17 @@ Version: 1.0
         }
       }
     }
+  }
+
+  // Appearance mechanism of hover buttonss
+  .product__item:hover .hover-buttons__list,
+  .product__image-container:hover .hover-buttons__list,
+  .hover-buttons__list:hover,
+  .hover-buttons__list:focus-within,
+  .hover-buttons__item:hover {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
 /* 5. Custom styles */  
@@ -1437,7 +1515,10 @@ Version: 1.0
             transform: translateX(-50%);
           }
         }
-      }      
+      } 
+      .tab-content>.active {
+        display: flex;
+      }     
     }
     .product__description {
       margin-top: 1.7rem;
