@@ -31,6 +31,7 @@ Version: 1.0
   4.5. General settings for product items (item__*)
   4.6. Buttons
   4.7. Section title and description
+  4.8. General styles for products
 
   4.# Text in banners
   4.# Buttons
@@ -285,7 +286,8 @@ footer span,
 .banner__title,
 .item__category,
 .item__title,
-.section-title {
+.section-title,
+.product__new-price {
   font-weight: 900;
 }
 /* Font weight - 700 */
@@ -293,7 +295,8 @@ footer span,
 .custom-btn,
 .top-interes__tabs li,
 .product__category,
-.product__title {
+.product__title,
+.product__old-price {
   font-weight: 700;
 }
 /* Upper case */
@@ -861,6 +864,44 @@ a[href^="tel"]:focus {
   width: 60%;
   text-align: center;
   margin: 0 auto 0;
+  color: #a4a4a4;
+}
+/* 4.8. General styles for products */
+.product__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product__description:hover .product__title {
+  text-decoration: underline;
+  color: #e74948;
+}
+.product__description .product__category {
+  letter-spacing: 0.15rem;
+  font-size: 0.75rem;
+  color: #a4a4a4;
+}
+.product__description .product__category:hover,
+.product__description .product__category:focus {
+  text-decoration: underline;
+}
+.product__description .product__title {
+  letter-spacing: 0.02rem;
+}
+.product__description .product__title:hover,
+.product__description .product__title:focus {
+  text-decoration: underline;
+  color: #e74948;
+}
+.product__description .product__rating {
+  font-size: 0.8rem;
+}
+.product__description .product__prices {
+  font-size: 0.9375rem;
+  color: #e74948;
+}
+.product__description .product__prices .product__old-price {
+  text-decoration: line-through;
   color: #a4a4a4;
 }
 /* 5. Custom styles */
