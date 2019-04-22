@@ -1278,8 +1278,10 @@ header a:hover {
 .top-interes > .row .top-interes__tabs .nav-link:focus {
   color: #e74948;
 }
-.top-interes > .row .top-interes__tabs .nav-link:hover::after,
-.top-interes > .row .top-interes__tabs .nav-link:focus::after {
+.top-interes > .row .top-interes__tabs .nav-link.active {
+  color: #e74948;
+}
+.top-interes > .row .top-interes__tabs .nav-link.active::after {
   content: '';
   position: absolute;
   left: 50%;

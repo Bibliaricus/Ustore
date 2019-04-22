@@ -1421,17 +1421,20 @@ Version: 1.0
         .nav-link {
           position: relative;
           &:hover,&:focus {
-            color: @main-red;
-            &::after {
-              content: '';
-              position: absolute;
-              left: 50%;
-              bottom: 15%;
-              width: calc(~'100% - 32px');
-              height: 2px;
-              background-color: @main-red;
-              transform: translateX(-50%);
-            }
+            color: @main-red;            
+          }
+        }
+        .nav-link.active {
+          color: @main-red;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 15%;
+            width: calc(~'100% - 32px');
+            height: 2px;
+            background-color: @main-red;
+            transform: translateX(-50%);
           }
         }
       }      
