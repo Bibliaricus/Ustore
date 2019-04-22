@@ -40,7 +40,7 @@ Version: 1.0
   4.#. Hover buttons
   4.#. Off-canvas
 5. Custom styles
-  5.1. Custom display for active slide in main banner slider (Bootstrap 4)
+  5.1. Bootstrap container  
 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
   6.1. Header
     6.1.1. Header-top
@@ -864,6 +864,12 @@ a[href^="tel"]:focus {
   color: #a4a4a4;
 }
 /* 5. Custom styles */
+/* 5.1. Bootstrap container */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
 /* 6.1. Header */
 header a:hover {
@@ -1195,6 +1201,17 @@ header a:hover {
   text-align: right;
 }
 /* 6.4. Top interesting */
+.top-interes {
+  margin-top: 7rem;
+}
+.top-interes .row {
+  flex-direction: column;
+  padding-top: 2rem;
+}
+.top-interes .row .top-interes__tabs {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {
