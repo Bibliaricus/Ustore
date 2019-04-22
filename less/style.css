@@ -873,7 +873,6 @@ a[href^="tel"]:focus {
   align-items: center;
 }
 .product__description:hover .product__title {
-  text-decoration: underline;
   color: #e74948;
 }
 .product__description .product__category {
@@ -1245,23 +1244,23 @@ header a:hover {
 .top-interes {
   margin-top: 7rem;
 }
-.top-interes .row {
+.top-interes > .row {
   flex-direction: column;
 }
-.top-interes .row .top-interes__tabs {
+.top-interes > .row .top-interes__tabs {
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.top-interes .row .top-interes__tabs .nav-link {
+.top-interes > .row .top-interes__tabs .nav-link {
   position: relative;
 }
-.top-interes .row .top-interes__tabs .nav-link:hover,
-.top-interes .row .top-interes__tabs .nav-link:focus {
+.top-interes > .row .top-interes__tabs .nav-link:hover,
+.top-interes > .row .top-interes__tabs .nav-link:focus {
   color: #e74948;
 }
-.top-interes .row .top-interes__tabs .nav-link:hover::after,
-.top-interes .row .top-interes__tabs .nav-link:focus::after {
+.top-interes > .row .top-interes__tabs .nav-link:hover::after,
+.top-interes > .row .top-interes__tabs .nav-link:focus::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -1270,6 +1269,13 @@ header a:hover {
   height: 2px;
   background-color: #e74948;
   transform: translateX(-50%);
+}
+.top-interes > .row .top-interes__item .product__description {
+  padding-top: 1.7rem;
+}
+.top-interes > .row .top-interes__item .product__description .product__rating {
+  margin-top: 0.45rem;
+  margin-bottom: 0.2rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */

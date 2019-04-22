@@ -987,8 +987,7 @@ Version: 1.0
     display: flex;
     flex-direction: column;
     align-items: center;
-    &:hover .product__title {
-      text-decoration: underline;
+    &:hover .product__title {      
       color: @main-red;
     }
     .product__category {
@@ -1394,7 +1393,7 @@ Version: 1.0
   /* 6.4. Top interesting */
   .top-interes {
     margin-top: 7rem;
-    .row {
+    > .row {
       flex-direction: column;      
       .top-interes__tabs {
         justify-content: center;
@@ -1414,6 +1413,15 @@ Version: 1.0
               background-color: @main-red;
               transform: translateX(-50%);
             }
+          }
+        }
+      }
+      .top-interes__item {
+        .product__description {
+          padding-top: 1.7rem;
+          .product__rating {
+            margin-top: 0.45rem;
+            margin-bottom: 0.2rem;
           }
         }
       }
