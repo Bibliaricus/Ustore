@@ -1250,7 +1250,7 @@ header a:hover {
 .top-interes > .row .top-interes__tabs {
   justify-content: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.1rem;
 }
 .top-interes > .row .top-interes__tabs .nav-link {
   position: relative;
@@ -1269,6 +1269,9 @@ header a:hover {
   height: 2px;
   background-color: #e74948;
   transform: translateX(-50%);
+}
+.top-interes > .row .top-interes__item {
+  display: inline-block;
 }
 .top-interes > .row .top-interes__item .product__description {
   padding-top: 1.7rem;
