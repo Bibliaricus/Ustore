@@ -1289,6 +1289,13 @@ header a:hover {
   background-color: #e74948;
   transform: translateX(-50%);
 }
+.top-interes .product__description {
+  margin-top: 1.7rem;
+}
+.top-interes .product__description .product__rating {
+  margin-top: 0.3rem;
+  margin-bottom: 0.25rem;
+}
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {
