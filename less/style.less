@@ -31,6 +31,7 @@ Version: 1.0
   4.4. Search field
   4.5. General settings for product items (item__*)
   4.6. Buttons
+  4.7. Section title and description
 
   4.# Text in banners
   4.# Buttons
@@ -83,17 +84,7 @@ Version: 1.0
       font-weight: @weight;
     }
 
-    /* 2.2.2. Utilits */
-    .block-center() {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .no-block-center() {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    /* 2.2.2. Utilits */    
 
       // NOTES: input font-size of element in px, but put near number viewport unit, for example:
       // .duper-title {
@@ -293,7 +284,8 @@ Version: 1.0
     /* Second font */
     .section__description,
     .custom-btn,
-    .banner__description {
+    .banner__description,
+    .section-description {
       font-family: @font-open-sans, sans-serif;
     }
 
@@ -345,13 +337,17 @@ Version: 1.0
     .banner__category,
     .banner__title,
     .item__category,
-    .item__title {
+    .item__title,
+    .section-title {
       font-weight: 900;
     }
 
     /* Font weight - 700 */
     .header-bottom .nav-link,
-    .custom-btn {
+    .custom-btn,
+    .top-interes__tabs li,
+    .product__category,
+    .product__title {
       font-weight: 700;
     }
 
@@ -366,7 +362,11 @@ Version: 1.0
     .banner__title,
     .item__category,
     .item__title,
-    .custom-btn {
+    .custom-btn,
+    .section-title,
+    .top-interes__tabs li,
+    .product__category,
+    .product__title {
       text-transform: uppercase;
     }
 
@@ -962,6 +962,23 @@ Version: 1.0
       color: #ffffff;
     }
   }
+
+  /* 4.7. Section title and description */
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.4rem;
+  } 
+
+  .section-description {
+    font-size: 15px;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto 0;    
+    color: @text-gray;
+  }
+
 
 /* 5. Custom styles */  
 

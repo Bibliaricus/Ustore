@@ -30,6 +30,7 @@ Version: 1.0
   4.4. Search field
   4.5. General settings for product items (item__*)
   4.6. Buttons
+  4.7. Section title and description
 
   4.# Text in banners
   4.# Buttons
@@ -235,7 +236,8 @@ body {
 /* Second font */
 .section__description,
 .custom-btn,
-.banner__description {
+.banner__description,
+.section-description {
   font-family: 'Open Sans', sans-serif;
 }
 /* Colors - Gray */
@@ -282,12 +284,16 @@ footer span,
 .banner__category,
 .banner__title,
 .item__category,
-.item__title {
+.item__title,
+.section-title {
   font-weight: 900;
 }
 /* Font weight - 700 */
 .header-bottom .nav-link,
-.custom-btn {
+.custom-btn,
+.top-interes__tabs li,
+.product__category,
+.product__title {
   font-weight: 700;
 }
 /* Upper case */
@@ -301,7 +307,11 @@ footer span,
 .banner__title,
 .item__category,
 .item__title,
-.custom-btn {
+.custom-btn,
+.section-title,
+.top-interes__tabs li,
+.product__category,
+.product__title {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -838,6 +848,20 @@ a[href^="tel"]:focus {
 .custom-btn:focus {
   background-color: #000000;
   color: #ffffff;
+}
+/* 4.7. Section title and description */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1.4rem;
+}
+.section-description {
+  font-size: 15px;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto 0;
+  color: #a4a4a4;
 }
 /* 5. Custom styles */
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
