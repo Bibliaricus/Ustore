@@ -350,7 +350,8 @@ Version: 1.0
     .top-interes__tabs li,
     .product__category,
     .product__title,
-    .product__old-price {
+    .product__old-price,
+    .product__item--sale::before {
       font-weight: 700;
     }
 
@@ -369,7 +370,8 @@ Version: 1.0
     .section-title,
     .top-interes__tabs li,
     .product__category,
-    .product__title {
+    .product__title,
+    .product__item--sale::before {
       text-transform: uppercase;
     }
 
@@ -983,37 +985,54 @@ Version: 1.0
   }
 
   /* 4.8. General styles for products */
-  .product__description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &:hover .product__title {      
-      color: @main-red;
+  .product__item {
+    display: inline-block;
+    &--sale::before {
+      content: 'sale';          
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: @main-red;
+      color: #ffffff;
+      font-size: 0.875rem;
+      border-radius: 50%;
+      transform: translate(-15%, -15%);
     }
-    .product__category {
-      letter-spacing: 0.15rem;
-      font-size: 0.75rem;
-      color: @text-gray;
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
-    .product__title {
-      letter-spacing: 0.02rem;
-      &:hover, &:focus {
-        text-decoration: underline;
+    .product__description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover .product__title {      
         color: @main-red;
       }
-    }
-    .product__rating {
-      font-size: 0.8rem;
-    }
-    .product__prices {
-      font-size: 0.9375rem;
-      color: @main-red;
-      .product__old-price {
-        text-decoration: line-through;
+      .product__category {
+        letter-spacing: 0.15rem;
+        font-size: 0.75rem;
         color: @text-gray;
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
+      }
+      .product__title {
+        letter-spacing: 0.02rem;
+        &:hover, &:focus {
+          text-decoration: underline;
+          color: @main-red;
+        }
+      }
+      .product__rating {
+        font-size: 0.8rem;
+      }
+      .product__prices {
+        font-size: 0.9375rem;
+        color: @main-red;
+        .product__old-price {
+          text-decoration: line-through;
+          color: @text-gray;
+        }
       }
     }
   }
@@ -1415,17 +1434,7 @@ Version: 1.0
             }
           }
         }
-      }
-      .top-interes__item {
-        display: inline-block;
-        .product__description {
-          padding-top: 1.7rem;
-          .product__rating {
-            margin-top: 0.45rem;
-            margin-bottom: 0.2rem;
-          }
-        }
-      }
+      }      
     }
   }
     
