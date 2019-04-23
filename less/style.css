@@ -1021,6 +1021,12 @@ a[href^="tel"]:focus {
   position: absolute;
   top: 3%;
   right: 4%;
+  z-index: 1;
+}
+.q-view-popup-new .close:hover,
+.q-view-popup-new .close:focus {
+  color: #e74948;
+  outline: none;
 }
 .q-view-popup-new__image-slider {
   display: flex;
@@ -1040,10 +1046,18 @@ a[href^="tel"]:focus {
   padding: 0.4rem 0.6rem;
   margin-bottom: 1rem;
 }
+.q-view-popup-new__information select:focus {
+  box-shadow: 0 0 3px 0 #000000;
+}
 .q-view-popup-new__title {
   letter-spacing: 0.0375rem;
   font-size: calc(0.7368421052631579vw + 16px);
   margin-bottom: 1.5rem;
+}
+.q-view-popup-new__title a:hover,
+.q-view-popup-new__title a:focus {
+  color: #e74948;
+  text-decoration: underline;
 }
 .q-view-popup-new__description {
   color: #999999;

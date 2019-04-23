@@ -1136,6 +1136,11 @@ Version: 1.0
       position: absolute;
       top: 3%;
       right: 4%;
+      z-index: 1;
+      &:hover, &:focus {
+        color: @main-red;
+        outline: none;
+      }
     }
     &__image-slider {
       display: flex;
@@ -1153,12 +1158,19 @@ Version: 1.0
         width: 50%;
         padding: 0.4rem 0.6rem;
         margin-bottom: 1rem;
+        &:focus {
+          box-shadow: 0 0 3px 0 #000000;
+        }
       }
     }
     &__title {
       letter-spacing: 0.0375rem;
       .smooth-px-to-vw(30vw);
       margin-bottom: 1.5rem;
+      a:hover, a:focus {
+        color: @main-red;
+        text-decoration: underline;
+      }
     }
     &__description {
       color: #999999;
