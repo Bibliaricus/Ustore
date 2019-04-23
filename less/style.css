@@ -900,6 +900,35 @@ a[href^="tel"]:focus {
 .product__item--out .product__image-container::before {
   content: '';
   width: 100%;
+  height: 100%;
+  background: #ebebeb;
+  position: absolute;
+  opacity: 0.7;
+}
+.product__item--out .product__image-container::after {
+  content: 'Out of stock';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  color: #252525;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.0225rem;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+.product__item--out .hover-buttons__item.shopping-cart__add-btn {
+  opacity: .5;
+  pointer-events: none;
 }
 .product__item .product__image-container {
   position: relative;
@@ -927,7 +956,7 @@ a[href^="tel"]:focus {
     pointer-events: auto;
     border-top: 1px solid var(--main-gray);
     border-bottom: 1px solid var(--main-gray);
-    width: calc(100% - 30px);
+    width: 100%;
     margin: 0 auto 0;
   }
 }
@@ -1014,6 +1043,15 @@ a[href^="tel"]:focus {
   opacity: 1;
   top: 50%;
   pointer-events: auto;
+}
+@media only screen and (max-width: 991.98px) {
+  .product__item:hover .hover-buttons__list,
+  .product__image-container:hover .hover-buttons__list,
+  .hover-buttons__list:hover,
+  .hover-buttons__list:focus-within,
+  .hover-buttons__item:hover {
+    top: inherit;
+  }
 }
 /* 4.9. Quick view popup */
 @media (min-width: 576px) {
