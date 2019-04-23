@@ -991,6 +991,7 @@ Version: 1.0
   /* 4.8. General styles for products */
   .product__item {
     display: inline-block;
+    margin-bottom: 2rem;
     @media only screen and (max-width: 991.98px) {
       padding-bottom: 2rem;
       margin-bottom: 1.5rem; 
@@ -1689,12 +1690,12 @@ Version: 1.0
   /* 6.4. Top interesting */
   .top-interes {
     margin-top: 7rem;
-    > .row {
-      flex-direction: column;      
+      &__wrapper {        
       .top-interes__tabs {
+        display: flex;
         justify-content: center;
         margin-top: 2rem;
-        margin-bottom: 2.1rem;
+        margin-bottom: 1.1rem;
         .nav-link {
           position: relative;
           &:hover,&:focus {
@@ -1714,7 +1715,42 @@ Version: 1.0
             transform: translateX(-50%);
           }
         }
-      } 
+      }
+      .slick-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        font-size: 0;
+        width: 60px;
+        height: 70px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        font-family: 'Usmart-icon-font';
+        &:hover, &:focus {
+          color: @main-red;
+          outline: none;
+        }
+      }
+      .slick-prev {
+        left: 0;
+        transform: translate(-100%, -50%);
+        &::before {
+          content: '\e912';
+          font-size: 28px;
+        }
+      }
+      .slick-next {
+        right: 0;
+        transform: translate(100%, -50%);
+        &::before {
+          content: '\e911';
+          font-size: 28px;
+        }
+      }
+      .slick-list.draggable {
+        padding-top: 1rem;
+      }
       .tab-content>.active {
         display: flex;
       }     

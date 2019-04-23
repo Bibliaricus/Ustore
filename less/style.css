@@ -875,6 +875,7 @@ a[href^="tel"]:focus {
 /* 4.8. General styles for products */
 .product__item {
   display: inline-block;
+  margin-bottom: 2rem;
 }
 @media only screen and (max-width: 991.98px) {
   .product__item {
@@ -1543,25 +1544,23 @@ header a:hover {
 .top-interes {
   margin-top: 7rem;
 }
-.top-interes > .row {
-  flex-direction: column;
-}
-.top-interes > .row .top-interes__tabs {
+.top-interes__wrapper .top-interes__tabs {
+  display: flex;
   justify-content: center;
   margin-top: 2rem;
-  margin-bottom: 2.1rem;
+  margin-bottom: 1.1rem;
 }
-.top-interes > .row .top-interes__tabs .nav-link {
+.top-interes__wrapper .top-interes__tabs .nav-link {
   position: relative;
 }
-.top-interes > .row .top-interes__tabs .nav-link:hover,
-.top-interes > .row .top-interes__tabs .nav-link:focus {
+.top-interes__wrapper .top-interes__tabs .nav-link:hover,
+.top-interes__wrapper .top-interes__tabs .nav-link:focus {
   color: #e74948;
 }
-.top-interes > .row .top-interes__tabs .nav-link.active {
+.top-interes__wrapper .top-interes__tabs .nav-link.active {
   color: #e74948;
 }
-.top-interes > .row .top-interes__tabs .nav-link.active::after {
+.top-interes__wrapper .top-interes__tabs .nav-link.active::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -1571,7 +1570,43 @@ header a:hover {
   background-color: #e74948;
   transform: translateX(-50%);
 }
-.top-interes > .row .tab-content > .active {
+.top-interes__wrapper .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 0;
+  width: 60px;
+  height: 70px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: 'Usmart-icon-font';
+}
+.top-interes__wrapper .slick-arrow:hover,
+.top-interes__wrapper .slick-arrow:focus {
+  color: #e74948;
+  outline: none;
+}
+.top-interes__wrapper .slick-prev {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+.top-interes__wrapper .slick-prev::before {
+  content: '\e912';
+  font-size: 28px;
+}
+.top-interes__wrapper .slick-next {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+.top-interes__wrapper .slick-next::before {
+  content: '\e911';
+  font-size: 28px;
+}
+.top-interes__wrapper .slick-list.draggable {
+  padding-top: 1rem;
+}
+.top-interes__wrapper .tab-content > .active {
   display: flex;
 }
 .top-interes .product__description {
