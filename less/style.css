@@ -288,7 +288,8 @@ footer span,
 .item__category,
 .item__title,
 .section-title,
-.product__new-price {
+.product__new-price,
+.q-view-popup-new__title {
   font-weight: 900;
 }
 /* Font weight - 700 */
@@ -298,7 +299,8 @@ footer span,
 .product__category,
 .product__title,
 .product__old-price,
-.product__item--sale::before {
+.product__item--sale::before,
+.q-view-popup-new__input-label {
   font-weight: 700;
 }
 /* Upper case */
@@ -317,7 +319,8 @@ footer span,
 .top-interes__tabs li,
 .product__category,
 .product__title,
-.product__item--sale::before {
+.product__item--sale::before,
+.q-view-popup-new__title {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -665,7 +668,7 @@ a[href^="tel"]:focus {
   font-size: 1.2rem;
 }
 .header-bottom__icons-list .shoping-cart-composite-icon::after {
-  content: '5';
+  content: attr(data-count);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1005,6 +1008,127 @@ a[href^="tel"]:focus {
   pointer-events: auto;
 }
 /* 4.9. Quick view popup */
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 50vw;
+  }
+}
+.q-view-popup-new {
+  flex-direction: row;
+  align-items: stretch;
+}
+.q-view-popup-new .close {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+}
+.q-view-popup-new__image-slider {
+  display: flex;
+  align-items: center;
+  background-color: #fcfcfc;
+}
+.q-view-popup-new__information {
+  padding: 3rem 3rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.q-view-popup-new__information select {
+  font-size: 0.875rem;
+  color: #4c4c4c;
+  width: 50%;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 1rem;
+}
+.q-view-popup-new__title {
+  letter-spacing: 0.0375rem;
+  font-size: calc(0.7368421052631579vw + 16px);
+  margin-bottom: 1.5rem;
+}
+.q-view-popup-new__description {
+  color: #999999;
+  font-size: 0.9375rem;
+}
+.q-view-popup-new__input-label {
+  font-size: 0.9375rem;
+  margin-bottom: 0.3rem;
+}
+.q-view-popup-new__quantity {
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.q-view-popup-new__quantity .quantity__minus,
+.q-view-popup-new__quantity .quantity__plus {
+  padding: 0.2rem 1rem;
+  border: 1px solid #e1e1e1;
+  cursor: pointer;
+}
+.q-view-popup-new__quantity .quantity__number-input::-webkit-inner-spin-button,
+.q-view-popup-new__quantity .quantity__number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.q-view-popup-new__quantity .quantity__number-input {
+  width: 3.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+  border: none;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  -moz-appearance: none;
+}
+.q-view-popup-new__btn {
+  margin-top: 1.3rem;
+  display: inline-block;
+  padding: 1em 2.7em 0.8em 2.5em;
+  font-size: 0.75rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  transition: .3s ease;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.q-view-popup-new__btn:hover,
+.q-view-popup-new__btn:focus {
+  color: #000000;
+  background-color: #ffffff;
+  outline: none;
+}
+.q-view-popup-new hr {
+  width: 100%;
+  height: 1px;
+  background-color: #ebebeb;
+  border: none;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.q-view-popup-new__socails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.q-view-popup-new__socails span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.0175rem;
+}
+.q-view-popup-new__social-list {
+  color: #b2b2b2;
+  font-size: 0.9375rem;
+}
+.q-view-popup-new__social-list a {
+  margin: 0 0.3rem 0;
+}
+.q-view-popup-new__social-list a:hover,
+.q-view-popup-new__social-list a:focus {
+  color: #e74948;
+}
 .q-view-popup {
   position: absolute;
   width: 120%;
@@ -1052,7 +1176,7 @@ a[href^="tel"]:focus {
 }
 .quantity__minus,
 .quantity__plus {
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 1rem;
   border: 1px solid #e1e1e1;
   cursor: pointer;
 }
@@ -1063,7 +1187,7 @@ a[href^="tel"]:focus {
   appearance: none;
 }
 .quantity__number-input {
-  width: 2rem;
+  width: 3.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   text-align: center;
