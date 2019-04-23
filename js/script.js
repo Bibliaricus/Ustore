@@ -73,32 +73,40 @@
     }
   })();
 
+$(document).ready(function() {
   // Slick slider in top interesting
-  // $('.top-interes .tab-pane').slick({
-  //   infinite: true,
-  //   slidesToShow: 4,
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     {
-  //       breakpoint: 850,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1
-  //       }
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2
-  //       }
-  //     },
-  //     {
-  //       breakpoint: 450,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1
-  //       }
-  //     }      
-  //   ]
+  $('.top-interes .tab-pane.active').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }      
+    ]
+  });
+
+  // $( '.slick-call-button' ).on( 'click', function(e){
+  //   $( '.initialize-slider' ).slick('reinit');
   // });
+
+  // $(".slider").slick('reinit');
+});
