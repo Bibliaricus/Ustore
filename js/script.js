@@ -1,3 +1,4 @@
+"use strict";
 // Off-canvas menu for vish-list and shoping cart popup
   // Opening and closing
   /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
@@ -74,39 +75,91 @@
   })();
 
 $(document).ready(function() {
-  // Slick slider in top interesting
-  $('.top-interes .tab-pane.active').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 850,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 450,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }      
-    ]
+  // Slick slider in top interesting  
+    $('.top-interes .tab-pane.active').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 850,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 450,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }      
+      ]
+    });  
+  
+  // Slick slider in Bootstrap-4 tabs. 
+
+  $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+    var targteta = $(this).attr('href');
+    console.log(targteta);
+    $(targteta).slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 850,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 450,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }      
+      ]
+    });    
   });
-
-  // $( '.slick-call-button' ).on( 'click', function(e){
-  //   $( '.initialize-slider' ).slick('reinit');
-  // });
-
-  // $(".slider").slick('reinit');
 });
+
+// Суть проблеми: є таби, які зроблені з допомогою бутстрапа. Активний перший таб має певне відображення,
+// а всі інші мають display: none; Я думаю, що проблема в тому, що слайдер завантажується на сторінку першим
+// і через те, що його ініціалізація вказана відразу для всіх табів, починає розраховувати ширину слайдів. 
+// А так як приховані слайди не мають ніякої ширини, то він їх і не може порахувати. 
+// (Підтвердження цього є те, що при перемиканні на другий таб, slick-traсk до того, як його драгнути матиме  
+// нульову ширину. Після того, як він буде драгнутий, то відразу ж розраховує ширину для цього діва.
+// Таку ж нульову ширину матимуть самі слайди. Вони отримують ширину від скріпта після того, як
+// slick-track буде драгнутим.) Тому з'явилась ідея. Ініціалізувати скріпт тільки для активного таба. 
+// Для цього можна прив'язати ініціалізацію до класу, який буде додаватись до активного таба. 
+// При переключенні табів, якимсь чином призупинити виконання сліковського скріпта, щоб спочатку додався активний клас,
+// а через деякий час для цього ж активного класу розпочалась ініціалізація слайдеру. Щоб на її початок у слайдів 
+// уже була реальна ширина. 
+
+// Друге рішення, яке може бути простішим: замінити механізм перемикання табів. Тобто змінити display: none; 
+// на щось інше. Наприклад на overflow: hidden; чи щось типу того. Звичайно ж, після того пофіксивши і підпилявши 
+// верстку, яка обов'язково похериться. 
+
+// Третє рішення: ініціалізувати або переініціалізувати слайдер уже після кліку на таб. 
+
+// Короче, треба зробити так, щоб на момент ініціалізації слайди мали реальну ширину і не були прихоаними. 
+// Для цього можна спробувати і четвертий спосіб: спочатку ініціалізувати слайдер із реальними ширинами слайдів, 
+// а потім ці слайди приховати. 
