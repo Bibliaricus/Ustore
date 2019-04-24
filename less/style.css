@@ -50,6 +50,7 @@ Version: 1.0
   6.2. Main banner
   6.3. Second banners
   6.4. Top interesting
+  6.5. Follow instagram
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -274,7 +275,8 @@ footer span,
 .footer__column-title,
 .subscribe-popup,
 .subscribe-popup input,
-.subscribe-popup button {
+.subscribe-popup button,
+.insta-line__title h3 {
   color: #ffffff;
 }
 /* Colors - White with opacity */
@@ -289,7 +291,8 @@ footer span,
 .item__title,
 .section-title,
 .product__new-price,
-.q-view-popup-new__title {
+.q-view-popup-new__title,
+.insta-line__title h3 {
   font-weight: 900;
 }
 /* Font weight - 700 */
@@ -320,7 +323,8 @@ footer span,
 .product__category,
 .product__title,
 .product__item--sale::before,
-.q-view-popup-new__title {
+.q-view-popup-new__title,
+.insta-line__title h3 {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -1543,6 +1547,7 @@ header a:hover {
 /* 6.4. Top interesting */
 .top-interes {
   margin-top: 7rem;
+  margin-bottom: 6rem;
 }
 .top-interes__wrapper .top-interes__tabs {
   display: flex;
@@ -1615,6 +1620,16 @@ header a:hover {
 .top-interes .product__description .product__rating {
   margin-top: 0.3rem;
   margin-bottom: 0.25rem;
+}
+/* 6.5. Follow instagram */
+.insta-line .insta-line__title {
+  background-color: #035888;
+  text-align: center;
+  padding: 2.3rem 0rem;
+}
+.insta-line .insta-line__title h3 {
+  letter-spacing: 0.05625rem;
+  font-size: 1.125rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
