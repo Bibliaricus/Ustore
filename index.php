@@ -715,8 +715,9 @@
       <h3>FOLLOW @ INSTAGRAM</h3>
     </div>
     <div class="insta-line__list">
-      <iframe src='/inwidget/index.php?inline=6&view=6&toolbar=false&adaptive=true' data-inwidget scrolling='no' frameborder='no' style='border:none;width:100%;height:800px;overflow:hidden;'></iframe>
+      <iframe src='/inwidget/index.php?inline=6&view=6&toolbar=false&adaptive=true' name="inWidget" data-inwidget scrolling='no' frameborder='no' style='border:none;width:100%;height:800px;overflow:hidden;'></iframe>
     </div>
+    <div class="new-insta-line" id="instafeed"></div>
   </section >
 
   <!-- Modals -->

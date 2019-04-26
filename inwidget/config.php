@@ -46,6 +46,7 @@ $CONFIG = array(
 	'tagsAvailable' => [
 		#'programminghumor',
 		#'css',
+		#'холодний_яр',
 	],
 		
 	// -------------------------------------------------------------
@@ -81,7 +82,7 @@ $CONFIG = array(
 	// Skip cache data [ true / false ]
 	// So mean, requests to Instagram API will be sending every time. 
 	// Warning! Use true value only for debug
-	'cacheSkip' => false,
+	'cacheSkip' => true,
 		
 	// Full path to the cache directory
 	'cachePath' => __DIR__.'/cache/',
