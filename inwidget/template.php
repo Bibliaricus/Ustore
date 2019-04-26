@@ -63,7 +63,7 @@ if(!$inWidget instanceof \inWidget\Core) {
 					<a href="https://instagram.com/<?= $inWidget->data->username ?>" target="_blank"><img src="<?= $inWidget->data->avatar ?>"></a>
 				</td>
 				<td class="value">
-					<?= $inWidget->data->posts; ?>
+					<?= $inWidget->data->posts; ?> <!-- Targut! -->
 					<span><?=$inWidget->lang['statPosts'] ?></span>
 				</td>
 				<td class="value">
@@ -99,8 +99,9 @@ if(!$inWidget instanceof \inWidget\Core) {
 						default:
 							$thumbnail = $item->small;
 					}
-					$instaLikes = 2;
-					$instaComments = 1;
+					$instaLikes = $inWidget->data->posts;
+					$instaComments = $inWidget->data->commentsCount;
+					echo 'Comments: ' . $instaComments;
 					echo '<a href="'.$item->link.'" class="image" target="_blank"><span style="background-image:url('.$thumbnail.');">&nbsp;</span><span class="insta-likes">'.$instaLikes.'</span><span class="insta-comments">'.$instaComments.'</span></a>';
 					$i++;
 					if($i >= $inWidget->view) break;
