@@ -141,11 +141,11 @@ $(document).ready(function() {
   });
 
   // Link general styles to iframe (InWidget)
-  var cssLink = document.createElement("link");
-  cssLink.href = "../css/style.min.css"; 
-  cssLink.rel = "stylesheet"; 
-  cssLink.type = "text/css"; 
-  frames['inWidget'].document.head.appendChild(cssLink);
+  // var cssLink = document.createElement("link");
+  // cssLink.href = "../css/style.min.css"; 
+  // cssLink.rel = "stylesheet"; 
+  // cssLink.type = "text/css"; 
+  // frames['inWidget'].document.head.appendChild(cssLink);
 
 });
 

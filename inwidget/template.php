@@ -99,7 +99,9 @@ if(!$inWidget instanceof \inWidget\Core) {
 						default:
 							$thumbnail = $item->small;
 					}
-					echo '<a href="'.$item->link.'" class="image" target="_blank"><span style="background-image:url('.$thumbnail.');">&nbsp;</span></a>';
+					$instaLikes = 2;
+					$instaComments = 1;
+					echo '<a href="'.$item->link.'" class="image" target="_blank"><span style="background-image:url('.$thumbnail.');">&nbsp;</span><span class="insta-likes">'.$instaLikes.'</span><span class="insta-comments">'.$instaComments.'</span></a>';
 					$i++;
 					if($i >= $inWidget->view) break;
 				}

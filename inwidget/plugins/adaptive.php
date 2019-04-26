@@ -1,11 +1,22 @@
 <?php
 	function setImageSize($inLine){
+		// echo '
+		// 	.widget .data a.image:link, .widget .data a.image:visited {
+		// 		width: -webkit-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
+		// 		width: -moz-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
+		// 		width: -ms-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
+		// 		width: calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
+		// 	}
+		// ';
+
+		// It's my hard code special for Ustore maket. And yes, I could not stylize it via native CSS in my general 
+		// CSS-file. Please understand and forgive. Becouse I'm just an intern.
 		echo '
 			.widget .data a.image:link, .widget .data a.image:visited {
-				width: -webkit-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
-				width: -moz-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
-				width: -ms-calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
-				width: calc((100% - (5px + (9px * '.$inLine.'))) / '.$inLine.');
+				width: -webkit-calc(100% / '.$inLine.');
+				width: -moz-calc(100% / '.$inLine.');
+				width: -ms-calc(100% / '.$inLine.');
+				width: calc(100% / '.$inLine.');
 			}
 		';
 	}
