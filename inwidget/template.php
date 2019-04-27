@@ -100,10 +100,9 @@ if(!$inWidget instanceof \inWidget\Core) {
 							$thumbnail = $item->small;
 					}
 					$instaLikes = $inWidget->data->posts;
-					$instaComments = $inWidget->data->commentsCount;
-					echo 'Comments: ' . $instaComments;
-					echo '<a href="'.$item->link.'" class="image" target="_blank"><span style="background-image:url('.$thumbnail.');">&nbsp;</span><span class="insta-likes">'.$instaLikes.'</span><span class="insta-comments">'.$instaComments.'</span></a>';
-					$i++;
+					$instaComments = 0;					
+					echo '<a href="'.$item->link.'" class="image" target="_blank" data-image-count="'.$count.'"><span style="background-image:url('.$thumbnail.');">&nbsp;</span><span class="insta-likes"></span><span class="insta-comments"></span></a>';
+					$i++;					
 					if($i >= $inWidget->view) break;
 				}
 				echo '<div class="clear">&nbsp;</div>';
@@ -130,6 +129,27 @@ if(!$inWidget instanceof \inWidget\Core) {
 		<?= $inWidget->lang['errorCache'].' '.date('Y-m-d H:i:s',$inWidget->data->lastupdate) .' <br /> '. $inWidget->lang['updateNeeded'] ?>
 	</div>
 <?php endif;?>
+<script>
+	jQuery(function($){
+		var imageCount = $('[data-image-count]').data("image-count");
+		// console.log('Image count is: ' + imageCount);
+    $.ajax({
+      url: 'https://api.instagram.com/v1/users/self/media/recent',
+      dataType: 'jsonp',
+      type: 'GET',
+      data: {access_token: '13047723273.8a93252.5249d0b065464a25b51d4b87c388babe'},
+      success: function(response){
+				// console.log(response);
+				for (var i = 1; i <= imageCount; i++) {
+					// console.log('Image count in loop: ' + imageCount);
+					$('[data-image-count]:nth-child(' + i + ') .insta-likes').text(response.data[i - 1].likes.count);
+					$('[data-image-count]:nth-child(' + i + ') .insta-comments').text(response.data[i - 1].comments.count);
+				}
+        // console.log(response.data[1].likes.count);
+      }
+    });
+  });
+</script>
 </body>
 </html>
 <!-- 

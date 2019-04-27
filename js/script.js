@@ -109,7 +109,6 @@ $(document).ready(function() {
 
   $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
     var targteta = $(this).attr('href');
-    console.log(targteta);
     $(targteta).slick({
       infinite: true,
       slidesToShow: 4,
@@ -149,4 +148,15 @@ $(document).ready(function() {
   // cssLink.type = "text/css"; 
   // frames['inWidget'].document.head.appendChild(cssLink);
 
+  jQuery(function($){
+    $.ajax({
+      url: 'https://api.instagram.com/v1/users/self/', // если ваше приложение прошло аппрув, вместо self можете указать ID пользователя
+      dataType: 'jsonp',
+      type: 'GET',
+      data: {access_token: '13047723273.8a93252.5249d0b065464a25b51d4b87c388babe'},
+      success: function(response){
+         $('.new-insta-line').text(response.data.counts.followed_by); // количество подписчиков
+      }
+    });
+  }); 
 });
