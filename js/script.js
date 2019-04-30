@@ -151,4 +151,9 @@ $(document).ready(function() {
       }
     });
   }); 
+
+  // Slider in complete look (Slick)
+  $('.complete-look__carousel').slick({
+    dots: true
+  });
 });
