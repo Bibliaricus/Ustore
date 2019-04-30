@@ -1909,7 +1909,11 @@ Version: 1.0
       .hover-buttons__list {
         top: 30%;      
       }
-      .product__image-container:hover .hover-buttons__list {
+      .hover-buttons__item:hover, 
+      .hover-buttons__list:focus-within, 
+      .hover-buttons__list:hover, 
+      &.product__image-container:hover .hover-buttons__list, 
+      &.product__item:hover .hover-buttons__list {
         top: 40%;
       }
     }

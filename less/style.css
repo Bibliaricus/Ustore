@@ -1759,7 +1759,11 @@ header a:hover {
 .complete-look__slide .hover-buttons__list {
   top: 30%;
 }
-.complete-look__slide .product__image-container:hover .hover-buttons__list {
+.complete-look__slide .hover-buttons__item:hover,
+.complete-look__slide .hover-buttons__list:focus-within,
+.complete-look__slide .hover-buttons__list:hover,
+.complete-look__slide.product__image-container:hover .hover-buttons__list,
+.complete-look__slide.product__item:hover .hover-buttons__list {
   top: 40%;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
