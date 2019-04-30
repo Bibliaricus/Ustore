@@ -732,6 +732,36 @@
           <span href="#" class="prod-count">(25 products)</span>
         </div>
       </a>
+      <a href="#" class="product-categories__item col-3">
+        <div class="product-categories__img-wrapper">
+          <img src="img/product_categories-2.jpg" alt="Dresses category">
+        </div>
+        <div class="product-categories__text">
+          <span href="#" class="item__category">Category</span>
+          <span href="#" class="item__title">Watches</span>
+          <span href="#" class="prod-count">(25 products)</span>
+        </div>
+      </a>
+      <a href="#" class="product-categories__item col-3">
+        <div class="product-categories__img-wrapper">
+          <img src="img/product_categories-3.jpg" alt="Dresses category">
+        </div>
+        <div class="product-categories__text">
+          <span href="#" class="item__category">Category</span>
+          <span href="#" class="item__title">Trousers</span>
+          <span href="#" class="prod-count">(25 products)</span>
+        </div>
+      </a>
+      <a href="#" class="product-categories__item col-3">
+        <div class="product-categories__img-wrapper">
+          <img src="img/product_categories-4.jpg" alt="Dresses category">
+        </div>
+        <div class="product-categories__text">
+          <span href="#" class="item__category">Category</span>
+          <span href="#" class="item__title">Perfumes</span>
+          <span href="#" class="prod-count">(25 products)</span>
+        </div>
+      </a>
     </div>
   </section>
 
