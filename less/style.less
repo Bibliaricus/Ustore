@@ -341,7 +341,8 @@ Version: 1.0
     .product__new-price,
     .q-view-popup-new__title,
     .insta-line__title h2,
-    .section-label {
+    .section-label,
+    .subscribe__title {
       font-weight: 900;
     }
 
@@ -379,7 +380,8 @@ Version: 1.0
     .q-view-popup-new__title,
     .insta-line__title h2,
     .section-label,
-    .featured-products__column-title {
+    .featured-products__column-title,
+    .subscribe__title {
       text-transform: uppercase;
     }
 
@@ -1954,6 +1956,60 @@ Version: 1.0
     .container {
       padding: 0;
     }
+    &__subscribe {
+      background-color: @main-red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 2.5rem;
+      form {
+        position: relative;
+      }
+      input {
+        width: 100%;
+        border: 1px solid #f8706f;
+        background-color: transparent;
+        color: #fff;
+        padding: 0.4rem 2.8rem 0.4rem 1rem;
+        &::-webkit-input-placeholder {color: #ffe5e5; font-size: 0.75rem;}
+        &:-ms-input-placeholder {color: #ffe5e5; font-size: 0.75rem;}
+        &::-ms-input-placeholder {color: #ffe5e5; font-size: 0.75rem;}
+        &::placeholder {color: #ffe5e5; font-size: 0.75rem;}
+      }
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 40px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        color: #f89c9c;
+        transition: .3s ease;
+        outline: none;
+        &:hover, &:focus {
+          color: #ffffff;
+        }
+      }
+      p {
+        color: #ffcccc;
+        font-size: 0.8125rem;
+      }
+    }
+    .subscribe {
+      &__title {
+        letter-spacing: 0.0275rem;
+        font-size: 1.375rem;
+      }
+      &__description {
+        font-size: 0.875rem;
+        margin: 0;
+      }      
+    }
   }
   .product__prices {
     font-size: 0.9375rem;
@@ -1971,6 +2027,7 @@ Version: 1.0
     &__list {
       padding: 0;
       list-style: none;
+      margin: 0;
     }
     &__item {
       display: flex;
@@ -1982,6 +2039,9 @@ Version: 1.0
       }
       a:hover, a:focus {
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+      }
+      &:last-child {
+        border-bottom: none;
       }
     }
     &__text {

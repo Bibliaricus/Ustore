@@ -1073,7 +1073,15 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__subscribe col-3"></div>
+        <div class="pre-footer__subscribe col-3">
+          <h4 class="subscribe__title">Join Xstore newsletter</h4>
+          <p class="subscribe__description">You can be always up to date with our company news!</p>
+          <form action="#">
+            <input type="email" placeholder="Email address..." required>
+            <button class="icon-font-add"></button>
+          </form>
+          <p>*Don’t worry, we won’t spam our customers mailboxes</p>
+        </div>
       </div>
     </div>
   </div>
