@@ -1826,6 +1826,10 @@ header a:hover {
 .featured-products__item:hover .featured-products__prod-title {
   color: #e74948;
 }
+.featured-products__item a:hover,
+.featured-products__item a:focus {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
 .featured-products__text {
   margin-left: 1.5rem;
 }
