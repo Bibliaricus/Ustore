@@ -794,6 +794,84 @@
           </div>
         </div>
       </div>
+      <div class="complete-look__slide product__item">
+        <div class="top-interes__images product__image-container">
+          <a href="#"><img src="img/bottom_side_banner.jpg" alt="Image of product in top interesting section"></a>
+          <div class="hover-buttons__list">
+              <button type="button" class="hover-buttons__item wishlist__add-btn icon-font-heart-regular" title="Add to wishlist"></button>
+              <button type="button" class="hover-buttons__item shopping-cart__add-btn icon-font-cart" title="Add to shopping cart"></button>
+              <button type="button" class="hover-buttons__item quick-view__btn icon-font-eye" data-toggle="modal" data-target="#q-view-popup-new" title="Open quick view"></button>
+          </div>
+          </div>
+          <div class="product__description">
+            <a href="#" class="product__category">Coctail Dresses</a>
+            <a href="#" class="product__title">Jacquard Duster</a>
+            <div class="product__rating">
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-regular"></span>
+            </div>
+            <div class="product__prices">
+              <span class="product__old-price">$350</span>
+              <span class="product__new-price">$299,99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="complete-look__slide product__item">
+        <div class="top-interes__images product__image-container">
+          <a href="#"><img src="img/bottom_side_banner.jpg" alt="Image of product in top interesting section"></a>
+          <div class="hover-buttons__list">
+              <button type="button" class="hover-buttons__item wishlist__add-btn icon-font-heart-regular" title="Add to wishlist"></button>
+              <button type="button" class="hover-buttons__item shopping-cart__add-btn icon-font-cart" title="Add to shopping cart"></button>
+              <button type="button" class="hover-buttons__item quick-view__btn icon-font-eye" data-toggle="modal" data-target="#q-view-popup-new" title="Open quick view"></button>
+          </div>
+          </div>
+          <div class="product__description">
+            <a href="#" class="product__category">Coctail Dresses</a>
+            <a href="#" class="product__title">Jacquard Duster</a>
+            <div class="product__rating">
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-regular"></span>
+            </div>
+            <div class="product__prices">
+              <span class="product__old-price">$350</span>
+              <span class="product__new-price">$299,99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="complete-look__slide product__item">
+        <div class="top-interes__images product__image-container">
+          <a href="#"><img src="img/bottom_side_banner.jpg" alt="Image of product in top interesting section"></a>
+          <div class="hover-buttons__list">
+              <button type="button" class="hover-buttons__item wishlist__add-btn icon-font-heart-regular" title="Add to wishlist"></button>
+              <button type="button" class="hover-buttons__item shopping-cart__add-btn icon-font-cart" title="Add to shopping cart"></button>
+              <button type="button" class="hover-buttons__item quick-view__btn icon-font-eye" data-toggle="modal" data-target="#q-view-popup-new" title="Open quick view"></button>
+          </div>
+          </div>
+          <div class="product__description">
+            <a href="#" class="product__category">Coctail Dresses</a>
+            <a href="#" class="product__title">Jacquard Duster</a>
+            <div class="product__rating">
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-solid"></span>
+              <span class="icon-font-star-regular"></span>
+            </div>
+            <div class="product__prices">
+              <span class="product__old-price">$350</span>
+              <span class="product__new-price">$299,99</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
