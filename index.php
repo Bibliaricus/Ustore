@@ -947,6 +947,28 @@
       </div>
     </div>
   </section>
+  <div class="pre-footer">
+    <div class="container">
+      <div class="row">
+        <div class="pre-footer__featured-products col-3">
+          <h3 class="featured-products__column-title">Featured Products</h3>
+          <ul class="featured-products__list">
+            <li class="featured-products__item">
+              <img src="img/feature_products-1-1.jpg" alt="Product in feature products">
+              <div class="featured-products__text">
+                <a href="#" class="featured-products__prod-title">Lemon Jacquard Duster</a>
+                <div class="product__prices">
+                  <span class="product__old-price">$350</span>
+                  <span class="product__new-price">$299,99</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="pre-footer__subscribe col-3"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modals -->
 

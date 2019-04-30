@@ -47,6 +47,7 @@ Version: 1.0
   6.5. Follow instagram
   6.6. Product categories
   6.7. Complete the look
+  6.8. Pre-footer
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -352,7 +353,9 @@ Version: 1.0
     .product__title,
     .product__old-price,
     .product__item--sale::before,
-    .q-view-popup-new__input-label {
+    .q-view-popup-new__input-label,
+    .featured-products__column-title,
+    .featured-products__prod-title {
       font-weight: 700;
     }
 
@@ -375,7 +378,8 @@ Version: 1.0
     .product__item--sale::before,
     .q-view-popup-new__title,
     .insta-line__title h2,
-    .section-label {
+    .section-label,
+    .featured-products__column-title {
       text-transform: uppercase;
     }
 
@@ -1883,6 +1887,7 @@ Version: 1.0
   /* 6.7. Complete the look */
   .complete-look {
     padding: 0;
+    margin-bottom: 5.5rem;
     .section-description {
       margin-bottom: 3rem;
     }
@@ -1939,6 +1944,46 @@ Version: 1.0
     &__prod-item {
       margin-left: 20px;
       background: #f8f8f8;
+    }
+  }
+
+  /* 6.8. Pre-footer */
+  .pre-footer {
+    background-color: #fafafa;
+    padding: 5rem 0;
+    .container {
+      padding: 0;
+    }
+  }
+  .product__prices {
+    font-size: 0.9375rem;
+    color: @main-red;
+    .product__old-price {
+      text-decoration: line-through;
+      color: @text-gray;
+    }
+  }
+  .featured-products {
+    &__column-title {
+      font-size: 0.9375rem;
+      letter-spacing: 0.01875rem;
+    }
+    &__list {
+      padding: 0;
+      list-style: none;
+    }
+    &__item {
+      display: flex;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 1.3rem 0;
+      align-items: center;
+    }
+    &__text {
+      margin-left: 1.5rem;
+    }
+    &__prod-title {
+      letter-spacing: 0.0175rem;
+      font-size: 0.875rem;
     }
   }
     
