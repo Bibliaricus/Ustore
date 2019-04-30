@@ -718,6 +718,17 @@
       <iframe src='/inwidget/index.php?inline=6&view=6toolbar=true&adaptive=true&width=600' name="inWidget" data-inwidget scrolling='no' frameborder='no' style='border:none;width:100%;height:800px;overflow:hidden;display:block;'></iframe>
     </div>       
   </section >  
+  <section class="product-categories container">
+    <h2 class="section-title">Product categories</h2>
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem solo tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="product-categories__list row">
+      <div class="product-categories__item col-3">
+        <a href="#" class="item__category">Category</a>
+        <a href="#" class="item__title">Dresses</a>
+        <a href="#" class="prod-count">25 products)</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Modals -->
 
