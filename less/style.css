@@ -1823,12 +1823,19 @@ header a:hover {
   padding: 1.3rem 0;
   align-items: center;
 }
+.featured-products__item:hover .featured-products__prod-title {
+  color: #e74948;
+}
 .featured-products__text {
   margin-left: 1.5rem;
 }
 .featured-products__prod-title {
   letter-spacing: 0.0175rem;
   font-size: 0.875rem;
+}
+.featured-products__prod-title:hover,
+.featured-products__prod-title:focus {
+  text-decoration: underline;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */

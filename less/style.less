@@ -1977,6 +1977,9 @@ Version: 1.0
       border-bottom: 1px solid #f0f0f0;
       padding: 1.3rem 0;
       align-items: center;
+      &:hover .featured-products__prod-title {
+        color: @main-red;
+      }
     }
     &__text {
       margin-left: 1.5rem;
@@ -1984,6 +1987,9 @@ Version: 1.0
     &__prod-title {
       letter-spacing: 0.0175rem;
       font-size: 0.875rem;
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
     }
   }
     
