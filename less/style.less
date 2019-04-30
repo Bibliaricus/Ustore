@@ -34,17 +34,9 @@ Version: 1.0
   4.7. Section title and description
   4.8. General styles for products
   4.9. Quick view popup
-
-  4.# Text in banners
-  4.# Buttons
-  4.#. General styles of product items
-  4.#. Section titles and descriptions
-  4.#. Quick popup
-  4.#. Hover buttons
-  4.#. Off-canvas
 5. Custom styles
   5.1. Bootstrap container  
-  5.2. Custom styles of InWidget (for Instagram photos)
+  5.2. Slick slider
 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
   6.1. Header
     6.1.1. Header-top
@@ -1331,15 +1323,71 @@ Version: 1.0
     }
   }
 
-  /* 5.2. Custom styles of InWidget (for Instagram photos) */
-  // .widget a.title:link, .widget a.title:visited {
-  //   display: none;
-  // }
+  /* 5.2. Slick slider */
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 0;
+    width: 60px;
+    height: 70px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-family: 'Usmart-icon-font';
+    &:hover, &:focus {
+      color: @main-red;
+      outline: none;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    transform: translate(-100%, -50%);
+    &::before {
+      content: '\e912';
+      font-size: 28px;
+    }
+  }
+  .slick-next {
+    right: 0;
+    transform: translate(100%, -50%);
+    &::before {
+      content: '\e911';
+      font-size: 28px;
+    }
+  }
+  .slick-list.draggable {
+    padding-top: 1rem;
+  }
+  .slick-dots {
+    position: absolute;
+    top: 3.5%;
+    left: 6.5%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    li {
+      line-height: 0;
+    }
+    button {
+      border: none;
+      font-size: 0;
+      background-color: #bebebe;
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0.2rem 0;
+      opacity: .3;
+    }
+    .slick-active button {
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+    }
+  }
   
-  // .widget {
-  //   border: none;    
-  // }
-
 /* 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section) */
   /* 6.1. Header */
     header {
@@ -1732,42 +1780,7 @@ Version: 1.0
             transform: translateX(-50%);
           }
         }
-      }
-      .slick-arrow {
-        position: absolute;
-        top: 50%;
-        z-index: 10;
-        font-size: 0;
-        width: 60px;
-        height: 70px;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        font-family: 'Usmart-icon-font';
-        &:hover, &:focus {
-          color: @main-red;
-          outline: none;
-        }
-      }
-      .slick-prev {
-        left: 0;
-        transform: translate(-100%, -50%);
-        &::before {
-          content: '\e912';
-          font-size: 28px;
-        }
-      }
-      .slick-next {
-        right: 0;
-        transform: translate(100%, -50%);
-        &::before {
-          content: '\e911';
-          font-size: 28px;
-        }
-      }
-      .slick-list.draggable {
-        padding-top: 1rem;
-      }
+      }      
       .tab-content>.active {
         display: flex;
       }     
@@ -1865,6 +1878,15 @@ Version: 1.0
       display: inline-block;
       max-width: 430px;
       width: 100%;
+      .slick-list.draggable {
+        padding: 0;
+      }
+      .slick-prev {
+        transform: translate(0%,-50%);
+      }
+      .slick-next {
+        transform: translate(0%,-50%);
+      }
     }
     &__slide {
       position: relative;
@@ -1883,6 +1905,12 @@ Version: 1.0
         .product__rating {
           margin-bottom: 0.5rem;
         }
+      }
+      .hover-buttons__list {
+        top: 30%;      
+      }
+      .product__image-container:hover .hover-buttons__list {
+        top: 40%;
       }
     }
   }
