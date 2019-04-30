@@ -238,14 +238,12 @@ body {
   color: #1c1a19;
 }
 /* Second font */
-.section__description,
 .custom-btn,
 .banner__description,
 .section-description {
   font-family: 'Open Sans', sans-serif;
 }
 /* Colors - Gray */
-.section__description,
 .item__price,
 .item__category,
 footer p,
@@ -869,6 +867,7 @@ a[href^="tel"]:focus {
   text-align: center;
   letter-spacing: 0.05rem;
   margin-bottom: 1.4rem;
+  color: initial;
 }
 .section-description {
   font-size: 15px;
@@ -1626,6 +1625,7 @@ header a:hover {
 /* 6.5. Follow instagram */
 .insta-line {
   padding: 0;
+  margin-bottom: 7rem;
 }
 .insta-line .insta-line__title {
   background-color: #035888;
