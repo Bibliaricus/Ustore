@@ -765,6 +765,7 @@
     </div>
   </section>
   <section class="complete-look container">
+    <span class="section-label">women collection</span>
     <h2 class="section-title">Complete the look</h2>
     <p class="section-description">Dolor sit amet, consectetur adipiscing elit, sed do eiusmo dadipiscing elit, adipiscing elit, sed do eiusmod sed do eiusmod lorem ipsun dolore magna aliqua.</p>
     <div class="complete-look__carousel">
