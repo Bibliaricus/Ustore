@@ -53,6 +53,7 @@ Version: 1.0
   6.4. Top interesting
   6.5. Follow instagram
   6.6. Product categories
+  6.7. Complete the look
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -1694,6 +1695,37 @@ header a:hover {
 .product-categories__item:focus .item__title::after {
   width: 100%;
   left: 0;
+}
+/* 6.7. Complete the look */
+.complete-look {
+  padding: 0;
+}
+.complete-look .section-description {
+  margin-bottom: 3rem;
+}
+.complete-look__carousel {
+  display: inline-block;
+  max-width: 430px;
+  width: 100%;
+}
+.complete-look__slide {
+  position: relative;
+  background-color: #f8f8f8;
+}
+.complete-look__slide .product__description {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 80%;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.5rem 0;
+}
+.complete-look__slide .product__description .product__rating {
+  margin-bottom: 0.5rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
