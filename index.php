@@ -712,12 +712,12 @@
   </section>
   <section class="insta-line container-fluid">
     <div class="insta-line__title">
-      <h3>FOLLOW @ INSTAGRAM</h3>
+      <h2>FOLLOW @ INSTAGRAM</h2>
     </div>
     <div class="insta-line__list">
       <iframe src='/inwidget/index.php?inline=6&view=6toolbar=true&adaptive=true&width=600' name="inWidget" data-inwidget scrolling='no' frameborder='no' style='border:none;width:100%;height:800px;overflow:hidden;display:block;'></iframe>
     </div>       
-  </section >
+  </section >  
 
   <!-- Modals -->
 
