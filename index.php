@@ -722,11 +722,16 @@
     <h2 class="section-title">Product categories</h2>
     <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem solo tempor incididunt ut labore et dolore magna aliqua.</p>
     <div class="product-categories__list row">
-      <div class="product-categories__item col-3">
-        <a href="#" class="item__category">Category</a>
-        <a href="#" class="item__title">Dresses</a>
-        <a href="#" class="prod-count">25 products)</a>
-      </div>
+      <a href="#" class="product-categories__item col-3">
+        <div class="product-categories__img-wrapper">
+          <img src="img/product_categories-1.jpg" alt="Dresses category">
+        </div>
+        <div class="product-categories__text">
+          <span href="#" class="item__category">Category</span>
+          <span href="#" class="item__title">Dresses</span>
+          <span href="#" class="prod-count">(25 products)</span>
+        </div>
+      </a>
     </div>
   </section>
 

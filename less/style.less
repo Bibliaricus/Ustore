@@ -53,6 +53,7 @@ Version: 1.0
   6.3. Second banners
   6.4. Top interesting
   6.5. Follow instagram
+  6.6. Product categories
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -288,7 +289,8 @@ Version: 1.0
     /* Second font */    
     .custom-btn,
     .banner__description,
-    .section-description {
+    .section-description,
+    .prod-count {
       font-family: @font-open-sans, sans-serif;
     }
 
@@ -1790,6 +1792,65 @@ Version: 1.0
         letter-spacing: 0.05625rem;
         font-size: 1.125rem;
       }
+    }
+  }
+
+  /* 6.6. Product categories */
+  .product-categories {
+    margin-bottom: 7rem;
+    padding: 0;
+    &__list {
+      margin-top: 2.75rem;
+    }
+    &__text {
+      position: absolute;
+      width: ~'calc(100% - 30px)';
+      top: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .item__category {
+        color: #fff;
+        font-size: 0.75rem;
+      }
+      .item__title {
+        position: relative;
+        font-size: 1.5rem;
+        color: #fff;
+        transition: .3s ease;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 10%;
+          width: 0;
+          right: 0;
+          height: 2px;
+          background-color: #fff;
+          transition: .3s ease;
+        }
+      }
+      .prod-count {
+        font-size: 0.875rem;
+        color: #fff;
+      }
+    }
+    &__img-wrapper {
+      overflow: hidden;
+      img {
+        transition: .4s ease;
+      }
+    }
+    &__item:hover,
+    &__item:focus {
+      img {
+        transform: scale(1.15);
+      }
+      .item__title::after {
+        width: 100%;
+        left: 0;
+      }      
     }
   }
     
