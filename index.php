@@ -57,8 +57,8 @@
         </div>
       </nav>
       <div class="fixed-header__icons">
-        <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list" data-count="5"></a>
-        <span class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3" tabindex="0"></span>        
+        <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list" data-count="5"></button>
+        <button class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3"></button>
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
           <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
           <datalist id="search-list">
@@ -68,7 +68,7 @@
           </datalist>          
           <button class="search-field__popup-button icon-font-search" type="submit"></button>
         </form>
-        <a href="#" class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon mx-3" onclick="openNav2()" title="Open shopping cart"></a>
+        <button class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon mx-3" onclick="openNav2()" title="Open shopping cart"></button>
       </div>
     </div>
     <div class="header-top row">

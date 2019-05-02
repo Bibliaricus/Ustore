@@ -1375,6 +1375,15 @@ header a:hover {
   width: 100%;
   left: 0;
 }
+.fixed-header button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.fixed-header button:hover,
+.fixed-header button:focus {
+  color: #e74948;
+}
 .fixed-header.fixed-enable {
   visibility: visible;
   opacity: 1;
