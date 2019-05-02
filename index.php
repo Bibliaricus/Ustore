@@ -1209,16 +1209,20 @@
           <a href="#">Accesories</a>
         </div>
       </div>
-      <div class="copyright row">
-        <div class="copyright__authur col-6">
-        &copy; Created by Web-lem. 
-        </div>
-        <div class="copyright__payments col-6">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="copyright__authur col-6">
+            &copy; Created by Web-lem. 
+          </div>
+          <div class="copyright__payments col-6">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
