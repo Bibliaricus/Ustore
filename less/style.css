@@ -48,6 +48,7 @@ Version: 1.0
   6.7. Complete the look
   6.8. Pre-footer
   6.9. Footer
+  6.10. Copyright
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -1919,7 +1920,7 @@ header a:hover {
 footer {
   background-color: #262626;
   font-weight: 300;
-  padding: 6.5rem 0;
+  padding: 6.5rem 0 0;
   color: #a4a4a4;
 }
 footer .container {
@@ -2017,6 +2018,16 @@ footer h4 {
 .footer__tags a:hover,
 .footer__tags a:focus {
   color: #e74948;
+}
+/* 6.10. Copyright */
+.copyright {
+  background-color: #242424;
+  padding: 3.5rem 0 3.5rem;
+  margin-top: 3rem;
+}
+.copyright__authur {
+  padding-left: 1rem;
+  font-size: 0.875rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
