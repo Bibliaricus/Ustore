@@ -33,14 +33,15 @@ Version: 1.0
   4.6. Buttons
   4.7. Section title and description
   4.8. General styles for products
-  4.9. Quick view popup
+  4.9. Quick view popup  
 5. Custom styles
   5.1. Bootstrap container  
   5.2. Slick slider
 6. Sections of page - index.html (styles of positioning elements in each specific section in the page) (firs nesting lvl. - section of page; second nesting lvl. - blocks in said section)
   6.1. Header
+    6.1.0. Fixed header
     6.1.1. Header-top
-    6.1.2. Header-bottom
+    6.1.2. Header-bottom    
   6.2. Main banner
   6.3. Second banners
   6.4. Top interesting
@@ -359,7 +360,8 @@ Version: 1.0
     .q-view-popup-new__input-label,
     .featured-products__column-title,
     .featured-products__prod-title,
-    footer h4 {
+    footer h4,
+    .fixed-header .nav-link {
       font-weight: 700;
     }
 
@@ -385,7 +387,8 @@ Version: 1.0
     .section-label,
     .featured-products__column-title,
     .subscribe__title,
-    footer h4 {
+    footer h4,
+    .fixed-header .nav-link {
       text-transform: uppercase;
     }
 
@@ -1422,6 +1425,90 @@ Version: 1.0
         color: initial;
       }
     }
+    /* 6.1.0. Fixed header */
+    // Hamburger 
+    .mobile-menu-humburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__part {
+        display: inline-block;
+        width: 16px;
+        height: 2px;
+        margin: 0.1rem 0;
+        background-color: #222222;
+      }
+    }
+    .header__top .mobile-menu-humburger {
+      display: none;
+      @media only screen and (max-width: 991.98px){
+        display: flex;
+      }
+    }
+    
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2.5rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e1e1e1;
+      transition: .3s ease-out;
+      transform: translateY(-100%);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 999;
+      &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        color: initial;
+        font-size: 0.8125rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0.2rem;
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;          
+          width: 0;
+          height: 2px;
+          background-color: @main-red;
+          transition: .3s ease;
+        }
+        &:hover, &:focus {
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  
+    .fixed-header.fixed-enable {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .fixed-header .shoping-cart-popup {
+      margin: 0;
+      border: none;
+      background-color: transparent;
+    }
+    
+    .fixed-header .user-links__icon::after {
+      right: -10%;
+    }
+    
     /* 6.1.1. Header-top */
     .header-top {
       border-bottom: 1px solid @main-gray-opacity;
@@ -2212,7 +2299,7 @@ Version: 1.0
     
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
   /* 7.1 Min-width: 1200px */
-  .test {position: fixed; top: 10px; left: 10px; color: tomato; z-index: 99999999; pointer-events: none;}
+  .test {position: fixed; top: 80px; left: 10px; color: tomato; z-index: 99999999; pointer-events: none;}
 
   @media only screen and (min-width: 1200px){
     .test:after  { content: '@media (min-width: 1200px [col-xl]) >>>';} 

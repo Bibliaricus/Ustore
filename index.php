@@ -26,6 +26,51 @@
   <!-- ## Modals -->
   <div class="test"></div>
   <header class="container-fluid page-header">
+    <div class="fixed-header">
+      <a href="#mobile-menu" class="mobile-menu-humburger">
+        <span class="mobile-menu-humburger__part"></span>
+        <span class="mobile-menu-humburger__part"></span>
+        <span class="mobile-menu-humburger__part"></span>
+      </a> 
+      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-12 col-lg-8">        
+        <div class="collapse navbar-collapse" id="header-responsive-menu">
+          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
+            <li class="nav-item mr-2 active">
+              <a class="nav-link" href="#">Home Page</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Ecommerce</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>            
+        </div>
+      </nav>
+      <div class="fixed-header__icons">
+        <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list" data-count="5"></a>
+        <span class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3" tabindex="0"></span>        
+        <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
+          <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
+          <datalist id="search-list">
+            <option value="Telephones"></option>
+            <option value="Mobiles"></option>
+            <option value="And many other things..."></option>       
+          </datalist>          
+          <button class="search-field__popup-button icon-font-search" type="submit"></button>
+        </form>
+        <a href="#" class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon mx-3" onclick="openNav2()" title="Open shopping cart"></a>
+      </div>
+    </div>
     <div class="header-top row">
       <div class="header-top__left col-6 d-flex align-items-center">
         <div class="dropdown header-top__language-list">

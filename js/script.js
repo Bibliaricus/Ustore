@@ -156,4 +156,14 @@ $(document).ready(function() {
   $('.complete-look__carousel').slick({
     dots: true
   });
+
+  // Fixed header  
+  $(window).scroll(function() {
+    var fixedScroll = $(window).scrollTop();    
+    if (fixedScroll < 100) {
+      $(".fixed-header").removeClass('fixed-enable');
+    } else {
+      $(".fixed-header").addClass('fixed-enable');
+    }
+  });
 });
