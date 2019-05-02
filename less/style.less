@@ -2037,7 +2037,7 @@ Version: 1.0
       &:hover .featured-products__prod-title {
         color: @main-red;
       }
-      a:hover, a:focus {
+      a:not(.featured-products__prod-title):hover, a:not(.featured-products__prod-title):focus {
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
       }
       &:last-child {
