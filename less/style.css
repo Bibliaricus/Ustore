@@ -1264,6 +1264,12 @@ a[href^="tel"]:focus {
   content: '\e911';
   font-size: 28px;
 }
+@media screen and (max-width: 1300px) {
+  .slick-prev,
+  .slick-next {
+    transform: translate(0, -50%);
+  }
+}
 .slick-list.draggable {
   padding-top: 1rem;
 }
