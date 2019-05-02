@@ -1089,7 +1089,7 @@
     <div class="container">
       <div class="row">
         <div class="footer__contacts col-3">
-          <img src="img/footer-logo.jpg" alt="Footer logo" class="footer__logo">
+          <img src="img/footer-logo.png" alt="Footer logo" class="footer__logo">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem.</p>
           <span>48 Park Avenue,</span>
           <span>East 21st Street, Apt. 304</span>
@@ -1126,7 +1126,7 @@
             <li>
               <img src="img/latest_news-1.jpg" alt="Image to latest posts">
               <div class="posts__text">
-                <h5 class="posts__title">Down The Road</h5>
+                <a href="#" class="posts__title">Down The Road</a>
                 <time class="icon-font-baseline-today-24px">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
@@ -1134,7 +1134,7 @@
             <li>
               <img src="img/latest_news-2.jpg" alt="Image to latest posts">
               <div class="posts__text">
-                <h5 class="posts__title">Down The Road</h5>
+                <a href="#" class="posts__title">Down The Road</a>
                 <time class="icon-font-baseline-today-24px">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
@@ -1142,7 +1142,7 @@
             <li>
               <img src="img/latest_news-3.jpg" alt="Image to latest posts">
               <div class="posts__text">
-                <h5 class="posts__title">Down The Road</h5>
+                <a href="#" class="posts__title">Down The Road</a>
                 <time class="icon-font-baseline-today-24px">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
@@ -1150,6 +1150,7 @@
           </ul>
         </div>
         <div class="footer__tags col-3">
+          <h4>Product tags</h4>
           <a href="#">Illegal</a>
           <a href="#">Accesories</a>
           <a href="#">Sale</a>

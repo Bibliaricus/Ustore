@@ -47,6 +47,7 @@ Version: 1.0
   6.6. Product categories
   6.7. Complete the look
   6.8. Pre-footer
+  6.9. Footer
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -302,7 +303,8 @@ footer span,
 .product__item--sale::before,
 .q-view-popup-new__input-label,
 .featured-products__column-title,
-.featured-products__prod-title {
+.featured-products__prod-title,
+footer h4 {
   font-weight: 700;
 }
 /* Upper case */
@@ -326,7 +328,8 @@ footer span,
 .insta-line__title h2,
 .section-label,
 .featured-products__column-title,
-.subscribe__title {
+.subscribe__title,
+footer h4 {
   text-transform: uppercase;
 }
 /* 2.5. Animations */
@@ -1911,6 +1914,109 @@ header a:hover {
 .featured-products__prod-title:hover,
 .featured-products__prod-title:focus {
   text-decoration: underline;
+}
+/* 6.9. Footer */
+footer {
+  background-color: #262626;
+  font-weight: 300;
+  padding: 6.5rem 0;
+  color: #a4a4a4;
+}
+footer .container {
+  padding: 0;
+}
+footer h4 {
+  color: #fff;
+  font-size: 0.9375rem;
+  letter-spacing: 0.09375rem;
+  margin-bottom: 1.5rem;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.footer__contacts img {
+  margin-bottom: 2rem;
+}
+.footer__contacts a {
+  color: #ffffff;
+}
+.footer__contacts a:hover,
+.footer__contacts a:focus {
+  color: #e74948;
+}
+.footer__links-cont {
+  display: flex;
+}
+.footer__links-cont ul {
+  list-style: none;
+  padding: 0;
+}
+.footer__links-cont ul:first-child {
+  margin-right: 3rem;
+}
+.footer__links-cont a {
+  font-size: 0.9375rem;
+  line-height: 2;
+  transition: .2s ease;
+}
+.footer__links-cont a:hover,
+.footer__links-cont a:focus {
+  color: #fff;
+}
+.footer__posts ul {
+  padding: 0;
+  list-style: none;
+}
+.footer__posts li {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.footer__posts .posts__text {
+  margin-left: 1rem;
+}
+.footer__posts .posts__text time,
+.footer__posts .posts__text span {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.footer__posts .posts__text time::before,
+.footer__posts .posts__text span::before {
+  font-size: 9px;
+  margin-right: 0.2rem;
+}
+.footer__posts .posts__text span::before {
+  margin-left: 0.5rem;
+}
+.footer__posts .posts__title {
+  font-size: 0.875rem;
+  letter-spacing: 0.0175rem;
+  display: block;
+  font-weight: 400;
+}
+.footer__posts .posts__title:hover,
+.footer__posts .posts__title:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer__tags a {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.0375rem;
+  border: 1px solid #333333;
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.footer__tags a:hover,
+.footer__tags a:focus {
+  color: #e74948;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */

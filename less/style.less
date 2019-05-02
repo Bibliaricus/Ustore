@@ -48,6 +48,7 @@ Version: 1.0
   6.6. Product categories
   6.7. Complete the look
   6.8. Pre-footer
+  6.9. Footer
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -356,7 +357,8 @@ Version: 1.0
     .product__item--sale::before,
     .q-view-popup-new__input-label,
     .featured-products__column-title,
-    .featured-products__prod-title {
+    .featured-products__prod-title,
+    footer h4 {
       font-weight: 700;
     }
 
@@ -381,7 +383,8 @@ Version: 1.0
     .insta-line__title h2,
     .section-label,
     .featured-products__column-title,
-    .subscribe__title {
+    .subscribe__title,
+    footer h4 {
       text-transform: uppercase;
     }
 
@@ -2052,6 +2055,115 @@ Version: 1.0
       font-size: 0.875rem;
       &:hover, &:focus {
         text-decoration: underline;
+      }
+    }
+  }
+
+  /* 6.9. Footer */
+
+  footer {
+    background-color: #262626;
+    font-weight: 300;
+    padding: 6.5rem 0;
+    color: @text-gray;
+    .container {
+      padding: 0;
+    }
+    h4 {
+      color: #fff;
+      font-size: 0.9375rem;
+      letter-spacing: 0.09375rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .footer {
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      img {
+        margin-bottom: 2rem;
+      }
+      a {
+        color: #ffffff;        
+        &:hover, &:focus {
+          color: @main-red;
+        }
+      }
+    }
+    &__links-cont {
+      display: flex;
+      ul {
+        list-style: none;
+        padding: 0;
+        &:first-child {
+          margin-right: 3rem;
+        }
+      }
+      a {
+        font-size: 0.9375rem;
+        line-height: 2;
+        transition: .2s ease;
+        &:hover, &:focus {
+          color: #fff;          
+        }
+      }
+    }
+    &__posts {
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid #333333;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+      .posts {
+        &__text {
+          margin-left: 1rem;
+          time, span {
+            font-size: 0.75rem;
+            font-weight: 300;
+            &::before {
+              font-size: 9px;
+              margin-right: 0.2rem;
+            }
+          }
+          span {
+            &::before {
+              margin-left: 0.5rem;
+            }
+          }
+        }
+        &__title {
+          font-size: 0.875rem;
+          letter-spacing: 0.0175rem;
+          display: block;
+          font-weight: 400;
+          &:hover, &:focus {
+            color: #ffffff;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &__tags {
+      a {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.0375rem;
+        border: 1px solid #333333;
+        display: inline-block;
+        padding: 0.3rem 1.2rem;
+        margin-bottom: 0.5rem;
+        &:hover, &:focus {
+          color: @main-red;
+        }
       }
     }
   }
