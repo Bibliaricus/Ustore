@@ -121,10 +121,10 @@
       </div>      
     </div>
     <div class="header-bottom row justify-content-between align-items-center px-4">
-      <a href="#" class="header-bottom__logo navbar-brand col-6 col-lg-2" tabindex="-1">        
+      <a href="#" class="header-bottom__logo navbar-brand col-lg-6 col-xl-2" tabindex="-1">        
         <img src="img/header-logo2.png" alt="Header logo">
       </a>
-      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-12 col-lg-8">
+      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-12 col-xl-8 order-lg-1 order-xl-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-responsive-menu" aria-controls="header-responsive-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -151,7 +151,7 @@
           </ul>            
         </div>
       </nav>
-      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-6 col-lg-2">                
+      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-lg-6 col-xl-2">                
         <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></a>
         <div class="vish-list sidenav" id="vish-list-off-canvas">
           <div class="vish-list__header">
@@ -178,7 +178,7 @@
           </div>
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </div>
-        <span class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-5" tabindex="0"></span>        
+        <span class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-lg-2 mx-xl-3" tabindex="0"></span>        
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
           <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
           <datalist id="search-list">
