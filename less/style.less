@@ -1824,7 +1824,6 @@ Version: 1.0
       justify-content: center;
       color: #ffffff;
       padding: 3rem 0 3rem 0;
-      // .smooth-px-to-vw(404px);
       height: calc(~'20.42105263157895vw + 16px');
       a:hover,
       a:focus {
@@ -2323,6 +2322,19 @@ Version: 1.0
   
     .off-canvas-open {
       max-width: 40vw;
+    }
+
+    .second-banners__list {
+      .second-banners__item {
+        padding: 1rem 0 1rem 0;
+        height: auto;
+        &:nth-child(1) {
+          padding-left: 1.5rem;
+        }
+        &:nth-child(3) {
+          padding-right: 1.5rem;
+        }
+      }
     }
   }
 

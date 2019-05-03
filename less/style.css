@@ -2181,6 +2181,16 @@ footer h4 {
   .off-canvas-open {
     max-width: 40vw;
   }
+  .second-banners__list .second-banners__item {
+    padding: 1rem 0 1rem 0;
+    height: auto;
+  }
+  .second-banners__list .second-banners__item:nth-child(1) {
+    padding-left: 1.5rem;
+  }
+  .second-banners__list .second-banners__item:nth-child(3) {
+    padding-right: 1.5rem;
+  }
 }
 @media only screen and (max-width: 991.98px) {
   .test:after {
