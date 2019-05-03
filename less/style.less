@@ -2044,8 +2044,9 @@ Version: 1.0
       flex-wrap: wrap;
     }
     &__prod-item {
-      margin-left: 20px;
+      margin-left: 0;
       background: #f8f8f8;
+      background-clip: content-box;
     }
   }
 
@@ -2352,9 +2353,7 @@ Version: 1.0
 
     .complete-look {
       margin-bottom: 1rem;
-      &__prod-item {
-        margin-left: 0;
-        background-clip: content-box;
+      &__prod-item {        
         display: flex;
         flex-direction: column;
         justify-content: space-around;

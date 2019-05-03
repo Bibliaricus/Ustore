@@ -1894,8 +1894,9 @@ header a:hover {
   flex-wrap: wrap;
 }
 .complete-look__prod-item {
-  margin-left: 20px;
+  margin-left: 0;
   background: #f8f8f8;
+  background-clip: content-box;
 }
 /* 6.8. Pre-footer */
 .pre-footer {
@@ -2205,8 +2206,6 @@ footer h4 {
     margin-bottom: 1rem;
   }
   .complete-look__prod-item {
-    margin-left: 0;
-    background-clip: content-box;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
