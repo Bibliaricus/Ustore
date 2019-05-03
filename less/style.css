@@ -2116,7 +2116,8 @@ footer h4 {
 }
 .footer__tags a:hover,
 .footer__tags a:focus {
-  color: #e74948;
+  background-color: #e74948;
+  color: #ffffff;
 }
 /* 6.10. Copyright */
 .copyright {
