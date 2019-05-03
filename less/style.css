@@ -762,18 +762,6 @@ a[href^="tel"]:focus {
 .search-field__button:focus {
   color: initial;
 }
-.search-field__button::after {
-  content: '';
-  width: 10rem;
-  position: absolute;
-  height: 4rem;
-  bottom: -160%;
-  left: -100%;
-  pointer-events: none;
-}
-.search-field__button:hover::after {
-  pointer-events: auto;
-}
 .search-field__toolip {
   position: fixed;
   top: 0;
