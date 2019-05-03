@@ -459,7 +459,8 @@ a[href^="tel"]:focus {
   padding: 2em 2em 2em 2em;
   position: absolute;
   top: 100%;
-  width: 50%;
+  left: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   font-size: 0.875rem;
@@ -468,6 +469,7 @@ a[href^="tel"]:focus {
   visibility: hidden;
   opacity: 0;
   transition: .3s ease;
+  transform: translateX(-50%);
   z-index: 3;
 }
 .login-popup::before {
