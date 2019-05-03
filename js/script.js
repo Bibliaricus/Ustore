@@ -162,8 +162,10 @@ $(document).ready(function() {
     var fixedScroll = $(window).scrollTop();    
     if (fixedScroll < 100) {
       $(".fixed-header").removeClass('fixed-enable');
+      $(".sidenav").css("top", "0");
     } else {
       $(".fixed-header").addClass('fixed-enable');
-    }
-  });
+      $(".sidenav").css("top", "64px");
+    }   
+  });  
 });
