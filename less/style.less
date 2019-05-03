@@ -1476,6 +1476,19 @@ Version: 1.0
           color: #ffffff;
         }
       }
+      .search-field__button {
+        &::after {
+          content: '';
+          width: 4rem;
+          position: absolute;
+          height: 1.5rem;
+          bottom: -40%;
+          left: 75%;
+          pointer-events: auto;
+          transform: translateX(-50%);
+        }
+        
+      }
       .shoping-cart-composite-icon {        
         &::after {
           color: #ffffff;

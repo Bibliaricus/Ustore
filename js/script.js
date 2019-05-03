@@ -157,15 +157,17 @@ $(document).ready(function() {
     dots: true
   });
 
-  // Fixed header  
+  // Fixed header and correct position of sidenav and search field
   $(window).scroll(function() {
     var fixedScroll = $(window).scrollTop();    
     if (fixedScroll < 100) {
       $(".fixed-header").removeClass('fixed-enable');
       $(".sidenav").css("top", "0");
+      $(".search-field__toolip").css("top", "0");
     } else {
       $(".fixed-header").addClass('fixed-enable');
       $(".sidenav").css("top", "64px");
+      $(".search-field__toolip").css("top", "64px");
     }   
   });  
 });

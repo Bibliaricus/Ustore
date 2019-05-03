@@ -1370,6 +1370,16 @@ header a:hover {
 .fixed-header .search-field__popup-button:focus {
   color: #ffffff;
 }
+.fixed-header .search-field__button::after {
+  content: '';
+  width: 4rem;
+  position: absolute;
+  height: 1.5rem;
+  bottom: -40%;
+  left: 75%;
+  pointer-events: auto;
+  transform: translateX(-50%);
+}
 .fixed-header .shoping-cart-composite-icon::after {
   color: #ffffff;
 }
