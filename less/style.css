@@ -676,11 +676,13 @@ a[href^="tel"]:focus {
   text-decoration: none;
 }
 /* Composite icon to shoping cart */
-.header-bottom__icons-list .shoping-cart-composite-icon {
+.header-bottom__icons-list .shoping-cart-composite-icon,
+.fixed-header .shoping-cart-composite-icon {
   position: relative;
   font-size: 1.2rem;
 }
-.header-bottom__icons-list .shoping-cart-composite-icon::after {
+.header-bottom__icons-list .shoping-cart-composite-icon::after,
+.fixed-header .shoping-cart-composite-icon::after {
   content: attr(data-count);
   position: absolute;
   top: 50%;
@@ -693,7 +695,9 @@ a[href^="tel"]:focus {
   transition: .3s ease;
 }
 .header-bottom__icons-list .shoping-cart-composite-icon:hover::after,
-.header-bottom__icons-list .shoping-cart-composite-icon:focus::after {
+.fixed-header .shoping-cart-composite-icon:hover::after,
+.header-bottom__icons-list .shoping-cart-composite-icon:focus::after,
+.fixed-header .shoping-cart-composite-icon:focus::after {
   color: #ffffff;
 }
 /* The side navigation menu */
@@ -1351,6 +1355,7 @@ header a:hover {
   border: none;
   background-color: transparent;
   outline: none;
+  transition: .3s ease;
 }
 .fixed-header button:hover,
 .fixed-header button:focus {
@@ -1361,6 +1366,9 @@ header a:hover {
 }
 .fixed-header .search-field__popup-button:hover,
 .fixed-header .search-field__popup-button:focus {
+  color: #ffffff;
+}
+.fixed-header .shoping-cart-composite-icon::after {
   color: #ffffff;
 }
 .fixed-header.fixed-enable {

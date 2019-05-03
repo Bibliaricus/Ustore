@@ -57,7 +57,7 @@
         </div>
       </nav>
       <div class="fixed-header__icons">
-        <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list" data-count="5"></button>
+        <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></button>
         <button class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3"></button>
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
           <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
@@ -68,7 +68,7 @@
           </datalist>          
           <button class="search-field__popup-button icon-font-search" type="submit"></button>
         </form>
-        <button class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon mx-3" onclick="openNav2()" title="Open shopping cart"></button>
+        <button class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon mx-3" onclick="openNav2()" title="Open shopping cart" data-count="5"></button>
       </div>
     </div>
     <div class="header-top row">
@@ -152,7 +152,7 @@
         </div>
       </nav>
       <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-6 col-lg-2">                
-        <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list" data-count="5"></a>
+        <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></a>
         <div class="vish-list sidenav" id="vish-list-off-canvas">
           <div class="vish-list__header">
             <span class="vish-list__title">Wishlist</span>
@@ -188,7 +188,7 @@
           </datalist>          
           <button class="search-field__popup-button icon-font-search" type="submit"></button>
         </form>
-        <a href="#" class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon ml-3" onclick="openNav2()" title="Open shopping cart"></a>
+        <a href="#" class="header-bottom__icon-item icon-font-bag shoping-cart-composite-icon ml-3" onclick="openNav2()" title="Open shopping cart" data-count="5"></a>
         <div class="shoping-cart sidenav" id="shoping-cart-off-canvas">          
           <div class="shopping-cart__item-list">
             <div class="shopping-cart__item">

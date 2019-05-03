@@ -784,7 +784,8 @@ Version: 1.0
   }  
 
   /* Composite icon to shoping cart */
-  .header-bottom__icons-list .shoping-cart-composite-icon {
+  .header-bottom__icons-list .shoping-cart-composite-icon,
+  .fixed-header .shoping-cart-composite-icon {
     position: relative;
     font-size: 1.2rem;
     &::after {
@@ -1463,6 +1464,7 @@ Version: 1.0
         border: none;
         background-color: transparent;
         outline: none;
+        transition: .3s ease;
         &:hover, &:focus {
           color: @main-red;
         }        
@@ -1470,6 +1472,11 @@ Version: 1.0
       .search-field__popup-button {
         background-color: @main-red;
         &:hover, &:focus {
+          color: #ffffff;
+        }
+      }
+      .shoping-cart-composite-icon {        
+        &::after {
           color: #ffffff;
         }
       }
