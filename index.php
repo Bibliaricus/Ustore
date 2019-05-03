@@ -32,7 +32,7 @@
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
       </a> 
-      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-12 col-lg-8">        
+      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-lg-10">        
         <div class="collapse navbar-collapse" id="header-responsive-menu">
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
@@ -56,7 +56,7 @@
           </ul>            
         </div>
       </nav>
-      <div class="fixed-header__icons">
+      <div class="fixed-header__icons col-lg-2">
         <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></button>
         <button class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3"></button>
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">

@@ -1294,11 +1294,13 @@ header a:hover {
   margin: 0.1rem 0;
   background-color: #222222;
 }
-.header__top .mobile-menu-humburger {
+.header__top .mobile-menu-humburger,
+.fixed-header .mobile-menu-humburger {
   display: none;
 }
 @media only screen and (max-width: 991.98px) {
-  .header__top .mobile-menu-humburger {
+  .header__top .mobile-menu-humburger,
+  .fixed-header .mobile-menu-humburger {
     display: flex;
   }
 }
