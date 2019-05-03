@@ -32,7 +32,7 @@
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
       </a> 
-      <nav class="header-top__navbar navbar navbar-expand-xl navbar-light col-lg-10">        
+      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">        
         <div class="collapse navbar-collapse" id="header-responsive-menu">
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
