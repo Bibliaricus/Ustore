@@ -2204,8 +2204,24 @@ footer h4 {
   .complete-look {
     margin-bottom: 1rem;
   }
+  .complete-look__prod-item {
+    margin-left: 0;
+    background-clip: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
   .pre-footer {
-    padding: 3rem 0;
+    padding: 3rem 0 0;
+  }
+  .pre-footer .subscribe__title {
+    margin-bottom: 1rem;
+  }
+  .pre-footer .subscribe__description {
+    margin-bottom: 0.5rem;
+  }
+  .pre-footer form {
+    margin-bottom: 0.5rem;
   }
   footer {
     padding: 4rem 0 0;

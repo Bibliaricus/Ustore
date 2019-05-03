@@ -2352,10 +2352,26 @@ Version: 1.0
 
     .complete-look {
       margin-bottom: 1rem;
+      &__prod-item {
+        margin-left: 0;
+        background-clip: content-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
     }
 
     .pre-footer {
-      padding: 3rem 0;
+      padding: 3rem 0 0;
+      .subscribe__title {
+        margin-bottom: 1rem;
+      }
+      .subscribe__description {
+        margin-bottom: 0.5rem;
+      }
+      form {
+        margin-bottom: 0.5rem;
+      }
     }
 
     footer {

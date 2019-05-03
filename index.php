@@ -814,7 +814,7 @@
     <h2 class="section-title">Complete the look</h2>
     <p class="section-description">Dolor sit amet, consectetur adipiscing elit, sed do eiusmo dadipiscing elit, adipiscing elit, sed do eiusmod sed do eiusmod lorem ipsun dolore magna aliqua.</p>
     <div class="complete-look__content">
-      <div class="complete-look__carousel">
+      <div class="complete-look__carousel col-lg-4">
         <div class="complete-look__slide product__item">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/bottom_side_banner.jpg" alt="Image of product in top interesting section"></a>
@@ -916,8 +916,8 @@
           </div>
         </div>
       </div>
-      <div class="complete-look__products">
-        <div class="complete-look__prod-item product__item">
+      <div class="complete-look__products col-lg-7 row">
+        <div class="complete-look__prod-item product__item col-lg-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-1n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -935,7 +935,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item">
+        <div class="complete-look__prod-item product__item col-lg-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-2n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -953,7 +953,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item">
+        <div class="complete-look__prod-item product__item col-lg-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-3n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -971,7 +971,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item">
+        <div class="complete-look__prod-item product__item col-lg-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-4n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -995,7 +995,7 @@
   <div class="pre-footer">
     <div class="container">
       <div class="row">
-        <div class="pre-footer__featured-products col-3">
+        <div class="pre-footer__featured-products col-lg-4 col-xl-3">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
@@ -1036,7 +1036,7 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__featured-products col-3">
+        <div class="pre-footer__featured-products col-lg-4 col-xl-3">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
@@ -1077,7 +1077,7 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__featured-products col-3">
+        <div class="pre-footer__featured-products col-lg-4 col-xl-3">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
@@ -1118,7 +1118,7 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__subscribe col-3">
+        <div class="pre-footer__subscribe col-lg-12 col-xl-3">
           <h4 class="subscribe__title">Join Xstore newsletter</h4>
           <p class="subscribe__description">You can be always up to date with our company news!</p>
           <form action="#">
