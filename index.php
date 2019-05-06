@@ -129,7 +129,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="header-responsive-menu">
-          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
+          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">            
             <li class="nav-item mr-4 active">
               <a class="nav-link" href="#">Home Page</a>
             </li>
@@ -148,6 +148,17 @@
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
+            <li class="nav-item mx-4">
+              <a class="nav-link" href="#">Sign in or create an account</a>
+            </li>
+            <ul class="navbar__social">
+              <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
+              <li><a href="#" class="icon-font-twitter-brands"></a></li>
+              <li><a href="#" class="icon-font-google-plus-logo"></a></li>
+              <li><a href="#" class="icon-font-linkedin2"></a></li>
+              <li><a href="#" class="icon-font-instagram"></a></li>
+            </ul>
+            <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
           </ul>            
         </div>
       </nav>
