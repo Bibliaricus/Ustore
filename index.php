@@ -27,13 +27,13 @@
   <div class="test"></div>
   <header class="container-fluid page-header">
     <div class="fixed-header">
-      <a href="#mobile-menu" class="mobile-menu-humburger">
+      <a href="#fixed-header-menu" class="mobile-menu-humburger">
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
       </a> 
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">        
-        <div class="collapse navbar-collapse" id="header-responsive-menu">
+        <div class="collapse navbar-collapse" id="fixed-header-menu">
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
               <a class="nav-link" href="#">Home Page</a>
@@ -125,11 +125,11 @@
         <img src="img/header-logo2.png" alt="Header logo">
       </a>
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-md-4 col-lg-12 col-xl-8 order-first order-lg-1 order-xl-0">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-responsive-menu" aria-controls="header-responsive-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-header-menu" aria-controls="mobile-header-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="header-responsive-menu">
-          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">            
+          <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-4 active">
               <a class="nav-link" href="#">Home Page</a>
             </li>
@@ -148,18 +148,41 @@
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
-            <li class="nav-item mx-4">
+          </ul>
+        </div>
+        <div class="mobile-header-menu collapse" id="mobile-header-menu">
+          <a href="#" class="closebtn">&times;</a>
+          <ul class="mobile-nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ecommerce</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">Sign in or create an account</a>
             </li>
-            <ul class="navbar__social">
-              <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
-              <li><a href="#" class="icon-font-twitter-brands"></a></li>
-              <li><a href="#" class="icon-font-google-plus-logo"></a></li>
-              <li><a href="#" class="icon-font-linkedin2"></a></li>
-              <li><a href="#" class="icon-font-instagram"></a></li>
-            </ul>
-            <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
-          </ul>            
+          </ul>
+          <ul class="mobile-top__social">
+            <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
+            <li><a href="#" class="icon-font-twitter-brands"></a></li>
+            <li><a href="#" class="icon-font-google-plus-logo"></a></li>
+            <li><a href="#" class="icon-font-linkedin2"></a></li>
+            <li><a href="#" class="icon-font-instagram"></a></li>
+          </ul>
+          <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
         </div>
       </nav>
       <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-md-4 col-lg-6 col-xl-2">                
