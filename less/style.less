@@ -832,11 +832,12 @@ Version: 1.0
     font-size: 36px;
     margin-left: 50px;
     z-index: 1;
+    color: initial;
   }  
 
   .sidenav .closebtn:hover,
   .sidenav .closebtn:focus {
-    color: var(--main-blue);
+    color: @main-red;
   }
 
   .off-canvas-open {
@@ -2422,6 +2423,10 @@ Version: 1.0
 
     .header-top__navbar .navbar-toggler {
       border: 2px solid rgba(0,0,0,0.5);
+    }
+
+    .off-canvas-open {
+      max-width: 45vw;
     }
   }
 
