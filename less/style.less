@@ -1310,13 +1310,17 @@ Version: 1.0
 
   /* Mobile menu */
   
-  .mobile-header-menu {
+  .mobile-header-menu,
+  .fixed-mobile-header-menu {
     position: fixed;
     top: 0;
     left: 0;
+    width: 50vw;
     padding: 2rem 2rem;
     color: initial;
     background-color: #fff;
+    border: 1px solid #a4a4a4;
+    z-index: 999;
     .mobile-nav.navbar-nav .nav-item .nav-link {
       color: initial;
     }

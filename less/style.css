@@ -1203,28 +1203,36 @@ a[href^="tel"]:focus {
   box-shadow: -1px 0 0 5px #000000;
 }
 /* Mobile menu */
-.mobile-header-menu {
+.mobile-header-menu,
+.fixed-mobile-header-menu {
   position: fixed;
   top: 0;
   left: 0;
+  width: 50vw;
   padding: 2rem 2rem;
   color: initial;
   background-color: #fff;
+  border: 1px solid #a4a4a4;
+  z-index: 999;
 }
-.mobile-header-menu .mobile-nav.navbar-nav .nav-item .nav-link {
+.mobile-header-menu .mobile-nav.navbar-nav .nav-item .nav-link,
+.fixed-mobile-header-menu .mobile-nav.navbar-nav .nav-item .nav-link {
   color: initial;
 }
-.mobile-header-menu .mobile-top__social {
+.mobile-header-menu .mobile-top__social,
+.fixed-mobile-header-menu .mobile-top__social {
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
   padding: 0;
   list-style: none;
 }
-.mobile-header-menu .mobile-top__social a {
+.mobile-header-menu .mobile-top__social a,
+.fixed-mobile-header-menu .mobile-top__social a {
   margin: 0 0.5rem 0;
 }
-.mobile-header-menu .closebtn {
+.mobile-header-menu .closebtn,
+.fixed-mobile-header-menu .closebtn {
   font-size: 2rem;
   position: absolute;
   top: 10px;

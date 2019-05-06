@@ -27,13 +27,13 @@
   <div class="test"></div>
   <header class="container-fluid page-header">
     <div class="fixed-header">
-      <a href="#fixed-header-menu" class="mobile-menu-humburger" data-toggle="collapse">
+      <a href="#fixed-mobile-header-menu" class="mobile-menu-humburger" data-toggle="collapse">
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
       </a> 
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">        
-        <div class="collapse navbar-collapse" id="fixed-header-menu">
+        <div class="fixed-mobile-header-menu collapse navbar-collapse" id="fixed-header-menu">          
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
               <a class="nav-link" href="#">Home Page</a>
@@ -51,6 +51,29 @@
               <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="fixed-mobile-header-menu collapse navbar-collapse" id="fixed-mobile-header-menu">
+          <span class="closebtn">&times;</span>
+          <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ecommerce</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
           </ul>            
@@ -151,7 +174,7 @@
           </ul>
         </div>
         <div class="mobile-header-menu collapse" id="mobile-header-menu">
-          <a href="#" class="closebtn">&times;</a>
+          <span href="#" class="closebtn">&times;</span>
           <ul class="mobile-nav navbar-nav">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home Page</a>
