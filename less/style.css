@@ -894,7 +894,7 @@ a[href^="tel"]:focus {
   color: #ffffff;
   font-size: 0.875rem;
   border-radius: 50%;
-  transform: translate(-15%, -15%);
+  transform: translate(-10%, -10%);
   z-index: 1;
 }
 .product__item--out .product__image-container::before {
@@ -2292,6 +2292,18 @@ footer h4 {
   }
   .main-banner__slide .banner__description {
     width: 65%;
+  }
+  .second-banners__list .second-banners__item:nth-child(1) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .second-banners__list .second-banners__item:nth-child(2) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .second-banners__list .second-banners__item:nth-child(3) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
