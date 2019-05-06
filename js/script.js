@@ -159,15 +159,16 @@ $(document).ready(function() {
 
   // Fixed header and correct position of sidenav and search field
   $(window).scroll(function() {
-    var fixedScroll = $(window).scrollTop();    
+    var fixedScroll = $(window).scrollTop();
+    var elementHeight = $(".fixed-header").outerHeight();
     if (fixedScroll < 100) {
       $(".fixed-header").removeClass('fixed-enable');
       $(".sidenav").css("top", "0");
       $(".search-field__toolip").css("top", "0");
     } else {
       $(".fixed-header").addClass('fixed-enable');
-      $(".sidenav").css("top", "64px");
-      $(".search-field__toolip").css("top", "64px");
+      $(".sidenav").css("top", elementHeight);
+      $(".search-field__toolip").css("top", elementHeight);
     }
   });
 
