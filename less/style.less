@@ -2224,16 +2224,12 @@ Version: 1.0
         &__text {
           margin-left: 1rem;
           time, span {
+            display: block;
             font-size: 0.75rem;
-            font-weight: 300;
+            font-weight: 300;            
             &::before {
               font-size: 9px;
               margin-right: 0.2rem;
-            }
-          }
-          span {
-            &::before {
-              margin-left: 0.5rem;
             }
           }
         }
@@ -2242,6 +2238,8 @@ Version: 1.0
           letter-spacing: 0.0175rem;
           display: block;
           font-weight: 400;
+          margin-bottom: 0.5rem;
+          line-height: 1;
           &:hover, &:focus {
             color: #ffffff;
             text-decoration: underline;

@@ -2083,6 +2083,7 @@ footer h4 {
 }
 .footer__posts .posts__text time,
 .footer__posts .posts__text span {
+  display: block;
   font-size: 0.75rem;
   font-weight: 300;
 }
@@ -2091,14 +2092,13 @@ footer h4 {
   font-size: 9px;
   margin-right: 0.2rem;
 }
-.footer__posts .posts__text span::before {
-  margin-left: 0.5rem;
-}
 .footer__posts .posts__title {
   font-size: 0.875rem;
   letter-spacing: 0.0175rem;
   display: block;
   font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 .footer__posts .posts__title:hover,
 .footer__posts .posts__title:focus {
