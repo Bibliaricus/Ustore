@@ -121,10 +121,10 @@
       </div>      
     </div>
     <div class="header-bottom row justify-content-between align-items-center px-4">
-      <a href="#" class="header-bottom__logo navbar-brand col-lg-6 col-xl-2" tabindex="-1">        
+      <a href="#" class="header-bottom__logo navbar-brand col-md-auto col-lg-6 col-xl-2" tabindex="-1">        
         <img src="img/header-logo2.png" alt="Header logo">
       </a>
-      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-12 col-xl-8 order-lg-1 order-xl-0">
+      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-md-4 col-lg-12 col-xl-8 order-first order-lg-1 order-xl-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-responsive-menu" aria-controls="header-responsive-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -151,7 +151,7 @@
           </ul>            
         </div>
       </nav>
-      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-lg-6 col-xl-2">                
+      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-md-4 col-lg-6 col-xl-2">                
         <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></a>
         <div class="vish-list sidenav" id="vish-list-off-canvas">
           <div class="vish-list__header">
