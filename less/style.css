@@ -2283,6 +2283,16 @@ footer h4 {
   .off-canvas-open {
     max-width: 45vw;
   }
+  .main-banner__slide .banner__category {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .main-banner__slide .banner__title {
+    margin-bottom: 1.5rem;
+  }
+  .main-banner__slide .banner__description {
+    width: 65%;
+  }
 }
 @media only screen and (max-width: 767.98px) {
   .test:after {
