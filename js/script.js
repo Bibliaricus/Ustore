@@ -168,6 +168,12 @@ $(document).ready(function() {
       $(".fixed-header").addClass('fixed-enable');
       $(".sidenav").css("top", "64px");
       $(".search-field__toolip").css("top", "64px");
-    }   
-  });  
+    }
+  });
+
+  // Close button for mobile-header-menu
+  $('.closebtn').on('click', function() {
+    var parent = $(this).parent();
+    $(parent).removeClass('show');
+  });
 });
