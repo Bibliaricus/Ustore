@@ -27,7 +27,7 @@
   <div class="test"></div>
   <header class="container-fluid page-header">
     <div class="fixed-header">
-      <a href="#fixed-header-menu" class="mobile-menu-humburger">
+      <a href="#fixed-header-menu" class="mobile-menu-humburger" data-toggle="collapse">
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
@@ -56,7 +56,7 @@
           </ul>            
         </div>
       </nav>
-      <div class="fixed-header__icons col-lg-2">
+      <div class="fixed-header__icons">
         <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></button>
         <button class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3"></button>
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
