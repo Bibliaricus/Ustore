@@ -33,7 +33,7 @@
         <span class="mobile-menu-humburger__part"></span>
       </a> 
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">        
-        <div class="fixed-mobile-header-menu collapse navbar-collapse" id="fixed-header-menu">          
+        <div class="fixed-header-menu collapse navbar-collapse" id="fixed-header-menu">          
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
               <a class="nav-link" href="#">Home Page</a>
@@ -55,7 +55,7 @@
             </li>
           </ul>
         </div>
-        <div class="fixed-mobile-header-menu collapse navbar-collapse" id="fixed-mobile-header-menu">
+        <div class="fixed-mobile-header-menu collapse" id="fixed-mobile-header-menu">
           <span class="closebtn">&times;</span>
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item active">
@@ -205,7 +205,7 @@
             <li><a href="#" class="icon-font-linkedin2"></a></li>
             <li><a href="#" class="icon-font-instagram"></a></li>
           </ul>
-          <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
+          <div class="header-top__number-line text-center">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
         </div>
       </nav>
       <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-md-4 col-lg-6 col-xl-2">                
