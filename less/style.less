@@ -1159,12 +1159,25 @@ Version: 1.0
 
   // New quick view popup
 
+  
   @media (min-width: 576px) {
     .modal-dialog {
       max-width: 50vw;
     }
   }
+  
+  @media (max-width: 1199.98px) {
+    .modal-dialog {
+      max-width: 70vw;
+    }
+  }
 
+  @media (max-width: 991.98px) {
+    .modal-dialog {
+      max-width: 80vw;
+    }
+  }
+  
   .q-view-popup-new {
     flex-direction: row;
     align-items: stretch;
@@ -1220,8 +1233,10 @@ Version: 1.0
       user-select: none;
       display: flex;
       width: 50%;
+      text-align: center;
       .quantity__minus,
       .quantity__plus {
+        width: 33%;
         padding: 0.2rem 1rem;
         border: 1px solid #e1e1e1;;
         cursor: pointer;
@@ -1233,7 +1248,7 @@ Version: 1.0
         appearance: none;
       }
       .quantity__number-input {
-        width: 3.5rem;
+        width: 33%;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         text-align: center;
@@ -1289,6 +1304,17 @@ Version: 1.0
         &:hover, &:focus {
           color: @main-red;
         }
+      }
+    }
+    @media screen and (max-width: 991.98px) {
+      &__information select {
+        width: 70%;
+      }
+      &__quantity {
+        width: 70%;
+      }
+      &__btn {
+        width: 70%;
       }
     }
   }  

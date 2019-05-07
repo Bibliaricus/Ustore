@@ -1059,6 +1059,16 @@ a[href^="tel"]:focus {
     max-width: 50vw;
   }
 }
+@media (max-width: 1199.98px) {
+  .modal-dialog {
+    max-width: 70vw;
+  }
+}
+@media (max-width: 991.98px) {
+  .modal-dialog {
+    max-width: 80vw;
+  }
+}
 .q-view-popup-new {
   flex-direction: row;
   align-items: stretch;
@@ -1117,9 +1127,11 @@ a[href^="tel"]:focus {
   user-select: none;
   display: flex;
   width: 50%;
+  text-align: center;
 }
 .q-view-popup-new__quantity .quantity__minus,
 .q-view-popup-new__quantity .quantity__plus {
+  width: 33%;
   padding: 0.2rem 1rem;
   border: 1px solid #e1e1e1;
   cursor: pointer;
@@ -1131,7 +1143,7 @@ a[href^="tel"]:focus {
   appearance: none;
 }
 .q-view-popup-new__quantity .quantity__number-input {
-  width: 3.5rem;
+  width: 33%;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   text-align: center;
@@ -1189,6 +1201,17 @@ a[href^="tel"]:focus {
 .q-view-popup-new__social-list a:hover,
 .q-view-popup-new__social-list a:focus {
   color: #e74948;
+}
+@media screen and (max-width: 991.98px) {
+  .q-view-popup-new__information select {
+    width: 70%;
+  }
+  .q-view-popup-new__quantity {
+    width: 70%;
+  }
+  .q-view-popup-new__btn {
+    width: 70%;
+  }
 }
 /* Arrows in quick popup slider */
 .q-view__arrow {
