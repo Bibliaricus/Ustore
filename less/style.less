@@ -2032,7 +2032,6 @@ Version: 1.0
     }
     &__carousel {
       display: inline-block;
-      max-width: 430px;
       width: 100%;
       .slick-list.draggable {
         padding: 0;
@@ -2063,7 +2062,7 @@ Version: 1.0
         }
       }
       .hover-buttons__list {
-        top: 30%;      
+        top: 30%;
       }
       .hover-buttons__item:hover, 
       .hover-buttons__list:focus-within, 
@@ -2344,6 +2343,9 @@ Version: 1.0
 
   @media only screen and (min-width: 1200px){
     .test:after  { content: '@media (min-width: 1200px [col-xl]) >>>';} 
+    .complete-look__carousel {
+      max-width: 430px;
+    }
 
   }
 
@@ -2460,6 +2462,43 @@ Version: 1.0
           padding-left: 1rem;
           padding-right: 1rem;
         }
+      }
+    }
+
+    .complete-look {
+      &__content {
+        align-items: flex-start;
+      }
+      &__slide {        
+        .hover-buttons__list {
+          top: auto;
+        }
+        .product__description {
+          bottom: 10%;
+          padding: 1rem 0;
+        }
+      }
+      &__products {
+        .hover-buttons__list {
+          bottom: -100%;
+          transform: translateY(-100%);
+        }
+      }
+    }
+
+    .complete-look__slide .hover-buttons__item:hover, 
+    .complete-look__slide .hover-buttons__list:focus-within, 
+    .complete-look__slide .hover-buttons__list:hover, 
+    .complete-look__slide.product__image-container:hover .hover-buttons__list, 
+    .complete-look__slide.product__item:hover .hover-buttons__list {
+      top: auto;
+    }
+
+    .product__item {
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+      .product__description {
+        padding-bottom: 2rem;
       }
     }
   }

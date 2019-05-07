@@ -871,7 +871,7 @@
     <h2 class="section-title">Complete the look</h2>
     <p class="section-description">Dolor sit amet, consectetur adipiscing elit, sed do eiusmo dadipiscing elit, adipiscing elit, sed do eiusmod sed do eiusmod lorem ipsun dolore magna aliqua.</p>
     <div class="complete-look__content">
-      <div class="complete-look__carousel col-lg-4">
+      <div class="complete-look__carousel col-md-5 col-lg-4">
         <div class="complete-look__slide product__item">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/bottom_side_banner.jpg" alt="Image of product in top interesting section"></a>
@@ -973,8 +973,8 @@
           </div>
         </div>
       </div>
-      <div class="complete-look__products col-lg-7 row">
-        <div class="complete-look__prod-item product__item col-lg-6">
+      <div class="complete-look__products col-md-7 col-lg-8 row">
+        <div class="complete-look__prod-item product__item col-md-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-1n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -992,7 +992,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-lg-6">
+        <div class="complete-look__prod-item product__item col-md-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-2n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -1010,7 +1010,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-lg-6">
+        <div class="complete-look__prod-item product__item col-md-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-3n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -1028,7 +1028,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-lg-6">
+        <div class="complete-look__prod-item product__item col-md-6">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-4n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
