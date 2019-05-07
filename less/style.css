@@ -2377,6 +2377,18 @@ footer h4 {
   .subscribe-popup .modal-content {
     max-width: 80vw;
   }
+  .complete-look__products {
+    padding: 0;
+    margin: 0;
+  }
+  .complete-look__products .hover-buttons__list {
+    bottom: -50%;
+    transform: translateY(0%);
+  }
+  .complete-look__slide img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media only screen and (max-width: 575.98px) {
   .test:after {
