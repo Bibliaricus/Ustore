@@ -1335,8 +1335,8 @@
             <span class="quantity__minus">-</span>
             <input type="number" class="quantity__number-input" min="1" step="1" value="1">
             <span class="quantity__plus">+</span>
-            <button class="q-view-popup-new__btn">Add to cart</button>
           </div>
+          <button class="q-view-popup-new__btn">Add to cart</button>
           <hr>
           <div class="q-view-popup-new__socails">
             <span>Share social</span>

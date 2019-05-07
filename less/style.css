@@ -1116,7 +1116,7 @@ a[href^="tel"]:focus {
 .q-view-popup-new__quantity {
   user-select: none;
   display: flex;
-  flex-wrap: wrap;
+  width: 50%;
 }
 .q-view-popup-new__quantity .quantity__minus,
 .q-view-popup-new__quantity .quantity__plus {
@@ -1142,8 +1142,9 @@ a[href^="tel"]:focus {
 }
 .q-view-popup-new__btn {
   margin-top: 1.3rem;
-  display: inline-block;
-  padding: 1em 2.7em 0.8em 2.5em;
+  display: block;
+  padding: 1em 1.5em 0.8em 1.5em;
+  width: 50%;
   font-size: 0.75rem;
   background-color: #000000;
   color: #ffffff;
