@@ -2422,6 +2422,22 @@ footer h4 {
   .second-banners__list .second-banners__item {
     height: 100vh;
   }
+  .q-view-popup-new {
+    text-align: center;
+  }
+  .q-view-popup-new__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .q-view-popup-new__information {
+    padding: 3rem 2rem 3rem 2rem;
+  }
+  .q-view-popup-new .close {
+    top: 1%;
+    right: 5%;
+    z-index: 2;
+    font-size: 3rem;
+  }
   .complete-look__products {
     padding: 0;
     margin: 0;

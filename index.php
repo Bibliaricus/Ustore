@@ -1294,7 +1294,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>        
-        <div class="q-view-popup-new__image-slider carousel slide col-sm-6" id="q-view-slider" data-ride="carousel">          
+        <div class="q-view-popup-new__image-slider carousel slide col-sm-12 col-md-6" id="q-view-slider" data-ride="carousel">          
           <div class="carousel-inner">
             <div class="q-view-popup-new carousel-item active">
               <img src="img/quick_view_poppup.jpg" alt="Name or description of product in popup">
@@ -1312,7 +1312,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <div class="q-view-popup-new__information col-sm-6">
+        <div class="q-view-popup-new__information col-sm-12 col-md-6">
           <h3 class="q-view-popup-new__title"><a href="#">Fashion demo new</a></h3>
           <p class="q-view-popup-new__description">Dress by SOAKED IN LUXURY. Long sleeves and rounded neckline. Mesh at neckline and on sleeves. Bodycon fit. Concealed zipper and button fastening to reverse. Thin lining.</p>
           <span class="q-view-popup-new__input-label">Size:</span>
