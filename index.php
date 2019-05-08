@@ -824,7 +824,7 @@
     <h2 class="section-title">Product categories</h2>
     <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem solo tempor incididunt ut labore et dolore magna aliqua.</p>
     <div class="product-categories__list row">
-      <a href="#" class="product-categories__item col-sm-6 col-3">
+      <a href="#" class="product-categories__item col-6 col-3">
         <div class="product-categories__img-wrapper">
           <img src="img/product_categories-1.jpg" alt="Dresses category">
         </div>
@@ -834,7 +834,7 @@
           <span href="#" class="prod-count">(25 products)</span>
         </div>
       </a>
-      <a href="#" class="product-categories__item col-sm-6 col-3">
+      <a href="#" class="product-categories__item col-6 col-3">
         <div class="product-categories__img-wrapper">
           <img src="img/product_categories-2.jpg" alt="Dresses category">
         </div>
@@ -844,7 +844,7 @@
           <span href="#" class="prod-count">(25 products)</span>
         </div>
       </a>
-      <a href="#" class="product-categories__item col-sm-6 col-3">
+      <a href="#" class="product-categories__item col-6 col-3">
         <div class="product-categories__img-wrapper">
           <img src="img/product_categories-3.jpg" alt="Dresses category">
         </div>
@@ -854,7 +854,7 @@
           <span href="#" class="prod-count">(25 products)</span>
         </div>
       </a>
-      <a href="#" class="product-categories__item col-sm-6 col-3">
+      <a href="#" class="product-categories__item col-6 col-3">
         <div class="product-categories__img-wrapper">
           <img src="img/product_categories-4.jpg" alt="Dresses category">
         </div>

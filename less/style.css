@@ -2491,6 +2491,9 @@ footer h4 {
   footer .container {
     padding: 0 15px;
   }
+  .section-title {
+    font-size: 2rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
