@@ -35,23 +35,19 @@
 	.copyright {
 		width: 100%;
 	}
-	@media (min-width: 400px) {
-		.widget .profile {
-			display:none;
-		}
+	.widget .profile {
+		display:none;
 	}
+
 	<?php if($inWidget->inline > 4): ?>
-		@media (max-width: 400px) {
-			<?= setImageSize(4) ?>
+		@media (max-width: 767.98px) {
+			<?= setImageSize(3) ?>
 		}	
-	<?php endif;?>
-	@media (max-width: 230px) {
-		<?= setImageSize(3) ?>
-	}
-	@media (max-width: 180px) {
+	<?php endif;?>	
+	@media (max-width: 480px) {
 		<?= setImageSize(2) ?>
 	}
-	@media (max-width: 90px) {
+	@media (max-width: 400px) {
 		<?= setImageSize(1) ?>
 	}
 </style>
