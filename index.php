@@ -974,7 +974,7 @@
         </div>
       </div>
       <div class="complete-look__products col-12 col-md-7 col-lg-8 row">
-        <div class="complete-look__prod-item product__item col-sm-6">
+        <div class="complete-look__prod-item product__item col-sm-6 col-md-3">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-1n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -992,7 +992,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-sm-6">
+        <div class="complete-look__prod-item product__item col-sm-6 col-md-3">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-2n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -1010,7 +1010,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-sm-6">
+        <div class="complete-look__prod-item product__item col-sm-6 col-md-3">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-3n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
@@ -1028,7 +1028,7 @@
             </div>
           </div>
         </div>
-        <div class="complete-look__prod-item product__item col-sm-6">
+        <div class="complete-look__prod-item product__item col-sm-6 col-md-3">
           <div class="top-interes__images product__image-container">
             <a href="#"><img src="img/complate_look-4n.jpg" alt="Image of product in top interesting section"></a>
             <div class="hover-buttons__list">
