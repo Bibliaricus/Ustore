@@ -1190,7 +1190,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="footer__contacts col-md-6 col-lg-3">
+        <div class="footer__contacts col-sm-6 col-lg-3">
           <img src="img/footer-logo.png" alt="Footer logo" class="footer__logo">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem.</p>
           <span>48 Park Avenue,</span>
@@ -1199,7 +1199,7 @@
           <span>Email: <a href="mailto:youremail@site.com" class="contact-link">youremail@site.com</a></span>
           <span>Phone: <a href="tel:+14089961010" class="contact-link">+1 408 996 1010</a></span></span>
         </div>
-        <div class="footer__links col-md-6 col-lg-3 order-md-1 order-lg-0">
+        <div class="footer__links col-sm-6 col-lg-3 order-md-1 order-lg-0">
           <h4>Useful Links</h4>
           <div class="footer__links-cont">
             <ul>
@@ -1222,7 +1222,7 @@
             </ul>
           </div>
         </div>
-        <div class="footer__posts col-md-6 col-lg-3">
+        <div class="footer__posts col-sm-6 col-lg-3">
           <h4>Latest posts</h4>
           <ul>
             <li>
@@ -1251,7 +1251,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer__tags col-md-6 col-lg-3 order-md-1 order-lg-0">
+        <div class="footer__tags col-sm-6 col-lg-3 order-md-1 order-lg-0">
           <h4>Product tags</h4>
           <a href="#">Illegal</a>
           <a href="#">Accesories</a>
