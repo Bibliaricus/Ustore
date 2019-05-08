@@ -2486,6 +2486,11 @@ footer h4 {
   .mobile-header-menu {
     width: 70vw;
   }
+  .product-categories,
+  .complete-look,
+  footer .container {
+    padding: 0 15px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
