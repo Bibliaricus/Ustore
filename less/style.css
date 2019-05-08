@@ -369,6 +369,11 @@ footer h4,
   to {
     background-position: 150% bottom;
   }
+  @media screen and (max-width: 767.98px) {
+    to {
+      background-position: 200% bottom;
+    }
+  }
 }
 /* 3. Tags settings */
 img {
@@ -2329,6 +2334,9 @@ footer h4 {
   .main-banner__slide .banner__description {
     width: 65%;
   }
+  .main-banner .mousehover {
+    display: none;
+  }
   .second-banners__list .second-banners__item:nth-child(1) {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -2376,6 +2384,38 @@ footer h4 {
   }
   .subscribe-popup .modal-content {
     max-width: 80vw;
+  }
+  .header-top__navbar .navbar-toggler {
+    border-color: #b99292;
+  }
+  .header-top__navbar .navbar-toggler span {
+    filter: invert(100%);
+  }
+  .main-banner .slide4 .banner__category,
+  .main-banner .slide4 .banner__description,
+  .main-banner .slide4 .banner__title {
+    margin-left: 0;
+  }
+  .main-banner .main-banner__arrow-wrapper:hover .main-banner-arrow-next,
+  .main-banner .main-banner__arrow-wrapper:hover .main-banner-arrow-prev {
+    color: inherit;
+  }
+  .main-banner .carousel-indicators li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .main-banner__slide::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .second-banners__list .second-banners__item {
+    height: 100vh;
   }
   .complete-look__products {
     padding: 0;

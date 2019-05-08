@@ -342,19 +342,19 @@
   </div>
   <div class="container-fluid">
     <div class="second-banners__list row">
-      <div class="second-banners__item col-4">
+      <div class="second-banners__item col-12 col-md-4">
         <a href="#" class="banner__category">ACCESSORIES</a>
         <a href="#" class="banner__title">Gateway Watch</a>
         <div class="banner__description">Door sit amet, consectetur adipiscing elit, sed do ore magna aliqua.</div>
         <button class="custom-btn">view more</button>
       </div>
-      <div class="second-banners__item col-4">
+      <div class="second-banners__item col-12 col-md-4">
         <a href="#" class="banner__category">Bags</a>
         <a href="#" class="banner__title">Beach bag</a>
         <div class="banner__description">Door sit amet, consectetur adipiscing elit, sed do ore magna aliqua.</div>
         <button class="custom-btn">View more</button>
       </div>
-      <div class="second-banners__item col-4">
+      <div class="second-banners__item col-12 col-md-4">
         <a href="#" class="banner__category">Sunglasses</a>
         <a href="#" class="banner__title">Cat sunglasses</a>
         <div class="banner__description">Door sit amet, consectetur adipiscing elit, sed do ore magna aliqua.</div>

@@ -411,7 +411,11 @@ Version: 1.0
 
     @keyframes main-banner_slide4 {
       from {background-position: 100vw bottom;}
-      to {background-position: 150% bottom;}
+      to {background-position: 150% bottom;
+      @media screen and (max-width: 767.98px) {
+        background-position: 200% bottom;
+        }
+      }
     }
 
 /* 3. Tags settings */
@@ -2485,6 +2489,10 @@ Version: 1.0
       }
     }
 
+    .main-banner .mousehover {
+      display: none;
+    }
+
     .second-banners__list {
       .second-banners__item {        
         &:nth-child(1) {
@@ -2545,6 +2553,54 @@ Version: 1.0
     .subscribe-popup .modal-content {
       max-width: 80vw;
     }
+
+    .header-top__navbar {
+      .navbar-toggler {
+        border-color: #b99292;
+        span {
+          filter: invert(100%)
+        }
+      }
+    }
+
+    .main-banner {
+      .slide4 {
+        .banner__category,
+        .banner__description,
+        .banner__title {
+          margin-left: 0;
+        }
+      } 
+      .main-banner__arrow-wrapper:hover {
+        .main-banner-arrow-next,
+        .main-banner-arrow-prev {
+          color: inherit;
+        }
+      }
+      .carousel-indicators li {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    .main-banner__slide {      
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+      }           
+    }
+
+    .second-banners__list {
+      .second-banners__item {
+        height: 100vh;
+      }      
+    } 
 
     .complete-look {
       &__products {
