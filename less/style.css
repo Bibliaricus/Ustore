@@ -2500,6 +2500,15 @@ footer h4 {
   .complete-look__products .hover-buttons__list {
     bottom: -60%;
   }
+  .copyright__authur {
+    margin-bottom: 0.5rem;
+  }
+  .copyright__payments {
+    text-align: left;
+  }
+  .copyright__payments span:nth-child(1) {
+    margin-left: 0;
+  }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
