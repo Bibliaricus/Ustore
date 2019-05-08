@@ -2494,6 +2494,9 @@ footer h4 {
   .section-title {
     font-size: 2rem;
   }
+  .complete-look__products .hover-buttons__list {
+    bottom: -60%;
+  }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
