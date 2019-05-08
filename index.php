@@ -144,10 +144,10 @@
       </div>      
     </div>
     <div class="header-bottom row justify-content-between align-items-center px-4">
-      <a href="#" class="header-bottom__logo navbar-brand col-sm-auto col-lg-6 col-xl-2" tabindex="-1">        
+      <a href="#" class="header-bottom__logo navbar-brand col-auto col-lg-6 col-xl-2" tabindex="-1">        
         <img src="img/header-logo2.png" alt="Header logo">
       </a>
-      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-sm-2 col-lg-12 col-xl-8 order-first order-lg-1 order-xl-0">
+      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-2 col-lg-12 col-xl-8 order-first order-lg-1 order-xl-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-header-menu" aria-controls="mobile-header-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -208,7 +208,7 @@
           <div class="header-top__number-line text-center">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
         </div>
       </nav>
-      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-sm-4 col-lg-6 col-xl-2">                
+      <div class="header-bottom__icons-list d-flex justify-content-end align-items-center col-4 col-lg-6 col-xl-2">                
         <a href="#" class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></a>
         <div class="vish-list sidenav" id="vish-list-off-canvas">
           <div class="vish-list__header">

@@ -2476,6 +2476,16 @@ footer h4 {
   .subscribe-popup .modal-content {
     max-width: 90vw;
   }
+  .header-bottom__logo {
+    display: none;
+  }
+  .off-canvas-open {
+    max-width: 75vw;
+  }
+  .fixed-mobile-header-menu,
+  .mobile-header-menu {
+    width: 70vw;
+  }
 }
 @media only screen and (max-width: 480px) {
   .test:after {
