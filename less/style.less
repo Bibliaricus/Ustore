@@ -411,10 +411,13 @@ Version: 1.0
 
     @keyframes main-banner_slide4 {
       from {background-position: 100vw bottom;}
-      to {background-position: 150% bottom;
-      @media screen and (max-width: 767.98px) {
-        background-position: 200% bottom;
-        }
+      to {background-position: 150% bottom;}
+    }
+
+    @media screen and (max-width: 767.98px) {
+      @keyframes main-banner_slide4 {
+        from {background-position: 100vw bottom;}
+        to {background-position: 200% bottom;}
       }
     }
 
