@@ -1052,7 +1052,7 @@
   <div class="pre-footer">
     <div class="container">
       <div class="row">
-        <div class="pre-footer__featured-products col-md-4 col-xl-3">
+        <div class="pre-footer__featured-products col-sm-6 col-md-4 col-xl-3">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
@@ -1093,7 +1093,7 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__featured-products col-md-4 col-xl-3">
+        <div class="pre-footer__featured-products col-sm-6 col-md-4 col-xl-3">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
@@ -1134,7 +1134,7 @@
             </li>
           </ul>
         </div>
-        <div class="pre-footer__featured-products col-md-4 col-xl-3">
+        <div class="pre-footer__featured-products col-sm-6 col-md-4 col-xl-3 mx-auto mx-md-0 my-sm-3 my-md-0">
           <h3 class="featured-products__column-title">Featured Products</h3>
           <ul class="featured-products__list">
             <li class="featured-products__item">
