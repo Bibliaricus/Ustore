@@ -2385,6 +2385,9 @@ footer h4 {
   .product__item .product__description {
     padding-bottom: 2rem;
   }
+  .section-description {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 767.98px) {
   .test:after {
