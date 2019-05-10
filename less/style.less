@@ -2752,6 +2752,10 @@ Version: 1.0
         width: 80%;
       }
     } 
+
+    .modal-dialog {
+      margin: .5rem auto;
+    }
   }
 
   @media only screen  and (max-width: 480px) {
@@ -2771,6 +2775,11 @@ Version: 1.0
         height: 100%;
         background-color: rgba(0,0,0,0.4);
       }
+    }
+
+    .modal.show .modal-dialog {
+      transform: translateX(15px);
+      max-width: 95vw;
     }
 
     .top-interes {
