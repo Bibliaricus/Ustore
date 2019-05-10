@@ -2652,4 +2652,14 @@ footer h4 {
   .slick-slide img {
     width: 100%;
   }
+  .product-categories__item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .product-categories__img-wrapper img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
