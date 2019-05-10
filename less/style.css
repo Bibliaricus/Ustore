@@ -2665,4 +2665,7 @@ footer h4 {
   .complete-look__products .hover-buttons__list {
     bottom: -44%;
   }
+  .section-title {
+    font-size: 1.75rem;
+  }
 }
