@@ -2545,6 +2545,19 @@ footer h4 {
   .main-banner .main-banner-arrow-prev {
     top: 55%;
   }
+  .complete-look__products .hover-buttons__list {
+    bottom: -35%;
+  }
+  .complete-look__products img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .complete-look__prod-item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 400px) {
   .test:after {
