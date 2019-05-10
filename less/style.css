@@ -2558,6 +2558,21 @@ footer h4 {
     flex: 0 0 100%;
     max-width: 100%;
   }
+  footer h4 {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  footer__contacts,
+  footer__links,
+  footer__posts,
+  footer__tags {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  footer__links-cont {
+    justify-content: center;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 400px) {
   .test:after {
@@ -2566,7 +2581,4 @@ footer h4 {
   .subscribe-popup .modal-content {
     background-position: 65%;
   }
-}
-.footer__links {
-  display: none;
 }

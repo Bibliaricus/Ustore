@@ -2783,6 +2783,24 @@ Version: 1.0
         max-width: 100%;
       }
     }
+
+    footer {
+      h4 {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      &__contacts,
+      &__links,
+      &__posts,
+      &__tags {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      &__links-cont {
+        justify-content: center;
+      }
+    }
   }
 
   @media only screen and (min-width: 320px) and (max-width: 400px) {
@@ -2790,8 +2808,4 @@ Version: 1.0
     .subscribe-popup .modal-content {
       background-position: 65%;
     }   
-  }
-
-  .footer__links {
-    display: none;
   }
