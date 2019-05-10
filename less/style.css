@@ -2585,4 +2585,21 @@ footer h4 {
   .subscribe-popup .modal-content {
     background-position: 65%;
   }
+  .header-top__navbar {
+    padding-left: 0;
+  }
+  .header-bottom__icons-list {
+    padding-right: 0;
+  }
+  .off-canvas-open {
+    max-width: 100vw;
+  }
+  .shopping-cart__total-quantity,
+  .shopping-cart__subtotal-price {
+    font-size: 0.9rem;
+  }
+  .fixed-mobile-header-menu,
+  .mobile-header-menu {
+    width: 95vw;
+  }
 }
