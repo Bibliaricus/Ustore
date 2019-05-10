@@ -2642,4 +2642,14 @@ footer h4 {
   .main-banner .slide4 {
     background-size: cover;
   }
+  .top-interes__wrapper .top-interes__tabs .nav-link {
+    font-size: 0.9rem;
+    padding: .5rem 0.5rem;
+  }
+  .top-interes__wrapper .top-interes__tabs .nav-link.active::after {
+    width: calc(84%);
+  }
+  .slick-slide img {
+    width: 100%;
+  }
 }
