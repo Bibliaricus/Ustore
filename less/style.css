@@ -380,6 +380,40 @@ footer h4,
     }
   }
 }
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+  @keyframes main-banner_slide1 {
+    from {
+      background-position: -50% bottom, 150% bottom, center -30rem;
+    }
+    to {
+      background-position: -100% bottom, 200% bottom, center top;
+    }
+  }
+  @keyframes main-banner_slide2 {
+    from {
+      background-position: -170% bottom, -210vh bottom, -100% bottom;
+    }
+    to {
+      background-position: 25vh bottom, -14vh bottom, 0 bottom;
+    }
+  }
+  @keyframes main-banner_slide3 {
+    from {
+      background-position: -150vh bottom, 200vh bottom;
+    }
+    to {
+      background-position: center bottom, center bottom;
+    }
+  }
+  @keyframes main-banner_slide4 {
+    from {
+      background-position: 100vw bottom;
+    }
+    to {
+      background-position: left bottom;
+    }
+  }
+}
 /* 3. Tags settings */
 img {
   max-width: 100%;
@@ -2601,5 +2635,11 @@ footer h4 {
   .fixed-mobile-header-menu,
   .mobile-header-menu {
     width: 95vw;
+  }
+  .main-banner .slide3 {
+    background-size: cover, cover;
+  }
+  .main-banner .slide4 {
+    background-size: cover;
   }
 }
