@@ -2562,15 +2562,15 @@ footer h4 {
     text-align: center;
     margin-top: 1.5rem;
   }
-  footer__contacts,
-  footer__links,
-  footer__posts,
-  footer__tags {
+  footer .footer__contacts,
+  footer .footer__links,
+  footer .footer__posts,
+  footer .footer__tags {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
   }
-  footer__links-cont {
+  footer .footer__links-cont {
     justify-content: center;
   }
   .modal-dialog.modal-dialog-centered {
