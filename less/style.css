@@ -386,7 +386,7 @@ footer h4,
       background-position: -50% bottom, 150% bottom, center -30rem;
     }
     to {
-      background-position: -100% bottom, 200% bottom, center top;
+      background-position: 200% bottom, -200% bottom, center top;
     }
   }
   @keyframes main-banner_slide2 {
@@ -2465,7 +2465,7 @@ footer h4 {
     background-color: rgba(0, 0, 0, 0.5);
   }
   .second-banners__list .second-banners__item {
-    height: 100vh;
+    height: 100vmin;
   }
   .q-view-popup-new {
     text-align: center;
