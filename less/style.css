@@ -2532,6 +2532,9 @@ footer h4 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
+  .top-interes .slick-arrow {
+    top: 30%;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 400px) {
   .test:after {
