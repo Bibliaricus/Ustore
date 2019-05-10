@@ -1606,7 +1606,7 @@ header a:hover {
   display: flex;
 }
 .main-banner .carousel-inner {
-  height: 100vh;
+  min-height: 100vh;
 }
 .main-banner .carousel-indicators li {
   width: 10px;
@@ -1725,10 +1725,12 @@ header a:hover {
   margin-left: -30%;
 }
 .main-banner__slide {
-  height: 100%;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
 }
 .main-banner__slide .banner__category {
   font-size: 0.875rem;
@@ -2510,7 +2512,7 @@ footer h4 {
     margin-left: 0;
   }
   .main-banner__slide .banner__description {
-    width: 90%;
+    width: 80%;
   }
 }
 @media only screen and (max-width: 480px) {
