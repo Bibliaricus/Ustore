@@ -82,8 +82,8 @@
         <button class="header-bottom__icon-item icon-font-heart-regular mx-3" onclick="openNav()" title="Open vish list"></button>
         <button class="header-bottom__icon-item user-buttons__item search-field__button icon-font-search mx-3"></button>
         <form class="search-field__toolip" action="http://saney.ru/calculator/px-rem-calculator.php" method="GET">
-          <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list">
-          <datalist id="search-list">
+          <input class="search-field__area" type="text" placeholder="Search for product..." aria-label="Search" list="search-list_fixed-header">
+          <datalist id="search-list_fixed-header">
             <option value="Telephones"></option>
             <option value="Mobiles"></option>
             <option value="And many other things..."></option>       
@@ -173,7 +173,7 @@
           </ul>
         </div>
         <div class="mobile-header-menu collapse" id="mobile-header-menu">
-          <span href="#" class="closebtn">&times;</span>
+          <span class="closebtn">&times;</span>
           <ul class="mobile-nav navbar-nav">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home Page</a>
@@ -816,7 +816,7 @@
       <h2>FOLLOW @ INSTAGRAM</h2>
     </div>
     <div class="insta-line__list">
-      <iframe src='/inwidget/index.php?inline=6&view=6toolbar=true&adaptive=true&width=600' name="inWidget" data-inwidget scrolling='no' frameborder='no' style='border:none;width:100%;height:800px;overflow:hidden;display:block;'></iframe>
+      <iframe src='/inwidget/index.php?inline=6&view=6toolbar=true&adaptive=true&width=600' name="inWidget" data-inwidget style='border:none;width:100%;height:800px;overflow:hidden;display:block;'></iframe>
     </div>       
   </section >  
   <section class="product-categories container">
@@ -828,9 +828,9 @@
           <img src="img/product_categories-1.jpg" alt="Dresses category">
         </div>
         <div class="product-categories__text">
-          <span href="#" class="item__category">Category</span>
-          <span href="#" class="item__title">Dresses</span>
-          <span href="#" class="prod-count">(25 products)</span>
+          <span class="item__category">Category</span>
+          <span class="item__title">Dresses</span>
+          <span class="prod-count">(25 products)</span>
         </div>
       </a>
       <a href="#" class="product-categories__item col-6 col-md-3">
@@ -838,9 +838,9 @@
           <img src="img/product_categories-2.jpg" alt="Dresses category">
         </div>
         <div class="product-categories__text">
-          <span href="#" class="item__category">Category</span>
-          <span href="#" class="item__title">Watches</span>
-          <span href="#" class="prod-count">(25 products)</span>
+          <span class="item__category">Category</span>
+          <span class="item__title">Watches</span>
+          <span class="prod-count">(25 products)</span>
         </div>
       </a>
       <a href="#" class="product-categories__item col-6 col-md-3">
@@ -848,9 +848,9 @@
           <img src="img/product_categories-3.jpg" alt="Dresses category">
         </div>
         <div class="product-categories__text">
-          <span href="#" class="item__category">Category</span>
-          <span href="#" class="item__title">Trousers</span>
-          <span href="#" class="prod-count">(25 products)</span>
+          <span class="item__category">Category</span>
+          <span class="item__title">Trousers</span>
+          <span class="prod-count">(25 products)</span>
         </div>
       </a>
       <a href="#" class="product-categories__item col-6 col-md-3">
@@ -858,9 +858,9 @@
           <img src="img/product_categories-4.jpg" alt="Dresses category">
         </div>
         <div class="product-categories__text">
-          <span href="#" class="item__category">Category</span>
-          <span href="#" class="item__title">Perfumes</span>
-          <span href="#" class="prod-count">(25 products)</span>
+          <span class="item__category">Category</span>
+          <span class="item__title">Perfumes</span>
+          <span class="prod-count">(25 products)</span>
         </div>
       </a>
     </div>
@@ -1196,7 +1196,7 @@
           <span>East 21st Street, Apt. 304</span>
           <span>New York NY 10016</span>
           <span>Email: <a href="mailto:youremail@site.com" class="contact-link">youremail@site.com</a></span>
-          <span>Phone: <a href="tel:+14089961010" class="contact-link">+1 408 996 1010</a></span></span>
+          <span>Phone: <a href="tel:+14089961010" class="contact-link">+1 408 996 1010</a></span>
         </div>
         <div class="footer__links col-6 col-lg-3 order-md-1 order-lg-0">
           <h4>Useful Links</h4>
@@ -1228,7 +1228,7 @@
               <img src="img/latest_news-1.jpg" alt="Image to latest posts">
               <div class="posts__text">
                 <a href="#" class="posts__title">Down The Road</a>
-                <time class="icon-font-baseline-today-24px">November 24, 2013</time>
+                <time class="icon-font-baseline-today-24px" datetime="2013-07-24">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
             </li>
@@ -1236,7 +1236,7 @@
               <img src="img/latest_news-2.jpg" alt="Image to latest posts">
               <div class="posts__text">
                 <a href="#" class="posts__title">Down The Road</a>
-                <time class="icon-font-baseline-today-24px">November 24, 2013</time>
+                <time class="icon-font-baseline-today-24px" datetime="2013-07-24">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
             </li>
@@ -1244,7 +1244,7 @@
               <img src="img/latest_news-3.jpg" alt="Image to latest posts">
               <div class="posts__text">
                 <a href="#" class="posts__title">Down The Road</a>
-                <time class="icon-font-baseline-today-24px">November 24, 2013</time>
+                <time class="icon-font-baseline-today-24px" datetime="2013-07-24">November 24, 2013</time>
                 <span class="icon-font-bubble">5 Comments</span>
               </div>
             </li>
