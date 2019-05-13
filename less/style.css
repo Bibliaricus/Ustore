@@ -370,6 +370,40 @@ footer h4,
     background-position: 150% bottom;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  @keyframes main-banner_slide1 {
+    from {
+      background-position: -50% bottom, 150% bottom, center -30rem;
+    }
+    to {
+      background-position: -100% bottom, 200% bottom, center top;
+    }
+  }
+  @keyframes main-banner_slide2 {
+    from {
+      background-position: -170% bottom, -210vh bottom, -100% bottom;
+    }
+    to {
+      background-position: 25vh bottom, -10vh bottom, 0 bottom;
+    }
+  }
+  @keyframes main-banner_slide3 {
+    from {
+      background-position: -150vh bottom, 200vh bottom;
+    }
+    to {
+      background-position: 40% bottom,right bottom;
+    }
+  }
+  @keyframes main-banner_slide4 {
+    from {
+      background-position: 100vw bottom;
+    }
+    to {
+      background-position: -90% bottom;
+    }
+  }
+}
 @media screen and (max-width: 767.98px) {
   @keyframes main-banner_slide4 {
     from {
@@ -377,6 +411,40 @@ footer h4,
     }
     to {
       background-position: 200% bottom;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  @keyframes main-banner_slide1 {
+    from {
+      background-position: -50% bottom, 150% bottom, center -30rem;
+    }
+    to {
+      background-position: 310% bottom, -900% bottom, center top;
+    }
+  }
+  @keyframes main-banner_slide2 {
+    from {
+      background-position: -50% bottom, 150% bottom, center -30rem;
+    }
+    to {
+      background-position: -30% bottom, -17vh bottom, 0 bottom;
+    }
+  }
+  @keyframes main-banner_slide3 {
+    from {
+      background-position: -50% bottom, 150% bottom, center -30rem;
+    }
+    to {
+      background-position: 40% bottom,right bottom;
+    }
+  }
+  @keyframes main-banner_slide4 {
+    from {
+      background-position: 100vw bottom;
+    }
+    to {
+      background-position: 0% bottom;
     }
   }
 }
@@ -2431,6 +2499,18 @@ footer h4 {
     width: 100%;
   }
 }
+/* 
+  Kludge for correct display background in slides of main banner. 
+  Each slide have own background position and size
+  */
+@media only screen and (min-height: 768px) and (max-width: 991.98px) {
+  .main-banner .slide3 {
+    background-size: 160%, 160%, contain;
+  }
+  .main-banner .slide4 {
+    background-size: inherit;
+  }
+}
 @media only screen and (max-width: 767.98px) {
   .test:after {
     content: '@media (max-width: 768px [col-sm])';
@@ -2588,6 +2668,12 @@ footer h4 {
   .main-banner .main-banner-arrow-next,
   .main-banner .main-banner-arrow-prev {
     top: 55%;
+  }
+  .main-banner .slide3 {
+    background-size: 140vh, 140vh,contain;
+  }
+  .main-banner .slide4 {
+    background-size: 140vh;
   }
   .complete-look__products .hover-buttons__list {
     bottom: -35%;

@@ -297,22 +297,22 @@
       <li data-target="#mainBannerSlider" data-slide-to="3"></li>
     </ol>      
     <div class="carousel-inner">
-      <div class="main-banner__slide slide1 carousel-item active">
+      <div class="main-banner__slide slide1 carousel-item active" data-interval="100000">
         <div class="banner__category animated fadeInDown">Casual Shirts</div>
         <h3 class="banner__title animated fadeIn">Shirt One Pocket</h3>
         <div class="banner__description animated fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
       </div>
-      <div class="main-banner__slide slide2 carousel-item">
+      <div class="main-banner__slide slide2 carousel-item" data-interval="100000">
         <div class="banner__category animated fadeInRight">Casual Shirts</div>
         <h3 class="banner__title animated fadeInRight">Shirt One Pocket</h3>
         <div class="banner__description animated fadeInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
       </div>
-      <div class="main-banner__slide slide3 carousel-item">
+      <div class="main-banner__slide slide3 carousel-item" data-interval="100000">
         <div class="banner__category animated fadeInUp">Casual Shirts</div>
         <h3 class="banner__title animated fadeInUp">Shirt One Pocket</h3>
         <div class="banner__description animated fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
       </div>
-      <div class="main-banner__slide slide4 carousel-item">
+      <div class="main-banner__slide slide4 carousel-item" data-interval="100000">
         <div class="banner__category animated fadeInLeft">Casual Shirts</div>
         <h3 class="banner__title animated fadeInLeft">Shirt One Pocket</h3>
         <div class="banner__description animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
