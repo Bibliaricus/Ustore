@@ -178,3 +178,7 @@ $(document).ready(function() {
     $(parent).removeClass('show');
   });
 });
+
+// Subscribe modal
+
+$('#subscribe-popup').modal();

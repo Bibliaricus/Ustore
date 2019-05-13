@@ -492,6 +492,7 @@ a[href^="tel"]:focus {
   background-color: transparent;
   text-shadow: none;
   transition: .3s ease;
+  outline: none;
 }
 .subscribe-popup form + span {
   font-size: 0.75rem;
@@ -2518,6 +2519,9 @@ footer h4 {
   .subscribe-popup .modal-content {
     max-width: 90vw;
   }
+  .subscribe-popup__title {
+    font-size: 2rem;
+  }
   .header-bottom__logo {
     display: none;
   }
@@ -2559,9 +2563,6 @@ footer h4 {
   .test:after {
     content: '@media (max-width: 480px)';
   }
-  .subscribe-popup__title {
-    font-size: 2.5rem;
-  }
   .subsribe-popup-wrap {
     width: 100%;
   }
@@ -2573,7 +2574,6 @@ footer h4 {
     background-color: rgba(0, 0, 0, 0.4);
   }
   .modal.show .modal-dialog {
-    transform: translateX(15px);
     max-width: 95vw;
   }
   .top-interes .slick-arrow {
@@ -2625,6 +2625,10 @@ footer h4 {
   }
   .subscribe-popup .modal-content {
     background-position: 65%;
+  }
+  .subscribe-popup__title {
+    font-size: 1.5rem;
+    width: 70%;
   }
   .header-top__navbar {
     padding-left: 0;

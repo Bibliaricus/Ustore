@@ -549,6 +549,7 @@ Version: 1.0
       background-color: transparent;
       text-shadow: none;
       transition: .3s ease;
+      outline: none;
     }
   }
 
@@ -2699,8 +2700,13 @@ Version: 1.0
 
   @media only screen and (max-width: 575.98px){
     .test:after  { content: '@media (max-width: 576px [col-])';}  
-    .subscribe-popup .modal-content {
+    .subscribe-popup {
+      .modal-content {
       max-width: 90vw;
+      }
+      &__title {
+        font-size: 2rem;
+      }
     }
 
     .header-bottom__logo {
@@ -2760,10 +2766,6 @@ Version: 1.0
 
   @media only screen  and (max-width: 480px) {
     .test:after  { content: '@media (max-width: 480px)';}  
-    .subscribe-popup__title {
-      font-size: 2.5rem;
-    }
-
     .subsribe-popup-wrap {
       width: 100%;
     }
@@ -2778,7 +2780,7 @@ Version: 1.0
     }
 
     .modal.show .modal-dialog {
-      transform: translateX(15px);
+      // transform: translateX(15px);
       max-width: 95vw;
     }
 
@@ -2845,8 +2847,14 @@ Version: 1.0
 
   @media only screen and (min-width: 320px) and (max-width: 400px) {
     .test:after { content: '@media min-width: 320px and @max-width: 400px)';}
-    .subscribe-popup .modal-content {
+    .subscribe-popup {
+      .modal-content {
       background-position: 65%;
+      }
+      &__title {
+        font-size: 1.5rem;
+        width: 70%;
+      }
     }
 
     .header-top__navbar {
