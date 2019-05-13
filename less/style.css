@@ -1228,9 +1228,11 @@ a[href^="tel"]:focus {
 .q-view-popup-new__socails {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 }
 .q-view-popup-new__socails span {
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.875rem;
@@ -2476,7 +2478,7 @@ footer h4 {
     margin-right: auto;
   }
   .q-view-popup-new__information {
-    padding: 3rem 2rem 3rem 2rem;
+    padding: 3rem 2rem 2rem 2rem;
   }
   .q-view-popup-new .close {
     top: 1%;
@@ -2573,7 +2575,8 @@ footer h4 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
-  .modal.show .modal-dialog {
+  #q-view-popup-new .modal.show .modal-dialog {
+    transform: translateX(15px);
     max-width: 95vw;
   }
   .top-interes .slick-arrow {

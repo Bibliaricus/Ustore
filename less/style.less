@@ -1320,8 +1320,10 @@ Version: 1.0
     &__socails {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       width: 100%;
       span {
+        margin-bottom: 1rem;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.875rem;
@@ -2653,7 +2655,7 @@ Version: 1.0
         margin-right: auto;
       }
       &__information {
-        padding: 3rem 2rem 3rem 2rem;
+        padding: 3rem 2rem 2rem 2rem;
       }
       .close {
         top: 1%;
@@ -2779,8 +2781,8 @@ Version: 1.0
       }
     }
 
-    .modal.show .modal-dialog {
-      // transform: translateX(15px);
+    #q-view-popup-new .modal.show .modal-dialog {
+      transform: translateX(15px);
       max-width: 95vw;
     }
 
