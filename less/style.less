@@ -2604,8 +2604,10 @@ Version: 1.0
       }
       &__products {
         .hover-buttons__list {
-          bottom: -100%;
-          transform: translateY(-100%);
+          bottom: 0;
+          width: ~'calc(100% - 30px)';
+          transform: translateY(0%);
+          
         }
       }
     }
@@ -2726,11 +2728,7 @@ Version: 1.0
     .complete-look {
       &__products {
         padding: 0;
-        margin: 0;
-        .hover-buttons__list {
-          bottom: -50%;
-          transform: translateY(0%);
-        }
+        margin: 0;        
       }
       &__slide img {
         margin-left: auto;
@@ -2786,14 +2784,6 @@ Version: 1.0
 
     .section-title {
       font-size: 2rem;
-    }
-
-    .complete-look {
-      &__products {
-        .hover-buttons__list {
-          bottom: -60%;
-        }
-      }
     }
 
     .copyright {
@@ -2865,9 +2855,6 @@ Version: 1.0
 
     .complete-look {
       &__products {
-        .hover-buttons__list {
-          bottom: -35%;
-        }
         img {
           display: block;
           margin-left: auto;
@@ -2978,12 +2965,6 @@ Version: 1.0
       display: block;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .complete-look__products {
-      .hover-buttons__list {
-        bottom: -41%;
-      }
     }
 
     .section-title {

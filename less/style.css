@@ -2477,8 +2477,9 @@ footer h4 {
     padding: 1rem 0;
   }
   .complete-look__products .hover-buttons__list {
-    bottom: -100%;
-    transform: translateY(-100%);
+    bottom: 0;
+    width: calc(100% - 30px);
+    transform: translateY(0%);
   }
   .complete-look__slide .hover-buttons__item:hover,
   .complete-look__slide .hover-buttons__list:focus-within,
@@ -2572,10 +2573,6 @@ footer h4 {
     padding: 0;
     margin: 0;
   }
-  .complete-look__products .hover-buttons__list {
-    bottom: -50%;
-    transform: translateY(0%);
-  }
   .complete-look__slide img {
     margin-left: auto;
     margin-right: auto;
@@ -2620,9 +2617,6 @@ footer h4 {
   }
   .section-title {
     font-size: 2rem;
-  }
-  .complete-look__products .hover-buttons__list {
-    bottom: -60%;
   }
   .copyright__authur {
     margin-bottom: 0.5rem;
@@ -2673,9 +2667,6 @@ footer h4 {
   }
   .main-banner .slide4 {
     background-size: 140vh;
-  }
-  .complete-look__products .hover-buttons__list {
-    bottom: -35%;
   }
   .complete-look__products img {
     display: block;
@@ -2760,9 +2751,6 @@ footer h4 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-  .complete-look__products .hover-buttons__list {
-    bottom: -41%;
   }
   .section-title {
     font-size: 1.75rem;
