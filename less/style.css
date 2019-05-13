@@ -735,7 +735,7 @@ a[href^="tel"]:focus {
 .shopping-cart__checkout-button,
 .vish-list__vish-list-button {
   background-color: #e74948;
-  border-color: 1px solid #e74948;
+  border-color: #e74948;
   color: #ffffff;
 }
 .shopping-cart__btn,
@@ -1070,8 +1070,6 @@ a[href^="tel"]:focus {
     background-color: #1c1a19;
     transform: translateY(0);
     pointer-events: auto;
-    border-top: 1px solid var(--main-gray);
-    border-bottom: 1px solid var(--main-gray);
     width: 100%;
     margin: 0 auto 0;
   }
@@ -1103,8 +1101,6 @@ a[href^="tel"]:focus {
     margin-left: -1px;
     border-top: none;
     border-bottom: none;
-    border-left: 1px solid var(--main-gray);
-    border-right: 1px solid var(--main-gray);
     border-radius: 0;
   }
   .product__item .hover-buttons__item:first-child {
