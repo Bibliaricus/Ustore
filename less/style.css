@@ -1043,10 +1043,10 @@ a[href^="tel"]:focus {
   opacity: .5;
   pointer-events: none;
 }
-.product__item .product__image-container {
+.product__item--out .product__image-container {
   position: relative;
 }
-.product__item .product__image-container .hover-buttons__list {
+.product__item--out .product__image-container .hover-buttons__list {
   justify-content: space-between;
 }
 .product__item .hover-buttons__list {
