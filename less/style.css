@@ -1936,6 +1936,9 @@ header a:hover {
 .top-interes__wrapper .tab-content > .active {
   display: flex;
 }
+.top-interes .product__image-container {
+  position: relative;
+}
 .top-interes .product__description {
   margin-top: 1.7rem;
 }
