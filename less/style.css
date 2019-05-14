@@ -1858,7 +1858,6 @@ header a:hover {
   flex-direction: column;
   justify-content: center;
   color: #ffffff;
-  padding: 3rem 0 3rem 0;
   height: calc(20.42105263157895vw + 16px);
 }
 .second-banners__list .second-banners__item a:hover,
