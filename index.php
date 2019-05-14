@@ -125,10 +125,10 @@
         <a href="#" class="header-top__login">Sign in or create an account</a>
         <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username or email address<span class="required">*</span></label>
-          <input type="text" name="login-email" id="login" class="login-popup__text-input" size="15" maxlength="15">
+          <input type="text" name="user-login" id="login" class="login-popup__text-input" size="15" maxlength="15">
           <small style="margin-top: -10px; margin-bottom: 10px; color: #c7c1c1;">Max 15 symbols</small>
           <label for="password">Password<span class="required">*</span></label>
-          <input type="password" name="password-field" id="password" class="login-popup__text-input" size="15" maxlength="15">
+          <input type="password" name="user-password" id="password" class="login-popup__text-input" size="15" maxlength="15">
           <small style="margin-top: -10px; margin-bottom: 10px; color: #c7c1c1;">Max 15 symbols</small>
           <div class="checkbox-field">  
             <input type="checkbox" name="remember-me" id="remember-input">
@@ -145,7 +145,7 @@
           if (empty($_SESSION['login']) or empty($_SESSION['id']))
           {
           // Если пусты, то мы не выводим ссылку
-          echo "Вы вошли на сайт, как гость<br><a href='#'>Эта ссылка  доступна только зарегистрированным пользователям</a>";
+          echo "Вы вошли на сайт, как гость<br>";
           }
           else
           {

@@ -17,13 +17,13 @@
  // подключаемся к базе
     include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  // проверка на существование пользователя с таким же логином
-    $result = mysqli_query("SELECT id FROM users WHERE login='$login'",$db);
-    $myrow = mysqli_fetch_array($result);
+    $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
+    $myrow = mysqli_fetch_array($result);    
     if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='index.php'>Главная страница</a>");
     }
  // если такого нет, то сохраняем данные
-    $result2 = mysqli_query ("INSERT INTO users (login,password) VALUES('$login','$password')");
+    $result2 = mysqli_query ($db, "INSERT INTO users (login,password) VALUES('$login','$password')");
     // Проверяем, есть ли ошибки
     if ($result2=='TRUE')
     {

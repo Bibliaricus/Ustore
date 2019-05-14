@@ -1,11 +1,17 @@
 <?php
     session_start();//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
-if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
-    if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
+if (isset($_POST['user-login'])) { $login = $_POST['user-login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+    if (isset($_POST['user-password'])) { $password = $_POST['user-password']; if ($password == '') { unset($password);} }
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
-if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+    echo 'Login is: ' . $login;
+    echo '<br>';
+    echo 'Password is: ' . $password;
+    echo '<br>';
+    var_dump($login);
+    var_dump($password);
+if (empty($login) && empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href='index.php'>Главная страница</a>");
     }
     //если логин и пароль введены,то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
@@ -18,12 +24,12 @@ $password = stripslashes($password);
 // подключаемся к базе
     include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  
-$result = mysqli_query("SELECT * FROM users WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
+$result = mysqli_query($db, "SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
     $myrow = mysqli_fetch_array($result);
     if (empty($myrow['password']))
     {
     //если пользователя с введенным логином не существует
-    exit ("Извините, введённый вами login или пароль неверный.");
+    exit ("Извините, введённый вами login или пароль неверный. <a href='index.php'>Главная страница</a>");
     }
     else {
     //если существует, то сверяем пароли
@@ -36,7 +42,7 @@ $result = mysqli_query("SELECT * FROM users WHERE login='$login'",$db); //изв
  else {
     //если пароли не сошлись
 
-    exit ("Извините, введённый вами login или пароль неверный.");
+    exit ("Извините, введённый вами login или пароль неверный. <a href='index.php'>Главная страница</a>");
     }
     }
     ?>
