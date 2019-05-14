@@ -139,7 +139,21 @@
           <span>New client?
             <a href="reg.php" class="login-popup__link">Register now!</a>
           </span>
-        </form>     
+        </form>
+        <?php
+          // Проверяем, пусты ли переменные логина и id пользователя
+          if (empty($_SESSION['login']) or empty($_SESSION['id']))
+          {
+          // Если пусты, то мы не выводим ссылку
+          echo "Вы вошли на сайт, как гость<br><a href='#'>Эта ссылка  доступна только зарегистрированным пользователям</a>";
+          }
+          else
+          {
+
+          // Если не пусты, то мы выводим ссылку
+          echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='http://tvpavlovsk.sk6.ru/'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
+          }
+          ?>
         <ul class="header-top__social">
           <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
           <li><a href="#" class="icon-font-twitter-brands"></a></li>
