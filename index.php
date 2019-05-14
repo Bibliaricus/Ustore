@@ -123,7 +123,7 @@
       </div>      
       <div class="header-top__right col-6">
         <a href="#" class="header-top__login">Sign in or create an account</a>
-        <form action="#" method="POST" class="login-popup">
+        <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username or email address<span class="required">*</span></label>
           <input type="text" name="login-email" id="login" class="login-popup__text-input" size="15" maxlength="15">
           <small style="margin-top: -10px; margin-bottom: 10px; color: #c7c1c1;">Max 15 symbols</small>
