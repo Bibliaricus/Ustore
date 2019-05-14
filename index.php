@@ -132,7 +132,7 @@
           </div>  
           <button class="login-popup__button">Log in</button>
           <span>New client?
-            <a href="#" class="login-popup__link">Register now!</a>
+            <a href="reg.php" class="login-popup__link">Register now!</a>
           </span>
         </form>     
         <ul class="header-top__social">
