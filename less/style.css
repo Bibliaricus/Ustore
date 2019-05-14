@@ -595,9 +595,6 @@ a[href^="tel"]:focus {
   left: -15%;
   z-index: -1;
 }
-.login-popup input[type="file"] {
-  margin-bottom: 1rem;
-}
 .login-popup small {
   margin-top: -10px;
   margin-bottom: 10px;

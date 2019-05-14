@@ -123,16 +123,13 @@
       </div>      
       <div class="header-top__right col-6">
         <a href="#" class="header-top__login">Sign in or create an account</a>
-        <form action="testreg.php" method="POST" class="login-popup" enctype="multipart/form-data">
+        <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username or email address<span class="required">*</span></label>
           <input type="text" name="user-login" id="login" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
           <label for="password">Password<span class="required">*</span></label>
           <input type="password" name="user-password" id="password" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
-          <label for="avatar">Select your avatar: </label>
-          <input type="file" name="fupload" id="avatar">
-          <small>Image format: jpg, gif or png. Max weight: 2 MB.</small>
           <div class="checkbox-field">  
             <input type="checkbox" name="remember-me" id="remember-input">
             <label for="remember-input">Remember Me</label>
