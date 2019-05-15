@@ -1,6 +1,19 @@
 <?php
   //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
   session_start();
+
+  include ("bd.php");// файл bd.php должен быть в той же папке, что и    все остальные, если это не так, то просто измените путь           
+  if    (!empty($_SESSION['login']) and !empty($_SESSION['password']))
+  {
+  //если существует логин и пароль в сессиях, то проверяем их и    извлекаем аватар
+
+  $login    = $_SESSION['login'];
+  $password    = $_SESSION['password'];
+  $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
+  $myrow    = mysqli_fetch_array($result);
+
+  //извлекаем нужные данные о пользователе
+  }
 ?>
 
 <!DOCTYPE html>
