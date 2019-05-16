@@ -2,18 +2,18 @@
   //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
   session_start();
 
-  include ("bd.php");// файл bd.php должен быть в той же папке, что и    все остальные, если это не так, то просто измените путь           
-  if    (!empty($_SESSION['login']) and !empty($_SESSION['password']))
-  {
+  // include ("bd.php");// файл bd.php должен быть в той же папке, что и    все остальные, если это не так, то просто измените путь           
+  // if    (!empty($_SESSION['login']) and !empty($_SESSION['password']))
+  // {
   //если существует логин и пароль в сессиях, то проверяем их и    извлекаем аватар
 
-  $login    = $_SESSION['login'];
-  $password    = $_SESSION['password'];
-  $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
-  $myrow    = mysqli_fetch_array($result);
+  // $login    = $_SESSION['login'];
+  // $password    = $_SESSION['password'];
+  // $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
+  // $myrow    = mysqli_fetch_array($result);
 
   //извлекаем нужные данные о пользователе
-  }
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -138,13 +138,13 @@
         <a href="#" class="header-top__login">Sign in or create an account</a>
         <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username or email address<span class="required">*</span></label>
-          <input type="text" name="user-login" id="login" class="login-popup__text-input" size="15" maxlength="15" required>
+          <input type="text" name="sign-in-login" id="login" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
           <label for="password">Password<span class="required">*</span></label>
-          <input type="password" name="user-password" id="password" class="login-popup__text-input" size="15" maxlength="15" required>
+          <input type="password" name="sign-in-password" id="password" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
           <div class="checkbox-field">  
-            <input type="checkbox" name="remember-me" id="remember-input">
+            <input type="checkbox" name="sign-in-user-remember" id="remember-input">
             <label for="remember-input">Remember Me</label>
             <a href="#" class="login-popup__link">Lost password?</a>
           </div>  
