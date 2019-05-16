@@ -1,15 +1,15 @@
 <?php
-    if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
-    if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
+    if (isset($_POST['sign-up-login'])) { $login = $_POST['sign-up-login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+    if (isset($_POST['sign-up-password'])) { $password=$_POST['sign-up-password']; if ($password =='') { unset($password);} }
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
  if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href='reg.php'>&larr; Назад.</a>");
     }
     //если логин и пароль введены, то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
- $password = stripslashes($password);
+    $password = stripslashes($password);
     $password = htmlspecialchars($password);
  //удаляем лишние пробелы
     $login = trim($login);
@@ -17,15 +17,15 @@
 
   //добавляем проверку на длину логина и пароля
   if    (strlen($login) < 3 or strlen($login) > 15) {
-    exit    ("Логин должен состоять не менее чем из 3 символов и не более чем из    15.");
+    exit    ("Логин должен состоять не менее чем из 3 символов и не более чем из 15. <a href='reg.php'>&larr; Назад.</a>");
     }
     if    (strlen($password) < 3 or strlen($password) > 15) {
-    exit    ("Пароль должен состоять не менее чем из 3 символов и не более чем из    15.");
+    exit    ("Пароль должен состоять не менее чем из 3 символов и не более чем из 15. <a href='reg.php'>&larr; Назад.</a>");
     }          
     
-  if (!empty($_POST['fupload'])) //проверяем, отправил ли пользователь изображение
+ /* if (!empty($_POST['sign-up-avatar'])) //проверяем, отправил ли пользователь изображение
     {
-    $fupload = $_POST['fupload'];
+    $fupload = $_POST['sign-up-avatar'];
     $fupload = trim($fupload); 
     if ($fupload == '' or empty($fupload)) {
         unset($fupload);// если переменная $fupload пуста, то удаляем ее
@@ -97,14 +97,14 @@
     var_dump($password);
   //можно добавить несколько своих символов по вкусу, например,    вписав "b3p6f". Если этот пароль будут взламывать методом подбора у    себя на сервере этой же md5,то явно ничего хорошего не выйдет. Но советую    ставить другие символы, можно в начале строки или в середине.          
   //При этом необходимо увеличить длину поля password в базе.    Зашифрованный пароль может получится гораздо большего размера.
-    
+*/    
  // подключаемся к базе
     include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  // проверка на существование пользователя с таким же логином
     $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
     $myrow = mysqli_fetch_array($result);    
     if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='index.php'>Главная страница</a>");
+    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>&larr; Назад.</a>");
     }
  // если такого нет, то сохраняем данные
     $result2 = mysqli_query ($db, "INSERT INTO users (login,password) VALUES('$login','$password')");
@@ -114,6 +114,6 @@
     echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
     }
  else {
-    echo "Ошибка! Вы не зарегистрированы.";
+    echo "Ошибка! Вы не зарегистрированы. <a href='reg.php'>&larr; Назад.</a>";
     }
     ?>
