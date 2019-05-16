@@ -26,17 +26,17 @@
   <form action="save_user.php" method="post">
     <p>
       <label>Ваш логин:<br></label>
-      <input name="login" type="text" size="15" maxlength="15" required>
+      <input name="sign-up-login" type="text" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
     <p>
       <label>Ваш пароль:<br></label>
-      <input name="password" type="password" size="15" maxlength="15" required>
+      <input name="sign-up-password" type="password" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
     <p>
       <label for="avatar">Select your avatar: </label>
-      <input type="file" name="fupload" id="avatar">
+      <input type="file" name="sign-up-avatar" id="avatar">
       <small>Image format: jpg, gif or png. Max weight: 2 MB.
         <small>Not required.</small>
       </small>
