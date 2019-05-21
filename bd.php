@@ -6,4 +6,4 @@
    * "Ustore" - name of data base
    */
   $db = mysqli_connect("localhost", "root", "", "Ustore");
-?> 
+?>
