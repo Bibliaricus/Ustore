@@ -8,7 +8,7 @@
 
   $login    = $_SESSION['login'];
   $password    = $_SESSION['password'];
-  $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
+  $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'"); 
   $myrow    = mysqli_fetch_array($result);
 
   //извлекаем нужные данные о пользователе
@@ -186,7 +186,8 @@
 
           // Если не пусты, то мы выводим ссылку
           echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='http://tvpavlovsk.sk6.ru/'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
-          echo '<a    href="exit.php">выход</a>';
+          echo '<a href="user-page.php?id=' . $myrow['id'] . '">Моя страница</a>';
+          echo '<a href="exit.php">выход</a>';
             if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
               // Впихнути сюди пусту авку
               $avatar = "avatars/no_photo.jpg";
