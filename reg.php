@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +42,15 @@
         <small>Not required.</small>
       </small>
     </p>
+    <p>Введите код с картинки *:
+    <?php include 'my_codegen.php'; ?>
+    <p><img src="my_codegen/image.png" alt="Image for checking code. Sorry if you don't see it. I just a intern."></p>
+    <p><input type="text" name="sign-up-check-code"></p>
+    <!-- В “code/my_codegen.php” генерируется код и рисуется изображение -->
     <p>
       <input type="submit" name="submit" value="Зарегистрироваться">
     </p>
   </form>
 </body>
 </html>
+<?php ob_end_flush(); ?>
