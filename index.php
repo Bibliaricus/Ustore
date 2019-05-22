@@ -2,18 +2,17 @@
   //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
   session_start();
 
-  // include ("bd.php");// файл bd.php должен быть в той же папке, что и    все остальные, если это не так, то просто измените путь           
-  // if    (!empty($_SESSION['login']) and !empty($_SESSION['password']))
-  // {
+  include ("bd.php");// файл bd.php должен быть в той же папке, что и    все остальные, если это не так, то просто измените путь           
+  if    (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
   //если существует логин и пароль в сессиях, то проверяем их и    извлекаем аватар
 
-  // $login    = $_SESSION['login'];
-  // $password    = $_SESSION['password'];
-  // $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
-  // $myrow    = mysqli_fetch_array($result);
+  $login    = $_SESSION['login'];
+  $password    = $_SESSION['password'];
+  $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND    password='$password'"); 
+  $myrow    = mysqli_fetch_array($result);
 
   //извлекаем нужные данные о пользователе
-  // }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +36,19 @@
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/style.min.css">
+
+  <!-- Test styles for avatar -->
+  <style>
+    .user-avatar {
+      width: 90px;
+      position: absolute;
+      top: 10px;
+      z-index: 99999;
+      right: 50%;
+      clip: rect(15px, auto, 105px, auto);
+    }
+  </style>
+  
 </head>
 <body> 
   <!-- Modals -->
@@ -116,20 +128,27 @@
         <div class="dropdown header-top__language-list">
           <button class="dropdown-toggle header-top__language-button header-top__language-link lang-en pr-2" id="language-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose your language">English</button>
           <div class="dropdown-menu" aria-labelledby="language-dropdown-button">
-            <a href="#" class="dropdown-item header-top__language-link lang-en">English</a>
-            <a href="#" class="dropdown-item header-top__language-link lang-fr">French</a>
-            <a href="#" class="dropdown-item header-top__language-link lang-ger">German</a>
-            <a href="#" class="dropdown-item header-top__language-link lang-it">Italian</a>
-            <a href="#" class="dropdown-item header-top__language-link lang-ua">Ukrain</a>
+            <?php $languages = array(
+             'en' => 'English',
+             'fr' => 'Franch',
+             'ger' => 'Germany',
+             'it' => 'Italian',
+             'ua' => 'Ukraine',
+            ) ?>
+            <?php foreach ($languages as $key => $value) {?>
+            <a href="#" class="dropdown-item header-top__language-link lang-<?php echo $key; ?>"><?php echo $value; ?></a>
+            <?php
+          } ?>
           </div>
         </div>
         <div class="dropdown header-top__currency-list">
           <button class="dropdown-toggle header-top__currency-button pl-3 mr-2" id="currency-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose desired currency">Eur / €</button>
           <div class="dropdown-menu" aria-labelledby="currency-dropdown-button">
-            <a href="#" class="dropdown-item header-top__currency-link">Eur / €</a>
-            <a href="#" class="dropdown-item header-top__currency-link">Gbp / £</a>
-            <a href="#" class="dropdown-item header-top__currency-link">Chf / ₣</a>
-            <a href="#" class="dropdown-item header-top__currency-link">Jpy / ¥</a>
+            <?php $currency = array('Eur / €', 'Gbp / £', 'Chf / ₣', 'Jpy / ¥'); ?>
+            <?php foreach ($currency as $key => $value) {?>
+              <a href="#" class="dropdown-item header-top__currency-link"><?php echo $value; ?></a>
+              <?php
+            } ?>
           </div>
         </div>
         <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
@@ -138,13 +157,15 @@
         <a href="#" class="header-top__login">Sign in or create an account</a>
         <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username or email address<span class="required">*</span></label>
-          <input type="text" name="sign-in-login" id="login" class="login-popup__text-input" size="15" maxlength="15" required>
+          <input type="text" name="sign-in-login" id="login" class="login-popup__text-input" value="<?php 
+            if (isset($_COOKIE['login'])) { echo $_COOKIE['login']; }
+          ?>" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
           <label for="password">Password<span class="required">*</span></label>
           <input type="password" name="sign-in-password" id="password" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
           <div class="checkbox-field">  
-            <input type="checkbox" name="sign-in-user-remember" id="remember-input">
+            <input type="checkbox" name="sign-in-user-remember" id="remember-input" checked>
             <label for="remember-input">Remember Me</label>
             <a href="#" class="login-popup__link">Lost password?</a>
           </div>  
@@ -165,7 +186,26 @@
 
           // Если не пусты, то мы выводим ссылку
           echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='http://tvpavlovsk.sk6.ru/'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
+          echo '<a    href="exit.php">выход</a>';
+            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+              // Впихнути сюди пусту авку
+              $avatar = "avatars/no_photo.jpg";
+              echo '<img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"';
+            } else {
+              // А сюди впихнути авку користувача. Але для початку подивитись, чого вона в БД не підгружається
+              echo '<img alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '">';
+            }
           }
+
+          // ------------------------------------------------------  New code  ----------------------------------
+          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+
+            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
+    
+          } else {
+    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
+          }
+
           ?>
         <ul class="header-top__social">
           <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
