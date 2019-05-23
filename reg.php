@@ -26,21 +26,25 @@
   <h2>Регистрация</h2>
   <form action="save_user.php" method="post" enctype="multipart/form-data">
     <p>
-      <label>Ваш логин:<br></label>
+      <label>Ваш логин *:<br></label>
       <input name="sign-up-login" type="text" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
     <p>
-      <label>Ваш пароль:<br></label>
+      <label>Ваш пароль *:<br></label>
       <input name="sign-up-password" type="password" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
     <p>
-      <label for="avatar">Select your avatar: </label>
+      <label for="avatar">Select your avatar *: </label>
       <input type="file" name="sign-up-avatar" id="avatar">
       <small>Image format: jpg, gif or png. Max weight: 2 MB.
         <small>Not required.</small>
       </small>
+    </p>
+    <p>
+      <label for="email">Ваш E-mail *:<br></label>
+      <input id="email" name="sign-up-email" type="email" size="15" maxlength="100" required>
     </p>
     <p>Введите код с картинки *:
     <?php include 'my_codegen.php'; ?>
