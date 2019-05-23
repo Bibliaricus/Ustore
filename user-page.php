@@ -90,16 +90,19 @@ HERE;
       $author = $messages['author'];
       $result4 = mysqli_query($db, "SELECT avatar,id    FROM users WHERE login='$author'"); //извлекаем аватар автора
       $myrow4 = mysqli_fetch_array($result4);
+      $avatar = $myrow4['avatar'];
+      $defaultAvatar = 'avatars/no_photo.jpg';
       if (!empty($myrow4['avatar'])) { //если такового нет, то выводим стандартный (может этого пользователя уже давно удалили)
-        $avatar = $myrow4['avatar'];
-      } else { $defaultAvatar;}
+        $authorAvatar = $avatar;
+      } else { $authorAvatar = $defaultAvatar;}
+      
       printf("
         <table>
         <tr>
 
-        <td><a href='page.php?id=%s'><img alt='аватар' src='%s'></a></td>
+        <td><a href='user-page.php?id=%s'><img alt='аватар' src='%s'></a></td>
 
-        <td>Автор:    <a href='page.php?id=%s'>%s</a><br>
+        <td>Автор:    <a href='user-page.php?id=%s'>%s</a><br>
         Дата:    %s<br>
         Сообщение:<br>
 
@@ -110,7 +113,7 @@ HERE;
         </td>
         </tr>
         </table><br>
-        ", $myrow4['id'], $avatar, $myrow4['id'], $author, $messages['date'], $messages['text'], $messages['id']);
+        ", $myrow4['id'], $authorAvatar, $myrow4['id'], $author, $messages['date'], $messages['message'], $messages['id']);
       //выводим само сообщение
     } while ($messages = mysqli_fetch_array($tmp));
   } else {
