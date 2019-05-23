@@ -1,12 +1,16 @@
 <?php
     if (isset($_POST['sign-up-login'])) { $login = $_POST['sign-up-login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
     if (isset($_POST['sign-up-password'])) { $password=$_POST['sign-up-password']; if ($password =='') { unset($password);} }
+    if (isset($_POST['sign-up-email'])) {$email = $_POST['sign-up-email'];if ($email == '') {unset($email);}} //заносим введенный пользователем e-mail, если он    пустой, то уничтожаем переменную
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
     if (isset($_POST['sign-up-check-code'])) {$code = $_POST['sign-up-check-code'];if ($code == '') {unset($code);}} //заносим    введенный пользователем защитный код в переменную $code, если он пустой, то    уничтожаем переменную
-    if (empty($login) or empty($password) or empty($code)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+    if (empty($login) or empty($password) or empty($code) or empty($email)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
-        exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href='reg.php'>&larr; Назад.</a>");
+        exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");
     }
+
+    if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $email)) //проверка    е-mail адреса регулярными выражениями на корректность
+        {exit("Неверно введен е-mail! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");}
     function generate_code() //запускаем    функцию, генерирующую код. Можно даже вывести ее в отдельный файл.
 
     {
