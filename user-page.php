@@ -82,13 +82,13 @@ HERE;
     <br>
   <h2>Личные    сообщения:</h2>
 HERE;
-  $tmp = mysqli_query($db, "SELECT * FROM    messages WHERE recipient='$login' ORDER BY id DESC");
+  $tmp = mysqli_query($db, "SELECT * FROM messages WHERE recipient='$login' ORDER BY id DESC");
   $messages = mysqli_fetch_array($tmp); //извлекаем сообщения    пользователя, сортируем по идентификатору в обратном порядке, т.е. самые    новые сообщения будут вверху
   if (!empty($messages['id'])) {
     do//выводим    все сообщения в цикле
     {
       $author = $messages['author'];
-      $result4 = mysqli_query($db, "SELECT avatar,id    FROM users WHERE login='$author'"); //извлекаем аватар автора
+      $result4 = mysqli_query($db, "SELECT avatar,id FROM users WHERE login='$author'"); //извлекаем аватар автора
       $myrow4 = mysqli_fetch_array($result4);
       $avatar = $myrow4['avatar'];
       $defaultAvatar = 'avatars/no_photo.jpg';
