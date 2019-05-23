@@ -56,19 +56,19 @@ HERE;
 if ($myrow['login'] == $login) {
   //Если    страничка принадлежит вошедшему, то предлагаем изменить данные и выводим    личные сообщения
   print <<<HERE
-  <form action='update_user.php' method='post'>
+  <form action='user-update.php' method='post'>
     Ваш логин    <strong>$myrow[login]</strong>. Изменить логин:<br>
     <input name='update-user-login' type='text'>
     <input type='submit' name='submit' value='изменить'>
   </form>
     <br>
-  <form action='update_user.php' method='post'>
+  <form action='user-update.php' method='post'>
     Изменить пароль:<br>
     <input name='update-user-password' type='password'>
     <input type='submit' name='submit' value='изменить'>
   </form>
     <br>
-  <form action='update_user.php' method='post' enctype='multipart/form-data'>
+  <form action='user-update.php' method='post' enctype='multipart/form-data'>
     Ваш аватар:<br>
 HERE;
 
