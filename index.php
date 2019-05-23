@@ -10,6 +10,7 @@
   $password    = $_SESSION['password'];
   $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'"); 
   $myrow    = mysqli_fetch_array($result);
+  $home = 'index.php';  
 
   //извлекаем нужные данные о пользователе
   }
@@ -52,7 +53,7 @@
         <div class="fixed-header-menu collapse navbar-collapse" id="fixed-header-menu">          
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
-              <a class="nav-link" href="#">Home Page</a>
+              <a class="nav-link" href="index.php">Home Page</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="#">About Us</a>
@@ -75,7 +76,7 @@
           <span class="closebtn">&times;</span>
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home Page</a>
+              <a class="nav-link" href="index.php">Home Page</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
@@ -215,7 +216,7 @@
         <div class="collapse navbar-collapse" id="header-responsive-menu">
           <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-4 active">
-              <a class="nav-link" href="#">Home Page</a>
+              <a class="nav-link" href="index.php">Home Page</a>
             </li>
             <li class="nav-item mx-4">
               <a class="nav-link" href="#">About Us</a>
@@ -238,7 +239,7 @@
           <span class="closebtn">&times;</span>
           <ul class="mobile-nav navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="https://www.instagram.com/p/BwrkbB4ANmA/">Home Page</a>
+              <a class="nav-link" href="index.php">Home Page</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://xstore.8theme.com/demos/home-default/">About Us</a>
@@ -1264,7 +1265,7 @@
           <h4>Useful Links</h4>
           <div class="footer__links-cont">
             <ul>
-              <li><a href="#">Home Page</a></li>
+              <li><a href="index.php">Home Page</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Delivery Info</a></li>
               <li><a href="#">Conditions</a></li>
