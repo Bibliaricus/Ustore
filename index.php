@@ -36,19 +36,6 @@
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/style.min.css">
-
-  <!-- Test styles for avatar -->
-  <style>
-    .user-avatar {
-      width: 90px;
-      position: absolute;
-      top: 10px;
-      z-index: 99999;
-      right: 50%;
-      clip: rect(15px, auto, 105px, auto);
-    }
-  </style>
-  
 </head>
 <body> 
   <!-- Modals -->
