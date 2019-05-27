@@ -9,24 +9,7 @@
     }
 
     if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $email)) //проверка    е-mail адреса регулярными выражениями на корректность
-        {exit("Неверно введен е-mail! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");}    
-
-    {
-        $hours = date("H"); // час
-        $minuts = substr(date("H"), 0, 1); // минута
-        $mouns = date("m"); // месяц
-        $year_day = date("z"); // день в году
-        $str = $hours . $minuts . $mouns . $year_day; //создаем строку
-        $str = md5(md5($str)); //дважды шифруем в md5
-        $str = strrev($str); // реверс строки
-        $str = substr($str, 3, 6); // извлекаем 6 символов,    начиная с 3
-        // Вам конечно же можно постваить другие значения, так    как, если взломщики узнают, каким именно способом это все генерируется, то в    защите не будет смысла.
-        $array_mix = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
-        srand((float) microtime() * 1000000);
-        shuffle($array_mix);
-        //Тщательно перемешиваем, соль, сахар по вкусу!!!
-        return implode("", $array_mix);
-    }
+        {exit("Неверно введен е-mail! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");}
     //если логин и пароль введены, то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
@@ -134,27 +117,43 @@
     $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
     $myrow = mysqli_fetch_array($result);    
     if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>&larr; Назад.</a>");
+        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>&larr; Назад.</a>");
     }
- // если такого нет, то сохраняем данные
-    $result2 = mysqli_query ($db, "INSERT INTO users (login,password) VALUES('$login','$password')");
-    // Проверяем, есть ли ошибки
-    if ($result2=='TRUE')
-    {
-        $result3    = mysqli_query ($db, "SELECT id FROM users WHERE login='$login'");//извлекаем    идентификатор пользователя. Благодаря ему у нас и будет уникальный код    активации, ведь двух одинаковых идентификаторов быть не может.
-        $myrow3    = mysqli_fetch_array($result3);
-        $activation    = md5($myrow3['id']).md5($login);//код активации аккаунта. Зашифруем    через функцию md5 идентификатор и логин. Такое сочетание пользователь вряд ли    сможет подобрать вручную через адресную строку.
-        $subject    = "Подтверждение регистрации";//тема сообщения
-        $message    = "Здравствуйте! Спасибо за регистрацию на ustore.com\nВаш логин: ".$login."\n
-            Перейдите    по ссылке, чтобы активировать ваш    аккаунт:\nhttp://ustore/activation.php?login=" . $login . "&code=" . $activation . "\nС уважением,\n
-            Администрация ustore.com";//содержание сообщение
-        mail($email, $subject, $message, "Content-type:text/plane;    Charset=windows-1251\r\n");//отправляем сообщение
-            
-        echo    "Вам на E-mail выслано письмо с cсылкой, для подтверждения регистрации. Внимание! Ссылка действительна 1 час. <a href='index.php'>Главная страница</a>"; //говорим о    отправленном письме пользователю
+ //    если такого нет, то сохраняем данные
+$result2 = mysqli_query($db, "INSERT INTO users (login,password,avatar,email,date)    VALUES('$login','$password','$avatar','$email',NOW())");
+//    Проверяем, есть ли ошибки
+    if ($result2 == 'TRUE') {
+        $result3 = mysqli_query($db, "SELECT id FROM users WHERE login='$login'"); //извлекаем    идентификатор пользователя. Благодаря ему у нас и будет уникальный код    активации, ведь двух одинаковых идентификаторов быть не может.
+        $myrow3 = mysqli_fetch_array($result3);
+        $activation = md5($myrow3['id']) . md5($login); //код активации аккаунта. Зашифруем    через функцию md5 идентификатор и логин. Такое сочетание пользователь вряд ли    сможет подобрать вручную через адресную строку.
+        $subject = "Подтверждение регистрации"; //тема сообщения
+        $message = <<<HERE
+        <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Super title</title>
+          </head>
+          <body>
+            <h1>Welcome to Ustore, $login</h1>
+            <p>Go to this link for activation your account:</p>
+            <a href="http://localhost/test3/activation.php?login="$login"&code="$activation">$activation</a>
+            <br>
+            <p>Administration of Ustore.com</p>
+          </body>
+        </html>
+HERE;
+        // "Здравствуйте! Спасибо за регистрацию на citename.ru\nВаш логин:    " . $login . "\n
+        //         Перейдите    по ссылке, чтобы активировать ваш    аккаунт:\nhttp://localhost/test3/activation.php?login=" . $login . "&code=" . $activation . "\nС    уважением,\n
+        //         Администрация    citename.ru"; //содержание сообщение
+        mail($email, $subject, $message); //отправляем сообщение
+
+        echo "Вам на E-mail выслано письмо с cсылкой, для подтверждения регистрации.    Внимание! Ссылка действительна 1 час. <a href='index.php'>Главная    страница</a>"; //говорим о    отправленном письме пользователю
+    }
         // }
     // echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
-    }
- else {
+    else {
     echo "Ошибка! Вы не зарегистрированы. <a href='reg.php'>&larr; Назад.</a>";
     }
     ?>
