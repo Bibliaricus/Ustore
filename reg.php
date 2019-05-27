@@ -45,13 +45,7 @@
     <p>
       <label for="email">Ваш E-mail *:<br></label>
       <input id="email" name="sign-up-email" type="email" size="15" maxlength="100" required>
-    </p>
-    <p>Введите код с картинки *:
-    <?php include 'my_codegen.php'; ?>
-    <p><img src="my_codegen/image.png" alt="Image for checking code. Sorry if you don't see it. I just a intern."></p>
-    <p><input type="text" name="sign-up-check-code"></p>
-    <!-- В “code/my_codegen.php” генерируется код и рисуется изображение -->
-    <p>
+    </p>    
       <input type="submit" name="submit" value="Зарегистрироваться">
     </p>
   </form>
