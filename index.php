@@ -144,7 +144,7 @@
       <div class="header-top__right col-6">
         <a href="#" class="header-top__login">Sign in or create an account</a>
         <form action="testreg.php" method="POST" class="login-popup">
-          <label for="login">Username or email address<span class="required">*</span></label>
+          <label for="login">Username<span class="required">*</span></label>
           <input type="text" name="sign-in-login" id="login" class="login-popup__text-input" value="<?php 
             if (isset($_COOKIE['login'])) { echo $_COOKIE['login']; }
           ?>" size="15" maxlength="15" required>
