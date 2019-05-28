@@ -31,9 +31,10 @@ if (empty($myrow['login'])) {exit("Пользователя не существ�
 <?php 
 
 // Function for checking does the user have an avatar
-function ifUserHaveHisAvatar() {
-  if (!empty($myrow['avatar'])) {
-    return $myrow['avatar'];
+$inputUserAvatar = $myrow['avatar'];
+function ifUserHaveHisAvatar($inputUserAvatar) {
+  if (!empty($inputUserAvatar)) {
+    return $inputUserAvatar;
   } else {
     return $defaultAvatar = "avatars/no_photo.jpg";
   }
@@ -72,7 +73,7 @@ if ($myrow['login'] == $login) {
     Ваш аватар:<br>
 HERE;
 
-    echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar() . '">';
+    echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar($inputUserAvatar) . '">';
     
     print <<<HERE
     Изображение должно быть    формата jpg, gif или png. Изменить аватар:<br>
