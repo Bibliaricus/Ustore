@@ -138,7 +138,7 @@ $result2 = mysqli_query($db, "INSERT INTO users (login,password,avatar,email,dat
           <body>
             <h1>Welcome to Ustore, $login</h1>
             <p>Go to this link for activation your account:</p>
-            <a href="http://localhost/test3/activation.php?login="$login"&code="$activation">$activation</a>
+            <a href="http://ustore/activation.php?login=$login&code=$activation">$activation</a>
             <br>
             <p>Administration of Ustore.com</p>
           </body>
