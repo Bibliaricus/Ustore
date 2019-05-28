@@ -625,7 +625,7 @@ a[href^="tel"]:focus {
   border: 1px solid #000000;
 }
 .checkbox-field {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 [name="remember-me"]:focus {
   outline: auto;
@@ -633,6 +633,7 @@ a[href^="tel"]:focus {
 .login-popup__link {
   text-decoration: underline;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 .login-popup__link:focus {
   background-color: lightgray;
