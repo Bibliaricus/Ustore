@@ -152,11 +152,16 @@
           <label for="password">Password<span class="required">*</span></label>
           <input type="password" name="sign-in-password" id="password" class="login-popup__text-input" size="15" maxlength="15" required>
           <small>Max 15 symbols</small>
+          <a href="send_pass.php" class="login-popup__link">Forgot password?</a>
           <div class="checkbox-field">  
             <input type="checkbox" name="sign-in-user-remember" id="remember-input" checked>
             <label for="remember-input">Remember Me</label>
             <a href="#" class="login-popup__link">Lost password?</a>
-          </div>  
+          </div>
+          <div class="checkbox-field">
+            <input type="checkbox" name="sign-in-auto-entrance" id="entrance" value="1">
+            <label for="entrance">Automatic entrance</label>
+          </div>
           <button class="login-popup__button">Log in</button>
           <span>New client?
             <a href="reg.php" class="login-popup__link">Register now!</a>
