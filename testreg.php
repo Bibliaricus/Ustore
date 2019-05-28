@@ -40,7 +40,7 @@ $password = "b1p55f" . $password . "b1p55f";
 // Adds checking of password to buffer (for correct sending of cookies)
 ob_start();
 
-$result = mysqli_query($db, "SELECT * FROM users WHERE login='$login' AND password='$password'"); //извлекаем из базы все данные о пользователе с    введенным логином и паролем
+$result = mysqli_query($db, "SELECT * FROM users WHERE login='$login' AND password='$password' AND activation='1'"); //извлекаем из базы все данные о пользователе с    введенным логином и паролем
 $myrow = mysqli_fetch_array($result);
 if (empty($myrow['id'])) {
     //если пользователя с введенным логином и паролем не существует
