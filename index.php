@@ -925,7 +925,7 @@
   <!-- Modals -->
   <?php
     include $quick_view_popup;
-    include $subscribe_modal;
+   // include $subscribe_modal;
   ?>
   <!-- ## Modals -->
 
