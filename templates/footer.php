@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="footer__contacts col-6 col-lg-3">
-          <img src="img/footer-logo.png" alt="Footer logo" class="footer__logo">
+          <a href="index.php"><img src="img/footer-logo.png" alt="Footer logo" class="footer__logo"></a>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem.</p>
           <span>48 Park Avenue,</span>
           <span>East 21st Street, Apt. 304</span>

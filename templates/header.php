@@ -157,7 +157,7 @@
       </div>      
     </div>
     <div class="header-bottom row justify-content-between align-items-center px-4">
-      <a href="#" class="header-bottom__logo navbar-brand col-auto col-lg-6 col-xl-2" tabindex="-1">        
+      <a href="index.php" class="header-bottom__logo navbar-brand col-auto col-lg-6 col-xl-2" tabindex="-1">        
         <img src="img/header-logo2.png" alt="Header logo">
       </a>
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-2 col-lg-12 col-xl-8 order-first order-lg-1 order-xl-0">
