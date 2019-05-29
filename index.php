@@ -17,9 +17,9 @@
 
   include 'global_vars.php';
   include $html_head; // Head with the meta-info and links
-  include $header; // Header
 ?>
-
+<body class="home">  
+<?php include $header; ?>
   <div class="main-banner carousel slide carousel-fade" data-ride="carousel" id="mainBannerSlider">
     <ol class="carousel-indicators">
       <li data-target="#mainBannerSlider" data-slide-to="0" class="active"></li>
