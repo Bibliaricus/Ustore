@@ -124,7 +124,7 @@ HERE;
 
 } else {
   //если    страничка чужая, то выводим только некторые данные и форму для отправки    личных сообщений
-  echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar() . '"><br>';
+  echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar($inputUserAvatar) . '"><br>';
   print <<<HERE
     <form action='post.php' method='post'>
     <br>
