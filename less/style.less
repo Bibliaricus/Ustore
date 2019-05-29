@@ -1805,7 +1805,20 @@ Version: 1.0
         }
       }
     } 
-    .page-header {position: absolute; top: 0; z-index: 100;}
+    body.home .page-header {
+      position: absolute; 
+      top: 0; 
+      z-index: 100;
+    }
+    body:not(.home) .page-header {
+      position: relative;
+      padding-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      background-color: #e74948;
+    }
+    body:not(.home).dark .page-header {
+      background-color: #262626;
+    }
   /* 6.2. Main banner */
   .main-banner {
     // height: 100vh;
