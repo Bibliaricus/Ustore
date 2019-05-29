@@ -156,11 +156,7 @@
             <input type="checkbox" name="sign-in-user-remember" id="remember-input" checked>
             <label for="remember-input">Remember Me</label>
             <a href="send_pass.php" class="login-popup__link">Lost password?</a>
-          </div>
-          <div class="checkbox-field">
-            <input type="checkbox" name="sign-in-auto-entrance" id="entrance" value="1">
-            <label for="entrance">Automatic entrance</label>
-          </div>
+          </div>          
           <button class="login-popup__button">Log in</button>
           <span>New client?
             <a href="reg.php" class="login-popup__link">Register now!</a>
