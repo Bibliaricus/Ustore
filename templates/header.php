@@ -1,5 +1,4 @@
 <?php ?>
-<body>  
   <header class="container-fluid page-header">
     <div class="fixed-header">
       <a href="#fixed-mobile-header-menu" class="mobile-menu-humburger" data-toggle="collapse">
