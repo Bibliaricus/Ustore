@@ -1774,12 +1774,17 @@ Version: 1.0
     }
 
     /* 6.1.2. Header-bottom */
+    body.home {
+      .header-bottom__logo {
+        pointer-events: none;
+      }
+    }
+    
     .header-bottom {
       margin-top: 1.2rem;
       &__logo {
-        pointer-events: none;
         margin: 0;
-      }
+      }      
 
       .navbar-nav .nav-item .nav-link { // So long heavy selector for overwrite default color of Bootstrap
         position: relative;

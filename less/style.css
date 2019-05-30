@@ -1675,11 +1675,13 @@ header a:hover {
   color: initial;
 }
 /* 6.1.2. Header-bottom */
+body.home .header-bottom__logo {
+  pointer-events: none;
+}
 .header-bottom {
   margin-top: 1.2rem;
 }
 .header-bottom__logo {
-  pointer-events: none;
   margin: 0;
 }
 .header-bottom .navbar-nav .nav-item .nav-link {
