@@ -83,7 +83,10 @@
       <div class="container">
         <div class="row">
           <div class="copyright__authur col-12 col-sm-6">
-            &copy; Created by Web-lem. 
+            <span>              
+              &copy; Created by Web-lem. 
+            </span>
+            <div class="header-top__number-line">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
           </div>
           <div class="copyright__payments col-12 col-sm-6">
             <span></span>
