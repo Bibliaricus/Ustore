@@ -32,28 +32,24 @@ if (isset($login) and isset($email)) { //если существуют необ�
   // ---
 
   include 'global_vars.php';
-  include $html_head;
-  include $header;
-?>
-<h1>Forgot your password?</h1>
+  include $html_head;?>
+
+  <body class="register forgot-pass">
+
+<?php include $header; ?>
+<h1 class="page-title">Forgot your password?</h1>
+<p>Please enter your email address below to receive a password reset link.</p>
+<form action="#" method="POST" class="user-input-form">
+  <label for="forgot-login">Enter you login:</label>
+  <input type="text" name="forgot-pass-login" id="forgot-login">
+  <label for="forgot-email">Enter you e-mail:</label>
+  <input type="text" name="forgot-pass-email" id="forgot-email">
+  <div class="register_button">
+    <button class="custom-btn" name="submit">Send my password</button>
+    <a class="custom-btn" href="<?php echo $_SERVER['HTTP_REFERER']?>">Back</a>
+  </div>
+</form>
 <?php 
   include $footer;
-  include $functions;
-  // ---
-    echo '
-        <html>
-          <head>
-            <title>Забыли пароль?</title>
-          </head>
-          <body>
-            <h2>Забыли пароль?</h2>
-            <form action="#" method="post">
-              <label for="">Enter you login:</label>
-              <input type="text" name="forgot-pass-login">
-              <label for="">Enter you e-mail:</label>
-              <input type="text" name="forgot-pass-email">
-              <input type="submit" name="submit" value="Send new password">
-            </form>
-          </body>
-        </html>';
+  include $functions;  
 }

@@ -2368,19 +2368,19 @@ body.register .page-title {
 body.register .register_button {
   display: flex;
 }
-body.register form {
+body.register form.user-input-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem 0;
 }
-body.register form p {
+body.register form.user-input-form p {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-body.register form input {
+body.register form.user-input-form input {
   width: 50%;
   margin-left: auto;
   margin-right: 1rem;
@@ -2420,6 +2420,23 @@ body.register .custom-btn:first-child:hover {
 body.register .custom-btn:hover {
   color: #fff;
   background-color: #000;
+}
+/* Forgot password page */
+body.forgot-pass h1 + p {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+body.forgot-pass form.user-input-form {
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+body.forgot-pass form.user-input-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+body.forgot-pass .register_button {
+  margin: 1rem auto 0rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
@@ -2619,6 +2636,9 @@ body.register .custom-btn:hover {
     margin-top: 0;
     font-size: 0.7rem;
   }
+  body.forgot-pass form.user-input-form {
+    width: 75%;
+  }
   .main-banner .slide4 .banner__category,
   .main-banner .slide4 .banner__description,
   .main-banner .slide4 .banner__title {
@@ -2756,6 +2776,9 @@ body.register .custom-btn:hover {
   body.register fieldset {
     flex-basis: 95%;
   }
+  body.forgot-pass form.user-input-form {
+    width: 75%;
+  }
   .main-banner .main-banner-arrow-next,
   .main-banner .main-banner-arrow-prev {
     top: 55%;
@@ -2827,7 +2850,7 @@ body.register .custom-btn:hover {
   body.register label {
     flex-basis: 100%;
   }
-  body.register form input {
+  body.register form.user-input-form input {
     width: 100%;
     margin-right: auto;
   }
@@ -2844,6 +2867,12 @@ body.register .custom-btn:hover {
   }
   body.register fieldset {
     margin-bottom: 1rem;
+  }
+  body.forgot-pass form.user-input-form {
+    width: 95%;
+  }
+  body.forgot-pass .custom-btn {
+    margin: 0.5rem 0;
   }
   .main-banner .slide3 {
     background-size: cover, cover;

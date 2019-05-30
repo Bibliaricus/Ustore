@@ -1779,7 +1779,7 @@ Version: 1.0
         pointer-events: none;
       }
     }
-    
+
     .header-bottom {
       margin-top: 1.2rem;
       &__logo {
@@ -2482,7 +2482,7 @@ body.register {
   .register_button {
     display: flex;
   }
-  form {
+  form.user-input-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -2537,6 +2537,25 @@ body.register {
   }
 }
 
+/* Forgot password page */
+body.forgot-pass {
+  h1 + p {
+    text-align: center;
+    margin: 2rem 0 0;
+  }
+  form.user-input-form {
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    input {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  .register_button {
+    margin: 1rem auto 0rem;
+  }
+}
 
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
   /* 7.1 Min-width: 1200px */
@@ -2783,6 +2802,12 @@ body.register {
       }
     }
 
+    body.forgot-pass {
+      form.user-input-form {
+        width: 75%;
+      }
+    }
+
     .main-banner {
       .slide4 {
         .banner__category,
@@ -2964,6 +2989,12 @@ body.register {
       }
     }
 
+    body.forgot-pass {
+      form.user-input-form {
+        width: 75%;
+      }
+    }
+
     .main-banner {
       .main-banner-arrow-next,
       .main-banner-arrow-prev {
@@ -3058,7 +3089,7 @@ body.register {
       label {
         flex-basis: 100%;
       }
-      form {
+      form.user-input-form {
         input {
           width: 100%;
           margin-right: auto;
@@ -3077,6 +3108,15 @@ body.register {
       }
       fieldset {
         margin-bottom: 1rem;
+      }
+    }
+
+    body.forgot-pass {
+      form.user-input-form {
+        width: 95%;
+      }
+      .custom-btn {
+        margin: 0.5rem 0;
       }
     }
 
