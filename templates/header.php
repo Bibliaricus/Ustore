@@ -1,4 +1,12 @@
-<?php ?>
+<?php 
+function colsIfUserLogined($col_not_user, $col_user) {
+  if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {
+    echo 'col-' . $col_not_user;
+  } else {
+    echo 'col-' . $col_user;
+  }
+}
+?>
   <header class="container-fluid page-header">
     <div class="fixed-header">
       <a href="#fixed-mobile-header-menu" class="mobile-menu-humburger" data-toggle="collapse">
@@ -6,7 +14,38 @@
         <span class="mobile-menu-humburger__part"></span>
         <span class="mobile-menu-humburger__part"></span>
       </a> 
-      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">        
+      <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">
+      <?php if (!empty($_SESSION['login']) or !empty($_SESSION['id'])) { ?>
+      <div class="header-top__user-bar col-xl-3">
+        <div class="user-info-panel">
+        <?php
+          // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
+          // {        
+            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+              $avatar = "avatars/no_photo.jpg";
+              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
+            } else {
+              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
+            }
+            echo "<span class=\"user-logged-name\">" . '<a class="user-name" href="user-page.php?id=' . $myrow['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
+            echo '</div>';
+            echo '<a class="my-acc-link" href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
+            echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
+            // }
+
+          // ------------------------------------------------------  New code  ----------------------------------
+          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+
+            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
+    
+          } else {
+    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
+          }
+
+          ?>
+        <!-- </div> -->
+      </div>
+      <?php } ?>
         <div class="fixed-header-menu collapse navbar-collapse" id="fixed-header-menu">          
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
             <li class="nav-item mr-2 active">
@@ -50,9 +89,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
+            <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
             <li class="nav-item">
               <a class="nav-link" href="reg.php">Sign in or create account</a>
             </li>
+            <?php } ?>
           </ul>            
         </div>
       </nav>
@@ -72,7 +113,7 @@
       </div>
     </div>
     <div class="header-top row">
-      <div class="header-top__left col-4 d-flex align-items-center">
+      <div class="header-top__left <?php colsIfUserLogined(6, 4) ?> d-flex align-items-center">
         <div class="dropdown header-top__language-list">
           <button class="dropdown-toggle header-top__language-button header-top__language-link lang-en pr-2" id="language-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose your language">English</button>
           <div class="dropdown-menu" aria-labelledby="language-dropdown-button">
@@ -101,11 +142,12 @@
         </div>
         <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
       </div>
+      <?php if (!empty($_SESSION['login']) or !empty($_SESSION['id'])) { ?>
       <div class="header-top__user-bar col-5">
         <div class="user-info-panel">
       <?php
-          if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
-          {            
+          // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
+          // {            
             if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
               echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
@@ -116,7 +158,7 @@
             echo '</div>';
             echo '<a class="my-acc-link" href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
             echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
-            }
+            // }
 
           // ------------------------------------------------------  New code  ----------------------------------
           if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
@@ -129,7 +171,8 @@
 
           ?>
       </div>
-      <div class="header-top__right col-3">
+        <?php } ?>
+      <div class="header-top__right <?php colsIfUserLogined(6, 3) ?>">
         <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
           <a href="#" class="header-top__login">Sign in or create an account</a>
         <?php } ?>
@@ -212,9 +255,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
+            <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
             <li class="nav-item">
               <a class="nav-link" href="reg.php">Sign in or create an account</a>
-            </li>            
+            </li>
+            <?php } ?>
           </ul>
           <ul class="mobile-top__social">
             <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStBZPWS4NP_8a6dDugIkq98UszVRCvnVI9nhFsSKVrAQHMk43oKn3Bjnw" class="icon-font-facebook-f-brands"></a></li>
