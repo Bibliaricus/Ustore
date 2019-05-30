@@ -102,20 +102,20 @@
         <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
       </div>
       <div class="header-top__user-bar col-5">
+        <div class="user-info-panel">
       <?php
           if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
           {            
             if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
-              echo '<a href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
             } else {
-              echo '<a href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
             }
-      
-      
-            echo "<span>You are logged in as " . $_SESSION['login']. '</span>';
-            echo '<a href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
-            echo '<a href="exit.php">Logout</a>';
+            echo "<span class=\"user-logged-name\">You are logged in as " . '<a class="user-name" href="user-page.php?id=' . $myrow['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
+            echo '</div>';
+            echo '<a class="my-acc-link" href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
+            echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
             }
 
           // ------------------------------------------------------  New code  ----------------------------------
