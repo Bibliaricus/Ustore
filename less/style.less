@@ -1489,7 +1489,7 @@ Version: 1.0
       }
     }
     .avatar-link {
-      width: 30%;
+      width: 50px;
     }
     .user-avatar {
       transform: scale(1);
@@ -1508,7 +1508,7 @@ Version: 1.0
 
   .user-name {
     color: #fff;
-    margin-left: 0.5rem;
+    margin-left: 0.2rem;
     border: 1px solid #fff;
     padding: 0.2rem;
     border-radius: 5px;
@@ -3018,6 +3018,14 @@ body.forgot-pass {
       display: none;
     }
 
+    .fixed-header {
+      .user-exit-button {
+        width: 20px;
+        overflow: hidden;
+        margin-left: 1rem;
+      }
+    }
+
     .off-canvas-open {
       max-width: 75vw;
     }
@@ -3079,6 +3087,14 @@ body.forgot-pass {
     #q-view-popup-new.modal.show .modal-dialog {
       transform: translateX(15px);
       max-width: 95vw;
+    }
+
+    .fixed-header {
+      padding: .5rem 1rem;
+      .header-bottom__icon-item {
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+      }
     }
 
     .top-interes {
@@ -3166,6 +3182,12 @@ body.forgot-pass {
       &__title {
         font-size: 1.5rem;
         width: 70%;
+      }
+    }
+
+    .fixed-header  {
+      .avatar-link {
+        display: none;
       }
     }
 

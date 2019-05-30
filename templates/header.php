@@ -16,7 +16,7 @@ function colsIfUserLogined($col_not_user, $col_user) {
       </a> 
       <nav class="header-top__navbar navbar navbar-expand-lg navbar-light col-lg-10">
       <?php if (!empty($_SESSION['login']) or !empty($_SESSION['id'])) { ?>
-      <div class="header-top__user-bar col-xl-3">
+      <div class="header-top__user-bar col-12 col-sm-6 col-lg-4 col-xl-3">
         <div class="user-info-panel">
         <?php
           // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
