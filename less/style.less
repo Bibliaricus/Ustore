@@ -1453,6 +1453,54 @@ Version: 1.0
   }
 
   /* 4.11. Styles for authorized users */
+  .fixed-header .my-acc-link {
+    display: none;
+  }
+
+  .fixed-header {
+    .user-name {
+      color: #000000;
+      border: none;
+    }
+    .header-top__user-bar {
+      font-size: .8125rem;
+      font-weight: 700;
+      padding-top: 0.2rem;
+      .my-acc-link,
+      .user-exit-button,
+      .user-name {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;          
+          width: 0;
+          height: 2px;
+          background-color: @main-red;
+          transition: .3s ease;
+        }
+        &:hover, &:focus {
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+    .avatar-link {
+      width: 30%;
+    }
+    .user-avatar {
+      transform: scale(1);
+    }
+    .user-exit-button {
+      padding: 0.2rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
   .user-avatar {
     border-radius: 50%;
     transform: scale(0.7);
@@ -1474,6 +1522,7 @@ Version: 1.0
 
   .user-exit-button {
     text-transform: uppercase;
+    font-weight: 700;
     &::before {
       margin-right: 0.5rem;
       font-size: 1rem;
