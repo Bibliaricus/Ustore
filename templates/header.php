@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="header-top row">
-      <div class="header-top__left col-6 d-flex align-items-center">
+      <div class="header-top__left col-4 d-flex align-items-center">
         <div class="dropdown header-top__language-list">
           <button class="dropdown-toggle header-top__language-button header-top__language-link lang-en pr-2" id="language-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Choose your language">English</button>
           <div class="dropdown-menu" aria-labelledby="language-dropdown-button">
@@ -100,9 +100,39 @@
           </div>
         </div>
         <div class="header-top__number-line ml-1">Order online or call us <a href="tel:+1800008808">(+1800) 000 8808</a></div>
-      </div>      
-      <div class="header-top__right col-6">
-        <a href="#" class="header-top__login">Sign in or create an account</a>
+      </div>
+      <div class="header-top__user-bar col-5">
+      <?php
+          if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
+          {            
+            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+              $avatar = "avatars/no_photo.jpg";
+              echo '<a href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
+            } else {
+              echo '<a href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
+            }
+      
+      
+            echo "<span>You are logged in as " . $_SESSION['login']. '</span>';
+            echo '<a href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
+            echo '<a href="exit.php">Logout</a>';
+            }
+
+          // ------------------------------------------------------  New code  ----------------------------------
+          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+
+            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
+    
+          } else {
+    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
+          }
+
+          ?>
+      </div>
+      <div class="header-top__right col-3">
+        <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
+          <a href="#" class="header-top__login">Sign in or create an account</a>
+        <?php } ?>
         <form action="testreg.php" method="POST" class="login-popup">
           <label for="login">Username<span class="required">*</span></label>
           <input type="text" name="sign-in-login" id="login" class="login-popup__text-input" value="<?php 
@@ -121,35 +151,7 @@
           <span>New client?
             <a href="reg.php" class="login-popup__link">Register now!</a>
           </span>
-        </form>
-        <?php
-          // Проверяем, пусты ли переменные логина и id пользователя
-          if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
-          {
-          // Если не пусты, то мы выводим ссылку
-          echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='http://tvpavlovsk.sk6.ru/'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
-          echo '<a href="user-page.php?id=' . $myrow['id'] . '">Моя страница</a>';
-          echo '<a href="exit.php">выход</a>';
-            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
-              // Впихнути сюди пусту авку
-              $avatar = "avatars/no_photo.jpg";
-              echo '<img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"';
-            } else {
-              // А сюди впихнути авку користувача. Але для початку подивитись, чого вона в БД не підгружається
-              echo '<img alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '">';
-            }
-          }
-
-          // ------------------------------------------------------  New code  ----------------------------------
-          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
-
-            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
-    
-          } else {
-    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
-          }
-
-          ?>
+        </form>        
         <ul class="header-top__social">
           <li><a href="#" class="icon-font-facebook-f-brands"></a></li>
           <li><a href="#" class="icon-font-twitter-brands"></a></li>
