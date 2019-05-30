@@ -50,6 +50,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Us</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reg.php">Sign in or create account</a>
+            </li>
           </ul>            
         </div>
       </nav>
@@ -193,23 +196,23 @@
               <a class="nav-link" href="index.php">Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://xstore.8theme.com/demos/home-default/">About Us</a>
+              <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://hosting.timeweb.ru/login">Services</a>
+              <a class="nav-link" href="#">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://tinypng.com/">Ecommerce</a>
+              <a class="nav-link" href="#">Ecommerce</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://teenslang.su/id/15874">Blog</a>
+              <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://ru.wikipedia.org/wiki/Kamon!!!">Contact Us</a>
+              <a class="nav-link" href="#">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://translate.academic.ru/%D0%9A%D0%B0%D0%BC%D0%BE%D0%BD/en/ru">Sign in or create an account</a>
-            </li>
+              <a class="nav-link" href="reg.php">Sign in or create an account</a>
+            </li>            
           </ul>
           <ul class="mobile-top__social">
             <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStBZPWS4NP_8a6dDugIkq98UszVRCvnVI9nhFsSKVrAQHMk43oKn3Bjnw" class="icon-font-facebook-f-brands"></a></li>
