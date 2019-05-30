@@ -1,54 +1,46 @@
-<?php ob_start(); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <!-- Favicons -->
-  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" href="android-chrome-192x192.png" sizes="192x192" type="image/png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <title>Registration</title>
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/style.min.css">
-
-</head>
-<body>
-  <h2>Регистрация</h2>
+<?php ob_start();
+  include 'global_vars.php';
+  include $html_head;
+  ?>
+  <body class="register">
+  
+  <?php include $header; ?>
+  
+  <h1 class="page-title">Create your account</h1>
   <form action="save_user.php" method="post" enctype="multipart/form-data">
-    <p>
-      <label>Ваш логин *:<br></label>
+    <fieldset>
+      <legend>Sign-in information</legend>
+      <p>
+      <label>Your login *:<br></label>
       <input name="sign-up-login" type="text" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
     <p>
-      <label>Ваш пароль *:<br></label>
+      <label>Your password *:<br></label>
       <input name="sign-up-password" type="password" size="15" maxlength="15" required>
       <small>Max 15 symbols</small>
     </p>
-    <p>
-      <label for="avatar">Select your avatar *: </label>
-      <input type="file" name="sign-up-avatar" id="avatar">
-      <small>Image format: jpg, gif or png. Max weight: 2 MB.
+    </fieldset>
+    <fieldset>
+      <legend>Input your email and upload avatar</legend>
+      <p>
+        <label for="email">Ваш E-mail *:<br></label>
+        <input id="email" name="sign-up-email" type="email" size="15" maxlength="100" required>
+      </p>
+      <p>
+        <label for="avatar">Select your avatar *: </label>
+        <input type="file" name="sign-up-avatar" id="avatar">        
+        <small>Image format: jpg, gif or png. Max weight: 2 MB.</small>
         <small>Not required.</small>
-      </small>
-    </p>
-    <p>
-      <label for="email">Ваш E-mail *:<br></label>
-      <input id="email" name="sign-up-email" type="email" size="15" maxlength="100" required>
-    </p>    
-      <input type="submit" name="submit" value="Зарегистрироваться">
-    </p>
-  </form>
-</body>
-</html>
-<?php ob_end_flush(); ?>
+      </p>
+    </fieldset>
+    <div class="register_button">
+      <button class="custom-btn" name="submit">Create your account</button>
+      <a class="custom-btn" href="<?php echo $_SERVER['HTTP_REFERER']?>">Back</a>
+    </div>
+  </form>  
+
+<?php 
+include $footer;
+include $functions;
+ob_end_flush(); ?>

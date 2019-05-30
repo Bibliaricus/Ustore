@@ -51,6 +51,7 @@ Version: 1.0
   6.8. Pre-footer
   6.9. Footer
   6.10. Copyright
+# Register page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2355,6 +2356,69 @@ footer h4 {
 .copyright__payments span:nth-child(5) {
   background-position: 95% 0%;
 }
+/* # Register page */
+body.register .page-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 33px;
+  margin-top: 3.5rem;
+}
+body.register .register_button {
+  display: flex;
+}
+body.register form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+body.register form p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body.register form input {
+  width: 50%;
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 0.2rem 1rem;
+}
+body.register fieldset {
+  flex-basis: 47%;
+  border: 1px solid #e1e1e1;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+body.register legend {
+  width: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+body.register small {
+  color: gray;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+body.register .custom-btn {
+  background-color: #fff;
+  color: #000;
+  letter-spacing: 0.1rem;
+  border: 1px solid #000;
+  margin: 0 0.5rem;
+}
+body.register .custom-btn:first-child {
+  background-color: #000000;
+  color: #ffffff;
+}
+body.register .custom-btn:first-child:hover {
+  background-color: #e74948;
+  border-color: #e74948;
+}
+body.register .custom-btn:hover {
+  color: #fff;
+  background-color: #000;
+}
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {
@@ -2438,6 +2502,9 @@ footer h4 {
     padding: 1rem 0;
     margin-top: 0rem;
   }
+  body.register fieldset {
+    flex-basis: 80%;
+  }
 }
 @media only screen and (max-width: 991.98px) {
   .test:after {
@@ -2457,6 +2524,10 @@ footer h4 {
   }
   .off-canvas-open {
     max-width: 45vw;
+  }
+  body.register .header-bottom {
+    margin-top: 0;
+    padding-top: 1.5rem;
   }
   .main-banner__slide .banner__category {
     margin-top: 2rem;
@@ -2535,11 +2606,16 @@ footer h4 {
   .subscribe-popup .modal-content {
     max-width: 80vw;
   }
-  .header-top__navbar .navbar-toggler {
+  body.home .header-top__navbar .navbar-toggler {
     border-color: #b99292;
   }
-  .header-top__navbar .navbar-toggler span {
+  body.home .header-top__navbar .navbar-toggler span {
     filter: invert(100%);
+  }
+  body.register small {
+    flex-basis: 100%;
+    margin-top: 0;
+    font-size: 0.7rem;
   }
   .main-banner .slide4 .banner__category,
   .main-banner .slide4 .banner__description,
@@ -2675,6 +2751,9 @@ footer h4 {
   .off-canvas-open {
     max-width: 85vw;
   }
+  body.register fieldset {
+    flex-basis: 95%;
+  }
   .main-banner .main-banner-arrow-next,
   .main-banner .main-banner-arrow-prev {
     top: 55%;
@@ -2742,6 +2821,27 @@ footer h4 {
   .fixed-mobile-header-menu,
   .mobile-header-menu {
     width: 95vw;
+  }
+  body.register label {
+    flex-basis: 100%;
+  }
+  body.register form input {
+    width: 100%;
+    margin-right: auto;
+  }
+  body.register small {
+    margin-top: 0.5rem;
+  }
+  body.register .register_button {
+    flex-wrap: wrap;
+  }
+  body.register .custom-btn {
+    flex-basis: 100%;
+    text-align: center;
+    margin: 0.5rem;
+  }
+  body.register fieldset {
+    margin-bottom: 1rem;
   }
   .main-banner .slide3 {
     background-size: cover, cover;
