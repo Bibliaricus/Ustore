@@ -7,7 +7,7 @@
   <?php include $header; ?>
   
   <h1 class="page-title">Create your account</h1>
-  <form action="save_user.php" method="post" enctype="multipart/form-data">
+  <form action="save_user.php" method="post" enctype="multipart/form-data" class="user-input-form">
     <fieldset>
       <legend>Sign-in information</legend>
       <p>
@@ -28,7 +28,7 @@
         <input id="email" name="sign-up-email" type="email" size="15" maxlength="100" required>
       </p>
       <p>
-        <label for="avatar">Select your avatar *: </label>
+        <label for="avatar">Select your avatar: </label>
         <input type="file" name="sign-up-avatar" id="avatar">        
         <small>Image format: jpg, gif or png. Max weight: 2 MB.</small>
         <small>Not required.</small>
