@@ -40,49 +40,62 @@ function ifUserHaveHisAvatar($inputUserAvatar) {
   }
 }
 
+include 'global_vars.php';
+include $html_head;
 ?>
 
-<html>
-  <head>
-    <title><?php echo $myrow['login']; ?></title>
-  </head>
-  <body>
-    <h2>Пользователь "<?php echo $myrow['login']; ?>"</h2>
+  <body class="user-page">
+<?php include $header; ?>
+<div class="container-fluid">
+  <h1 class="page-title">Welcome, <?php echo $myrow['login']; ?></h2>
+      <div class="row user-page-row">
+
+  <nav class="user-navigation col-4 col-md-3 col-lg-2">
+    <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
+      <li class="nav-item mr-4"><a href="index.php" class="nav-link">Home page</a></li>
+      <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $myrow2['id'] ?>" class="nav-link">My page</a></li>
+      <li class="nav-item mr-4"><a href="all_users.php" class="nav-link">All users</a></li>
+      <li class="nav-item mr-4"><a href="exit.php" class="nav-link">Log out</a></li>
+    </ul>
+  </nav>
+  <div class="user-main-content col-8 col-md-9 col-lg-10">
+<?php
+if ($myrow['login'] == $login) {
+?>
+ 
+  <form class="user-input-form" action='user-update.php' method='post'>
+    <p>Your login: <strong><?php echo $myrow['login'] ?></strong>.</p> 
+    <label for="up-user-login">Input your new login:</label>
+    <input name='update-user-login' type='text' id="up-user-login">
+    <button class="custom-btn" name='submit'>Change login</button>
+  </form>    
+  <form class="user-input-form" action='user-update.php' method='post'>
+    <label for="up-user-password">Input your new password:</label>
+    <input name='update-user-password' type='password' id="up-user-password">
+    <button class="custom-btn" name='submit'>Change password</button>
+  </form>
+  <form class="user-input-form" action='user-update.php' method='post' enctype='multipart/form-data'>
+    <div class="user-avatar-field">
+      <div class="user-current-ava">
+        <p>Your old avatar:</p>
+        <img class="user-avatar" alt="Avatar of user" src="<?php echo ifUserHaveHisAvatar($inputUserAvatar); ?>">
+        <label class="custom-btn" for="up-user-avatar">Select your new avatar</label>
+        <input type="FILE"    name="update-user-avatar" id="up-user-avatar" onchange="getFileParam();">
+        <small>Image format: jpg, gif or png. Max weight: 2 MB.</small>
+      </div>
+      <div class="input-file__group" id="new-avatar">
+        <p>Your new avatar:</p>
+        <div id="input-file_prev"></div>
+        <div id="input-file__name"></div>
+        <div id="input-file__size"></div>
+      </div>
+    </div>
+    <button class="custom-btn" name='submit'>Change avatar</button>
+  </form>
+
+  <h2>Личные    сообщения:</h2>
 
 <?php
-// Меню
-print <<<HERE
-  |<a href='user-page.php?id=$myrow2[id]'>Моя страница</a>|<a href='index.php'>Главная страница</a>|<a href='all_users.php'>Список пользователей</a>|<a href='exit.php'>Выход</a><br><br>
-HERE;
-if ($myrow['login'] == $login) {
-  //Если    страничка принадлежит вошедшему, то предлагаем изменить данные и выводим    личные сообщения
-  print <<<HERE
-  <form action='user-update.php' method='post'>
-    Ваш логин    <strong>$myrow[login]</strong>. Изменить логин:<br>
-    <input name='update-user-login' type='text'>
-    <input type='submit' name='submit' value='изменить'>
-  </form>
-    <br>
-  <form action='user-update.php' method='post'>
-    Изменить пароль:<br>
-    <input name='update-user-password' type='password'>
-    <input type='submit' name='submit' value='изменить'>
-  </form>
-    <br>
-  <form action='user-update.php' method='post' enctype='multipart/form-data'>
-    Ваш аватар:<br>
-HERE;
-
-    echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar($inputUserAvatar) . '">';
-    
-    print <<<HERE
-    Изображение должно быть    формата jpg, gif или png. Изменить аватар:<br>
-    <input type="FILE"    name="update-user-avatar">
-    <input type='submit' name='submit' value='изменить'>
-    </form>
-    <br>
-  <h2>Личные    сообщения:</h2>
-HERE;
   $tmp = mysqli_query($db, "SELECT * FROM messages WHERE recipient='$login' ORDER BY id DESC");
   $messages = mysqli_fetch_array($tmp); //извлекаем сообщения    пользователя, сортируем по идентификатору в обратном порядке, т.е. самые    новые сообщения будут вверху
   if (!empty($messages['id'])) {
@@ -120,8 +133,12 @@ HERE;
   } else {
       //если сообщений не найдено
       echo "Сообщений нет";
-  }
-
+  } 
+  ?>
+        </div>
+      </div>
+    </div>
+  <?php
 } else {
   //если    страничка чужая, то выводим только некторые данные и форму для отправки    личных сообщений
   echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar($inputUserAvatar) . '"><br>';
@@ -137,6 +154,6 @@ HERE;
     </form>
 HERE;
 }
+include $footer;
+include $functions;
 ?>
-  </body>
-</html>
