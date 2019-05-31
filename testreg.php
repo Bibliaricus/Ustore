@@ -36,7 +36,7 @@ $myrow = mysqli_fetch_array($result);
     $_SESSION['login'] = $myrow['login'];
 
     $_SESSION['id'] = $myrow['id']; //эти    данные очень часто используются, вот их и будет "носить с собой"    вошедший пользователь
-    echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";
+    echo '<html><head><meta http-equiv="refresh" content="0;URL=index.php"></head><body></body></html>';
     }
     else {
     //если пароли не сошлись
