@@ -159,7 +159,7 @@ else if (isset($_FILES['update-user-avatar']['name'])) //отправлялас�
         }
     }
     $result4 = mysqli_query($db, "UPDATE users SET    avatar='$avatar' WHERE login='$old_login'"); //обновляем аватар в базе    
-    if ($result4 == 'TRUE') { //если верно, то отправляем на личную страничку    
-      echo "<html><head></head><body>Ваша аватарка изменена! <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a></body></html>";} //отправляем    пользователя назад
+    if ($result4 == 'TRUE') { //если верно, то отправляем на личную страничку
+        echo '<html><head><meta http-equiv="refresh" content="0;URL=user-page.php?id=' . $_SESSION['id'] . '"></head><body></body></html>';}
 }
 ?>
