@@ -2610,6 +2610,40 @@ body.user-page .file-is-upload {
 body.user-page .user-page-row {
   padding: 2rem;
 }
+body.user-page .user-message__item .user-avatar {
+  transform: none;
+}
+body.user-page .user-message__item {
+  margin: 2rem 0;
+}
+body.user-page .user-message__header {
+  display: flex;
+  align-items: center;
+}
+body.user-page .user-message__meta {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+body.user-page .user-message__meta span {
+  font-size: 1.2rem;
+}
+body.user-page .user-message__meta span a {
+  color: #e74948;
+}
+body.user-page .user-message__meta span a:hover,
+body.user-page .user-message__meta span a:focus {
+  text-decoration: underline;
+}
+body.user-page .user-message__body {
+  margin: 1rem;
+}
+body.user-page .user-message__del-btn {
+  display: inline-block;
+}
+.message-section {
+  padding: 0 1rem;
+}
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
 .test {

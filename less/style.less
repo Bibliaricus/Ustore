@@ -2738,7 +2738,45 @@ body.user-page {
   }
   .user-page-row {
     padding: 2rem;
-  } 
+  }
+  .user-message__item {
+    .user-avatar {
+      transform: none;
+    }
+  }
+  .user-message {
+    &__item {
+      margin: 2rem 0;
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+    }
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1.5rem;
+      span {
+        font-size: 1.2rem;
+        a {
+          color: @main-red;
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &__body {
+      margin: 1rem;
+    }
+    &__del-btn {
+      display: inline-block;
+    }
+  }
+}
+
+.message-section {
+  padding: 0 1rem;
 }
 
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
