@@ -54,6 +54,7 @@ include $html_head;
     <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
       <li class="nav-item mr-4"><a href="index.php" class="nav-link">Home page</a></li>
       <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $myrow2['id'] ?>" class="nav-link">My page</a></li>
+      <li class="nav-item mr-4"><a href="all_users.php" class="nav-link">All users</a></li>
       <li class="nav-item mr-4"><a href="exit.php" class="nav-link">Log out</a></li>
     </ul>
   </nav>
