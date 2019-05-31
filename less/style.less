@@ -54,6 +54,8 @@ Version: 1.0
   6.9. Footer
   6.10. Copyright
 # Register page
+# Forgot password page
+# User page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2575,13 +2577,14 @@ Version: 1.0
    
 /* # Register page */
 
-body.register {
-  .page-title {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 33px;
-    margin-top: 3.5rem;
-  }
+.page-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 33px;
+  margin-top: 3.5rem;
+}
+
+body.register {  
   .register_button {
     display: flex;
   }
@@ -2658,6 +2661,84 @@ body.forgot-pass {
   .register_button {
     margin: 1rem auto 0rem;
   }
+}
+
+/* User page */
+body.user-page {
+  .user-navigation .navbar-nav .nav-item .nav-link {
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    &::after {
+        background-color: #000000;
+    }
+  }
+  .user-input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  form {
+    p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+  }
+  label {
+    font-size: 1.25rem;
+  }
+  input {
+    width: 50%;
+    padding: 0.3rem;
+    &[type="FILE"] {
+      display: none;
+    }
+  }
+  .custom-btn {
+    color: #fff;
+    background-color: #000;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    border: 1px solid #000;
+    cursor: pointer;
+    &:hover, &:focus{
+      color: #000000;
+      background-color: #ffffff;
+    }
+  }
+  .preview-img{ 
+    width: 90px; 
+    height: 90px; 
+    margin: 5px;
+    border-radius: 50%;
+  }
+  .user-current-ava {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: auto;
+    .user-avatar {
+      transform: none;
+    }
+  }
+  .user-avatar-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  .input-file__group {
+    flex-basis: 50%;
+    display: none;
+  }
+  .file-is-upload {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-page-row {
+    padding: 2rem;
+  } 
 }
 
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
@@ -2784,7 +2865,8 @@ body.forgot-pass {
       max-width: 45vw;
     }
 
-    body.register {
+    body.register,
+    body.user-page {
       .header-bottom {
         margin-top: 0;
         padding-top: 1.5rem;
@@ -2916,6 +2998,15 @@ body.forgot-pass {
       }
     }
 
+    body.user-page {
+      input {
+        width: 100%;
+      }
+      .user-avatar-field {
+        flex-direction: column;
+      }
+    }
+
     .main-banner {
       .slide4 {
         .banner__category,
@@ -3035,6 +3126,16 @@ body.forgot-pass {
       width: 70vw;
     }
 
+    body.user-page {
+      .user-page-row {
+        padding: 0;
+      }
+      .page-title {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
     .product-categories,
     .complete-look,
     footer .container {
@@ -3117,6 +3218,18 @@ body.forgot-pass {
       form.user-input-form {
         width: 75%;
       }
+    }
+
+    body.user-page {
+      .user-navigation,
+      .user-main-content {
+        -ms-flex: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .desktop-nav {
+        flex-direction: row;
+      }      
     }
 
     .main-banner {

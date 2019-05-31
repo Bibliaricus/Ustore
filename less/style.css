@@ -53,6 +53,8 @@ Version: 1.0
   6.9. Footer
   6.10. Copyright
 # Register page
+# Forgot password page
+# User page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2455,7 +2457,7 @@ footer h4 {
   background-position: 95% 0%;
 }
 /* # Register page */
-body.register .page-title {
+.page-title {
   text-align: center;
   text-transform: uppercase;
   font-size: 33px;
@@ -2533,6 +2535,80 @@ body.forgot-pass form.user-input-form input {
 }
 body.forgot-pass .register_button {
   margin: 1rem auto 0rem;
+}
+/* User page */
+body.user-page .user-navigation .navbar-nav .nav-item .nav-link {
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+body.user-page .user-navigation .navbar-nav .nav-item .nav-link::after {
+  background-color: #000000;
+}
+body.user-page .user-input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body.user-page form p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+body.user-page label {
+  font-size: 1.25rem;
+}
+body.user-page input {
+  width: 50%;
+  padding: 0.3rem;
+}
+body.user-page input[type="FILE"] {
+  display: none;
+}
+body.user-page .custom-btn {
+  color: #fff;
+  background-color: #000;
+  padding: 0.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+body.user-page .custom-btn:hover,
+body.user-page .custom-btn:focus {
+  color: #000000;
+  background-color: #ffffff;
+}
+body.user-page .preview-img {
+  width: 90px;
+  height: 90px;
+  margin: 5px;
+  border-radius: 50%;
+}
+body.user-page .user-current-ava {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: auto;
+}
+body.user-page .user-current-ava .user-avatar {
+  transform: none;
+}
+body.user-page .user-avatar-field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+body.user-page .input-file__group {
+  flex-basis: 50%;
+  display: none;
+}
+body.user-page .file-is-upload {
+  display: flex;
+  flex-direction: column;
+}
+body.user-page .user-page-row {
+  padding: 2rem;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
@@ -2644,7 +2720,8 @@ body.forgot-pass .register_button {
   .off-canvas-open {
     max-width: 45vw;
   }
-  body.register .header-bottom {
+  body.register .header-bottom,
+  body.user-page .header-bottom {
     margin-top: 0;
     padding-top: 1.5rem;
   }
@@ -2739,6 +2816,12 @@ body.forgot-pass .register_button {
   body.forgot-pass form.user-input-form {
     width: 75%;
   }
+  body.user-page input {
+    width: 100%;
+  }
+  body.user-page .user-avatar-field {
+    flex-direction: column;
+  }
   .main-banner .slide4 .banner__category,
   .main-banner .slide4 .banner__description,
   .main-banner .slide4 .banner__title {
@@ -2830,6 +2913,13 @@ body.forgot-pass .register_button {
   .mobile-header-menu {
     width: 70vw;
   }
+  body.user-page .user-page-row {
+    padding: 0;
+  }
+  body.user-page .page-title {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
   .product-categories,
   .complete-look,
   footer .container {
@@ -2890,6 +2980,15 @@ body.forgot-pass .register_button {
   }
   body.forgot-pass form.user-input-form {
     width: 75%;
+  }
+  body.user-page .user-navigation,
+  body.user-page .user-main-content {
+    -ms-flex: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  body.user-page .desktop-nav {
+    flex-direction: row;
   }
   .main-banner .main-banner-arrow-next,
   .main-banner .main-banner-arrow-prev {
