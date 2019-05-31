@@ -92,8 +92,9 @@ if ($myrow['login'] == $login) {
     </div>
     <button class="custom-btn" name='submit'>Change avatar</button>
   </form>
-
-  <h2>Личные    сообщения:</h2>
+  </div>
+  <section class="message-section">
+  <h2 class="page-title">Your message:</h2>
 
 <?php
   $tmp = mysqli_query($db, "SELECT * FROM messages WHERE recipient='$login' ORDER BY id DESC");
@@ -109,33 +110,32 @@ if ($myrow['login'] == $login) {
       if (!empty($myrow4['avatar'])) { //если такового нет, то выводим стандартный (может этого пользователя уже давно удалили)
         $authorAvatar = $avatar;
       } else { $authorAvatar = $defaultAvatar;}
-      
-      printf("
-        <table>
-        <tr>
-
-        <td><a href='user-page.php?id=%s'><img alt='аватар' src='%s'></a></td>
-
-        <td>Автор:    <a href='user-page.php?id=%s'>%s</a><br>
-        Дата:    %s<br>
-        Сообщение:<br>
-
-        %s<br>
-        <a href='drop_post.php?id=%s'>Удалить</a>
-
-
-        </td>
-        </tr>
-        </table><br>
-        ", $myrow4['id'], $authorAvatar, $myrow4['id'], $author, $messages['date'], $messages['message'], $messages['id']);
-      //выводим само сообщение
+      ?>
+    <article class="user-message__item">
+      <header class="user-message__header">
+        <a class="user-message__img" href="user-page.php?id=<?php echo $myrow4['id']; ?>">
+          <img class="user-avatar" src="<?php echo $authorAvatar; ?>" alt="Avatar of user">
+        </a>
+        <div class="user-message__meta">
+          <span>Author: <a href="user-page.php?id=<?php echo $myrow4['id']; ?>"><?php echo $author ?></a></span>
+          <span>Date: <?php echo $messages['date'] ?></span>
+        </div>
+      </header>
+      <div class="user-message__body"><?php echo $messages['message'] ?></div>
+      <a href="drop_post.php?id=<?php echo $messages['id'] ?>" class="user-message__del-btn custom-btn">Delete message</a>
+    </article>
+    
+      <?php
     } while ($messages = mysqli_fetch_array($tmp));
+    ?>
+      </section>
+    <?php
   } else {
-      //если сообщений не найдено
-      echo "Сообщений нет";
+    ?>
+      <span>There are no message</span>
+    <?php
   } 
   ?>
-        </div>
       </div>
     </div>
   <?php
