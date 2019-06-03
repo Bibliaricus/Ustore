@@ -7,9 +7,9 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
 
     $login = $_SESSION['login'];
     $password = $_SESSION['password'];
-    $result2 = mysqli_query($db, "SELECT id FROM users WHERE login='$login' AND password='$password'");
-    $myrow2 = mysqli_fetch_array($result2);
-    if (empty($myrow2['id'])) {
+    $result2 = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'");
+    $user = mysqli_fetch_array($result2);
+    if (empty($user['id'])) {
         //если данные    пользователя не верны
         exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");
     }
@@ -17,24 +17,55 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     //Проверяем,    зарегистрирован ли вошедший
     exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");}
 ?>
-  <html>
-  <head>
-  <title>Список пользователей</title>
-  </head>
-  <body>
-  <h2>Список    пользователей</h2>
 
+<?php 
+  include "global_vars.php";
+  include $html_head;
+?>
+
+<body class="all-users user-page">
+
+<?php 
+  include $header;
+?>  
+<div class="container-fluid">  
+  <h1 class="page-title">List of all users</h1>
+  <div class="row user-page-row">
+    <nav class="user-navigation col-4 col-md-3 col-lg-2">
+      <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
+        <li class="nav-item mr-4"><a href="index.php" class="nav-link">Home page</a></li>
+        <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $user['id'] ?>" class="nav-link">My page</a></li>
+        <li class="nav-item mr-4"><a href="all_users.php" class="nav-link">All users</a></li>
+        <li class="nav-item mr-4"><a href="exit.php" class="nav-link">Log out</a></li>
+      </ul>
+    </nav>
+    <div class="user-main-content col-8 col-md-9 col-lg-10">
+      <ul class="user-list">
  <?php
-//выводим    меню
-print <<<HERE
-  |<a href='user-page.php?id=$_SESSION[id]'>Моя страница</a>|<a href='index.php'>Главная страница</a>|<a href='all_users.php'>Список пользователей</a>|<a href='exit.php'>Выход</a><br><br>
-HERE;
-$result = mysqli_query($db, "SELECT login,id FROM users ORDER BY login"); //извлекаем логин и идентификатор пользователей
+$result = mysqli_query($db, "SELECT login,id,avatar FROM users ORDER BY login"); //извлекаем логин и идентификатор пользователей
 $myrow = mysqli_fetch_array($result);
 do {
-    //выводим их в цикле
-    printf("<a href='user-page.php?id=%s'>%s</a><br>", $myrow['id'], $myrow['login']);
+  ?>
+  
+    <li class="user-list__item">
+      <a href="user-page.php?id=<?php echo $myrow['id']; ?>">
+        <img src="<?php echo $myrow['avatar']; ?>" alt="Avatar of user" class="user-list__avatar user-avatar">
+      </a>
+      <span class="user-list__link"><?php echo $myrow['login']; ?></span>
+      <a href="user-page.php?id=<?php echo $myrow['id']; ?>" class="custom-btn">Write message</a>
+    </li>
+  
+    <!-- //выводим их в цикле
+    printf("<a href='user-page.php?id=%s'>%s</a><br>", $myrow['id'], $myrow['login']); -->
+  <?php
 } while ($myrow = mysqli_fetch_array($result));
 ?>
-  </body>
-  </html>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php
+include $footer;
+include $functions;
+?>
+  
