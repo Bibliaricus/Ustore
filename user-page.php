@@ -11,9 +11,9 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
   //если    существует логин и пароль в сессиях, то проверяем, действительны ли они
   $login = $_SESSION['login'];
   $password = $_SESSION['password'];
-  $result2 = mysqli_query($db, "SELECT id FROM users WHERE login='$login' AND password='$password'");
-  $myrow2 = mysqli_fetch_array($result2);
-  if (empty($myrow2['id'])) 
+  $result2 = mysqli_query($db, "SELECT id,avatar  FROM users WHERE login='$login' AND password='$password'");
+  $user = mysqli_fetch_array($result2);
+  if (empty($user['id'])) 
   {
     //Если не действительны (может мы удалили этого пользователя из базы за плохое поведение)
 
@@ -24,14 +24,14 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
   exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");
 }
 $result = mysqli_query($db, "SELECT * FROM users WHERE id='$id'");
-$myrow = mysqli_fetch_array($result); //Извлекаем все данные    пользователя с данным id
-if (empty($myrow['login'])) {exit("Пользователя не существует! Возможно он был удален. <a href='index.php'>Главная страница</a>");} //если такого не существует
+$userAnother = mysqli_fetch_array($result); //Извлекаем все данные    пользователя с данным id
+if (empty($userAnother['login'])) {exit("Пользователя не существует! Возможно он был удален. <a href='index.php'>Главная страница</a>");} //если такого не существует
 ?>
 
 <?php 
 
 // Function for checking does the user have an avatar
-$inputUserAvatar = $myrow['avatar'];
+$inputUserAvatar = $userAnother['avatar'];
 function ifUserHaveHisAvatar($inputUserAvatar) {
   if (!empty($inputUserAvatar)) {
     return $inputUserAvatar;
@@ -47,24 +47,26 @@ include $html_head;
   <body class="user-page">
 <?php include $header; ?>
 <div class="container-fluid">
-  <h1 class="page-title">Welcome, <?php echo $myrow['login']; ?></h2>
+  <?php if ($userAnother['login'] == $login) { ?>
+  <h1 class="page-title">Welcome, <?php echo $userAnother['login']; ?></h2>
+  <?php }?>
       <div class="row user-page-row">
 
   <nav class="user-navigation col-4 col-md-3 col-lg-2">
     <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
       <li class="nav-item mr-4"><a href="index.php" class="nav-link">Home page</a></li>
-      <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $myrow2['id'] ?>" class="nav-link">My page</a></li>
+      <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $user['id'] ?>" class="nav-link">My page</a></li>
       <li class="nav-item mr-4"><a href="all_users.php" class="nav-link">All users</a></li>
       <li class="nav-item mr-4"><a href="exit.php" class="nav-link">Log out</a></li>
     </ul>
   </nav>
   <div class="user-main-content col-8 col-md-9 col-lg-10">
 <?php
-if ($myrow['login'] == $login) {
+if ($userAnother['login'] == $login) {
 ?>
  
   <form class="user-input-form" action='user-update.php' method='post'>
-    <p>Your login: <strong><?php echo $myrow['login'] ?></strong>.</p> 
+    <p>Your login: <strong><?php echo $userAnother['login'] ?></strong>.</p> 
     <label for="up-user-login">Input your new login:</label>
     <input name='update-user-login' type='text' id="up-user-login">
     <button class="custom-btn" name='submit'>Change login</button>
@@ -141,18 +143,50 @@ if ($myrow['login'] == $login) {
   <?php
 } else {
   //если    страничка чужая, то выводим только некторые данные и форму для отправки    личных сообщений
-  echo '<img alt="Avatar of user" src="' . ifUserHaveHisAvatar($inputUserAvatar) . '"><br>';
-  print <<<HERE
-    <form action='post.php' method='post'>
-    <br>
-    <h2>Отправить Ваше    сообщение:</h2>
-    <textarea cols='43' rows='4'    name='text'></textarea><br>
-    <input type='hidden' name='recipient'    value='$myrow[login]'>
-    <input type='hidden' name='id'    value='$myrow[id]'>
-    <input type='submit' name='submit' value='Отправить'>
+  ?>
+    <div class="another-user user-message__header">
+      <img class="user-avatar" alt="Avatar of user" src="<?php echo ifUserHaveHisAvatar($inputUserAvatar); ?> ">
+      <div class="another-user__info user-message__meta">
+        <span class="another-user__name"><?php echo $userAnother['login']; ?></span>
+        <span class="another-user__last-entr"><?php 
 
+          $exitTimeQuery = mysqli_query($db, "SELECT exit_time FROM users WHERE id='$id'");
+          $userExitTime = mysqli_fetch_array($exitTimeQuery);
+
+          $userLastEntrance = time() - $userExitTime['exit_time'];
+          $secondsInMinute = 60;
+          $secondsInHour = 3600;
+          $secondsInDay = $secondsInHour * 24;
+          $secondsInMonth = $secondsInDay * 30;
+          $secondsInYear = $secondsInDay * 365;          
+
+          if ($userLastEntrance > $secondsInYear) {
+            echo 'The user logged in last ' .  floor($userLastEntrance / $secondsInYear) . ' years ago.';
+          } elseif ($userLastEntrance > $secondsInMonth) {
+            echo 'The user logged in last ' .  floor($userLastEntrance / $secondsInMonth) . ' months ago.';
+          } elseif ($userLastEntrance > $secondsInDay) {
+            echo 'The user logged in last ' .  floor($userLastEntrance / $secondsInDay) . ' days ago.';
+          } elseif ($userLastEntrance > $secondsInHour) {
+            echo 'The user logged in last ' . floor($userLastEntrance / $secondsInHour) . ' hours ago.';
+          } elseif ($userLastEntrance > $secondsInMinute) {
+            echo 'The user logged in last ' .  floor($userLastEntrance / $secondsInMinute) . ' minutes ago.';
+          }else {
+            echo 'The user logged in last ' .  $userLastEntrance . ' seconds ago.';
+          } 
+        ?></span>
+      </div>
+    </div>
+    <h2 class="message-field-title">Send your message:</h2>
+    <form action='post.php' method='post'>
+      <textarea class="user-message-textarea" name='message-to-user'></textarea><br>
+      <input type='hidden' name='recipient'    value='<?php echo $userAnother['login']; ?>'>
+      <input type='hidden' name='id'    value='<?php echo $userAnother['id']; ?>'>
+      <button class="custom-btn" name="submit">Send your message</button>
     </form>
-HERE;
+  </div>
+</div>
+</div>
+<?php    
 }
 include $footer;
 include $functions;
