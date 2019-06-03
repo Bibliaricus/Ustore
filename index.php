@@ -9,7 +9,7 @@
   $login    = $_SESSION['login'];
   $password    = $_SESSION['password'];
   $result    = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'"); 
-  $myrow    = mysqli_fetch_array($result);
+  $user    = mysqli_fetch_array($result);
   $home = 'index.php';  
 
   //извлекаем нужные данные о пользователе

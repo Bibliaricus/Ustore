@@ -21,20 +21,20 @@ function colsIfUserLogined($col_not_user, $col_user) {
         <?php
           // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
           // {        
-            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+            if (!isset($user['avatar']) or $user['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
-              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
             } else {
-              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $user['avatar'] . '"></a>';
             }
-            echo "<span class=\"user-logged-name\">" . '<a class="user-name" href="user-page.php?id=' . $myrow['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
+            echo "<span class=\"user-logged-name\">" . '<a class="user-name" href="user-page.php?id=' . $user['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
             echo '</div>';
-            echo '<a class="my-acc-link" href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
+            echo '<a class="my-acc-link" href="user-page.php?id=' . $user['id'] . '">My account</a>';
             echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
             // }
 
           // ------------------------------------------------------  New code  ----------------------------------
-          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+          if (!isset($user['avatar']) or $user['avatar'] == '') {
 
             //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
     
@@ -148,20 +148,20 @@ function colsIfUserLogined($col_not_user, $col_user) {
       <?php
           // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
           // {            
-            if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+            if (!isset($user['avatar']) or $user['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
-              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
             } else {
-              echo '<a class="avatar-link" href="user-page.php?id=' . $myrow['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $myrow['avatar'] . '"></a>';
+              echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="' . $_SESSION['login'] . '" src="' . $user['avatar'] . '"></a>';
             }
-            echo "<span class=\"user-logged-name\">You are logged in as " . '<a class="user-name" href="user-page.php?id=' . $myrow['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
+            echo "<span class=\"user-logged-name\">You are logged in as " . '<a class="user-name" href="user-page.php?id=' . $user['id'] . '" title="Enter in my account">' . $_SESSION['login']. '</span>';
             echo '</div>';
-            echo '<a class="my-acc-link" href="user-page.php?id=' . $myrow['id'] . '">My account</a>';
+            echo '<a class="my-acc-link" href="user-page.php?id=' . $user['id'] . '">My account</a>';
             echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
             // }
 
           // ------------------------------------------------------  New code  ----------------------------------
-          if (!isset($myrow['avatar']) or $myrow['avatar'] == '') {
+          if (!isset($user['avatar']) or $user['avatar'] == '') {
 
             //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
     
