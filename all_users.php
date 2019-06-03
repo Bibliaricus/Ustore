@@ -1,16 +1,13 @@
 <?php
-//    вся процедура работает на сессиях. Именно в ней хранятся данные пользователя,    пока он находится на сайте. Очень важно запустить их в самом начале    странички!!!
 session_start();
-include "bd.php"; // файл bd.php должен быть в той же папке, что и все    остальные, если это не так, то просто измените путь
+include "bd.php";
 if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
-    //если    существует логин и пароль в сессиях, то проверяем, действительны ли они
     include "error-page.php";
     $login = $_SESSION['login'];
     $password = $_SESSION['password'];
     $result2 = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'");
     $user = mysqli_fetch_array($result2);
     if (empty($user['id'])) {
-        //если данные    пользователя не верны
         echo $errorPageContent_Start;
         ?>
         <p>Login to this page is allowed only to registered users!</p>
@@ -19,7 +16,6 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     exit(footerInErrorPage());
     }
 } else {
-    //Проверяем,    зарегистрирован ли вошедший
     include "error-page.php";
     echo $errorPageContent_Start;
         ?>
@@ -53,7 +49,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     <div class="user-main-content col-8 col-md-9 col-lg-10">
       <ul class="user-list">
  <?php
-$result = mysqli_query($db, "SELECT login,id,avatar FROM users ORDER BY login"); //извлекаем логин и идентификатор пользователей
+$result = mysqli_query($db, "SELECT login,id,avatar FROM users ORDER BY login");
 $myrow = mysqli_fetch_array($result);
 do {
   ?>
@@ -65,9 +61,6 @@ do {
       <span class="user-list__link"><?php echo $myrow['login']; ?></span>
       <a href="user-page.php?id=<?php echo $myrow['id']; ?>" class="custom-btn">Write message</a>
     </li>
-  
-    <!-- //выводим их в цикле
-    printf("<a href='user-page.php?id=%s'>%s</a><br>", $myrow['id'], $myrow['login']); -->
   <?php
 } while ($myrow = mysqli_fetch_array($result));
 ?>
