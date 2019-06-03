@@ -9,10 +9,7 @@ $nowTimestamp = time();
 $login = $_SESSION['login'];
 
 $test = mysqli_query($db, "UPDATE users SET exit_time='$nowTimestamp' WHERE login='$login'");
-var_dump($test);
 
-
-// setcookie("last-entrance", time(), time() + 9999999);
 unset($_SESSION['password']);
 unset($_SESSION['login']);
 unset($_SESSION['id']); //    уничтожаем переменные в сессиях
