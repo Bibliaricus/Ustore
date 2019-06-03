@@ -1433,7 +1433,7 @@ a[href^="tel"]:focus {
   width: 50px;
 }
 .fixed-header .user-avatar {
-  transform: scale(1);
+  transform: scale(0.7);
 }
 .fixed-header .user-exit-button {
   padding: 0.2rem;
@@ -1442,7 +1442,7 @@ a[href^="tel"]:focus {
 }
 .user-avatar {
   border-radius: 50%;
-  transform: scale(0.7);
+  transform: scale(1);
 }
 .user-name {
   color: #fff;
@@ -1469,6 +1469,12 @@ a[href^="tel"]:focus {
   display: flex;
   align-items: center;
 }
+.user-info-panel .user-avatar {
+  transform: scale(1);
+}
+.fixed-header .header-top__user-bar .user-avatar {
+  transform: scale(1);
+}
 .avatar-link {
   width: 15%;
 }
@@ -1479,6 +1485,9 @@ a[href^="tel"]:focus {
   text-transform: uppercase;
   font-size: .7rem;
   letter-spacing: .034rem;
+}
+.header-top__user-bar .user-avatar {
+  transform: scale(0.7);
 }
 /* 5. Custom styles */
 /* 5.1. Bootstrap container */
@@ -2635,11 +2644,29 @@ body.user-page .user-message__meta span a:hover,
 body.user-page .user-message__meta span a:focus {
   text-decoration: underline;
 }
+body.user-page .user-message__meta .another-user__name {
+  color: #e74948;
+}
+body.user-page .user-message__meta .another-user__last-entr {
+  font-size: 0.9rem;
+  color: #8d8d8d;
+}
 body.user-page .user-message__body {
   margin: 1rem;
 }
 body.user-page .user-message__del-btn {
   display: inline-block;
+}
+body.user-page .message-field-title {
+  text-align: center;
+  margin: 1.5rem 0rem 2.5rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+body.user-page .user-message-textarea {
+  padding: 0.5rem 1rem;
+  width: 70%;
+  height: 160px;
 }
 .message-section {
   padding: 0 1rem;
@@ -2758,6 +2785,10 @@ body.user-page .user-message__del-btn {
   body.user-page .header-bottom {
     margin-top: 0;
     padding-top: 1.5rem;
+  }
+  body.register .user-message-textarea,
+  body.user-page .user-message-textarea {
+    width: 100%;
   }
   .main-banner__slide .banner__category {
     margin-top: 2rem;
@@ -2954,6 +2985,15 @@ body.user-page .user-message__del-btn {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
   }
+  body.user-page .user-navigation,
+  body.user-page .user-main-content {
+    -ms-flex: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  body.user-page .desktop-nav {
+    flex-direction: row;
+  }
   .product-categories,
   .complete-look,
   footer .container {
@@ -3014,15 +3054,6 @@ body.user-page .user-message__del-btn {
   }
   body.forgot-pass form.user-input-form {
     width: 75%;
-  }
-  body.user-page .user-navigation,
-  body.user-page .user-main-content {
-    -ms-flex: 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  body.user-page .desktop-nav {
-    flex-direction: row;
   }
   .main-banner .main-banner-arrow-next,
   .main-banner .main-banner-arrow-prev {

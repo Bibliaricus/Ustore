@@ -1494,7 +1494,7 @@ Version: 1.0
       width: 50px;
     }
     .user-avatar {
-      transform: scale(1);
+      transform: scale(0.7);
     }
     .user-exit-button {
       padding: 0.2rem;
@@ -1505,7 +1505,7 @@ Version: 1.0
 
   .user-avatar {
     border-radius: 50%;
-    transform: scale(0.7);
+    transform: scale(1);
   }
 
   .user-name {
@@ -1535,6 +1535,13 @@ Version: 1.0
   .user-info-panel {
     display: flex;
     align-items: center;
+    .user-avatar {
+      transform: scale(1);
+    }
+  }
+
+  .fixed-header .header-top__user-bar .user-avatar {
+    transform: scale(1);
   }
 
   .avatar-link {
@@ -1548,6 +1555,9 @@ Version: 1.0
     text-transform: uppercase;
     font-size: .7rem;
     letter-spacing: .034rem;
+    .user-avatar {
+      transform: scale(0.7);
+    }
   }
 
 
@@ -2765,6 +2775,15 @@ body.user-page {
           }
         }
       }
+      .another-user {
+        &__name {
+          color: @main-red;
+        } 
+        &__last-entr {
+          font-size: 0.9rem;
+          color: darken(@main-gray, 35%);
+        }
+      }
     }
     &__body {
       margin: 1rem;
@@ -2772,6 +2791,17 @@ body.user-page {
     &__del-btn {
       display: inline-block;
     }
+  }
+  .message-field-title {
+    text-align: center;
+    margin: 1.5rem 0rem 2.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+  .user-message-textarea {
+    padding: 0.5rem 1rem;
+    width: 70%;
+    height: 160px;
   }
 }
 
@@ -2908,6 +2938,9 @@ body.user-page {
       .header-bottom {
         margin-top: 0;
         padding-top: 1.5rem;
+      }
+      .user-message-textarea {
+        width: 100%;
       }
     }
 
@@ -3172,6 +3205,15 @@ body.user-page {
         margin-top: 2rem;
         margin-bottom: 1.5rem;
       }
+      .user-navigation,
+      .user-main-content {
+        -ms-flex: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .desktop-nav {
+        flex-direction: row;
+      }
     }
 
     .product-categories,
@@ -3256,19 +3298,7 @@ body.user-page {
       form.user-input-form {
         width: 75%;
       }
-    }
-
-    body.user-page {
-      .user-navigation,
-      .user-main-content {
-        -ms-flex: 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
-      .desktop-nav {
-        flex-direction: row;
-      }      
-    }
+    }    
 
     .main-banner {
       .main-banner-arrow-next,
