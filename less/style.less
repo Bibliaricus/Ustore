@@ -56,6 +56,7 @@ Version: 1.0
 # Register page
 # Forgot password page
 # User page
+# All user page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2800,13 +2801,42 @@ body.user-page {
   }
   .user-message-textarea {
     padding: 0.5rem 1rem;
-    width: 70%;
+    width: 100%;
     height: 160px;
   }
 }
 
 .message-section {
   padding: 0 1rem;
+}
+
+/* # All user page */
+.user-list {
+  list-style: none;
+  padding: 0;
+  .user-list__item {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .user-list__link {
+    font-size: 1.2rem;
+    margin-left: 1rem;    
+  }
+  .custom-btn {
+    margin: 0 2rem 0 auto;
+  }
+  a:not(.custom-btn) {
+    border-radius: 50%;
+    &:hover, &:focus {
+      box-shadow: 0 0 3px 3px darken(@main-gray, 35%);
+    }
+  }
 }
 
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
@@ -3078,6 +3108,25 @@ body.user-page {
       }
     }
 
+    .user-list {
+      .user-list {
+        &__item {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;          
+          .custom-btn {
+            margin: 1rem 0;
+          }
+          a:not(.custom-btn) {
+            margin: 1rem 0;
+          }        
+        }
+        &__link {
+          margin: 0;
+        }
+      }
+    }
+
     .main-banner {
       .slide4 {
         .banner__category,
@@ -3185,6 +3234,15 @@ body.user-page {
         width: 20px;
         overflow: hidden;
         margin-left: 1rem;
+      }
+    }
+
+    .user-list {
+      .user-list {
+        &__item {
+          flex-direction: row;
+          justify-content: space-around;
+        }
       }
     }
 
@@ -3369,6 +3427,14 @@ body.user-page {
     .fixed-header  {
       .avatar-link {
         display: none;
+      }
+    }
+    
+    .user-list {
+      .user-list {
+        &__item {
+          flex-direction: column;
+        }
       }
     }
 
