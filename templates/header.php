@@ -19,8 +19,6 @@ function colsIfUserLogined($col_not_user, $col_user) {
       <div class="header-top__user-bar col-12 col-sm-6 col-lg-4 col-xl-3">
         <div class="user-info-panel">
         <?php
-          // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
-          // {        
             if (!isset($user['avatar']) or $user['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
               echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
@@ -31,19 +29,7 @@ function colsIfUserLogined($col_not_user, $col_user) {
             echo '</div>';
             echo '<a class="my-acc-link" href="user-page.php?id=' . $user['id'] . '">My account</a>';
             echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
-            // }
-
-          // ------------------------------------------------------  New code  ----------------------------------
-          if (!isset($user['avatar']) or $user['avatar'] == '') {
-
-            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
-    
-          } else {
-    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
-          }
-
           ?>
-        <!-- </div> -->
       </div>
       <?php } ?>
         <div class="fixed-header-menu collapse navbar-collapse" id="fixed-header-menu">          
@@ -146,8 +132,6 @@ function colsIfUserLogined($col_not_user, $col_user) {
       <div class="header-top__user-bar col-5">
         <div class="user-info-panel">
       <?php
-          // if (!empty($_SESSION['login']) or !empty($_SESSION['id']))
-          // {            
             if (!isset($user['avatar']) or $user['avatar'] == '') {
               $avatar = "avatars/no_photo.jpg";
               echo '<a class="avatar-link" href="user-page.php?id=' . $user['id'] . '"><img class="user-avatar" alt="Avatar of ' . $_SESSION['login'] . '" src="' . $avatar . '"></a>';
@@ -158,17 +142,6 @@ function colsIfUserLogined($col_not_user, $col_user) {
             echo '</div>';
             echo '<a class="my-acc-link" href="user-page.php?id=' . $user['id'] . '">My account</a>';
             echo '<a class="icon-font-logout user-exit-button" href="exit.php">Logout</a>';
-            // }
-
-          // ------------------------------------------------------  New code  ----------------------------------
-          if (!isset($user['avatar']) or $user['avatar'] == '') {
-
-            //проверяем, не извлечены ли данные пользователя из базы. Если    нет, то он не вошел, либо пароль в сессии неверный. Выводим окно для входа.    Но мы не будем его выводить для вошедших, им оно уже не нужно.
-    
-          } else {
-    //при удачном входе пользователю выдается все, что расположено    ниже между звездочками.
-          }
-
           ?>
       </div>
         <?php } ?>
