@@ -20,11 +20,11 @@
   }
 
   // Closing off-canvas on click outside popups
-  $(document).mouseup(function (e){ // событие клика по веб-документу
-    var div = $(".off-canvas-open"); // тут указываем ID элемента
-    if (!div.is(e.target) // если клик был не по нашему блоку
-        && div.has(e.target).length === 0) { // и не по его дочерним элементам
-      div.removeClass('off-canvas-open'); // скрываем его
+  $(document).mouseup(function (e){ 
+    var div = $(".off-canvas-open");
+    if (!div.is(e.target) 
+        && div.has(e.target).length === 0) { 
+      div.removeClass('off-canvas-open'); 
     }    
   });
   // Closing off-canvas on pressing "Esc"
@@ -40,11 +40,11 @@
     e.preventDefault();
     $(".search-field__toolip").addClass('form-retention');
   }) 
-  $(document).mouseup(function (e){ // событие клика по веб-документу
-		var div = $(".search-field__toolip"); // тут указываем ID элемента
-		if (!div.is(e.target) // если клик был не по нашему блоку
-		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
-			div.removeClass('form-retention'); // скрываем его
+  $(document).mouseup(function (e){ 
+		var div = $(".search-field__toolip"); 
+		if (!div.is(e.target) 
+		    && div.has(e.target).length === 0) { 
+			div.removeClass('form-retention'); 
     }    
   });
   $(document).on('keydown', function (e) {
@@ -142,12 +142,12 @@ $(document).ready(function() {
   // Getting likes and comments count from Instagram API (use with inWidget)
   jQuery(function($){
     $.ajax({
-      url: 'https://api.instagram.com/v1/users/self/', // если ваше приложение прошло аппрув, вместо self можете указать ID пользователя
+      url: 'https://api.instagram.com/v1/users/self/', 
       dataType: 'jsonp',
       type: 'GET',
       data: {access_token: '13047723273.8a93252.5249d0b065464a25b51d4b87c388babe'},
       success: function(response){
-         $('.new-insta-line').text(response.data.counts.followed_by); // количество подписчиков
+         $('.new-insta-line').text(response.data.counts.followed_by);
       }
     });
   }); 
