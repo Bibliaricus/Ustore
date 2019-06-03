@@ -177,7 +177,7 @@ if ($userAnother['login'] == $login) {
       </div>
     </div>
     <h2 class="message-field-title">Send your message:</h2>
-    <form action='post.php' method='post'>
+    <form action='post.php' method='post' class="another-user-textarea">
       <textarea class="user-message-textarea" name='message-to-user'></textarea><br>
       <input type='hidden' name='recipient'    value='<?php echo $userAnother['login']; ?>'>
       <input type='hidden' name='id'    value='<?php echo $userAnother['id']; ?>'>
