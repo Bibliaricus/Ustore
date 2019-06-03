@@ -56,6 +56,7 @@ Version: 1.0
 # Forgot password page
 # User page
 # All user page
+# Error page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2700,6 +2701,39 @@ body.user-page .user-message-textarea {
 .user-list a:not(.custom-btn):hover,
 .user-list a:not(.custom-btn):focus {
   box-shadow: 0 0 3px 3px #8d8d8d;
+}
+/* # Error page */
+.error-page__message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 500px;
+  background-image: url(../img/error-page-back-op.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #000;
+}
+.error-page__message p {
+  font-size: 1.5rem;
+}
+body:not(.home).error-page .page-header {
+  margin-bottom: 0;
+}
+.custom-btn {
+  border: 1px solid;
+  margin: 0 1rem;
+}
+.custom-btn:first-child {
+  border-color: #e74948;
+  background-color: #e74948;
+  color: #fff;
+}
+.custom-btn:first-child:hover,
+.custom-btn:first-child:focus {
+  background-color: #000000;
+  border-color: #000;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
