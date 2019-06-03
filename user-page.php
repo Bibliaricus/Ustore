@@ -143,23 +143,23 @@ if ($userAnother['login'] == $login) {
   <?php
 } else {
   //если    страничка чужая, то выводим только некторые данные и форму для отправки    личных сообщений
+
+  $exitTimeQuery = mysqli_query($db, "SELECT exit_time FROM users WHERE id='$id'");
+  $userExitTime = mysqli_fetch_array($exitTimeQuery);
+
+  $userLastEntrance = time() - $userExitTime['exit_time'];
+  $secondsInMinute = 60;
+  $secondsInHour = 3600;
+  $secondsInDay = $secondsInHour * 24;
+  $secondsInMonth = $secondsInDay * 30;
+  $secondsInYear = $secondsInDay * 365;
+  
   ?>
     <div class="another-user user-message__header">
       <img class="user-avatar" alt="Avatar of user" src="<?php echo ifUserHaveHisAvatar($inputUserAvatar); ?> ">
       <div class="another-user__info user-message__meta">
         <span class="another-user__name"><?php echo $userAnother['login']; ?></span>
-        <span class="another-user__last-entr"><?php 
-
-          $exitTimeQuery = mysqli_query($db, "SELECT exit_time FROM users WHERE id='$id'");
-          $userExitTime = mysqli_fetch_array($exitTimeQuery);
-
-          $userLastEntrance = time() - $userExitTime['exit_time'];
-          $secondsInMinute = 60;
-          $secondsInHour = 3600;
-          $secondsInDay = $secondsInHour * 24;
-          $secondsInMonth = $secondsInDay * 30;
-          $secondsInYear = $secondsInDay * 365;          
-
+        <span title="Last entry: <?php echo date('d F Y (H:i)', $userExitTime['exit_time']); ?>" class="another-user__last-entr"><?php 
           if ($userLastEntrance > $secondsInYear) {
             echo 'The user logged in last ' .  floor($userLastEntrance / $secondsInYear) . ' years ago.';
           } elseif ($userLastEntrance > $secondsInMonth) {
