@@ -4,18 +4,29 @@ session_start();
 include "bd.php"; // файл bd.php должен быть в той же папке, что и все    остальные, если это не так, то просто измените путь
 if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     //если    существует логин и пароль в сессиях, то проверяем, действительны ли они
-
+    include "error-page.php";
     $login = $_SESSION['login'];
     $password = $_SESSION['password'];
     $result2 = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'");
     $user = mysqli_fetch_array($result2);
     if (empty($user['id'])) {
         //если данные    пользователя не верны
-        exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");
+        echo $errorPageContent_Start;
+        ?>
+        <p>Login to this page is allowed only to registered users!</p>
+        <?php
+        echo $errorPageContent_End;
+    exit(footerInErrorPage());
     }
 } else {
     //Проверяем,    зарегистрирован ли вошедший
-    exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");}
+    include "error-page.php";
+    echo $errorPageContent_Start;
+        ?>
+        <p>Login to this page is allowed only to registered users!</p>
+        <?php
+        echo $errorPageContent_End;
+  exit(footerInErrorPage());}
 ?>
 
 <?php 
