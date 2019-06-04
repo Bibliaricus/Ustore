@@ -6,8 +6,8 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     $password = $_SESSION['password'];
     $result2 = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'");
     $user = mysqli_fetch_array($result2);
-    include "error-page.php";
     if (empty($user['id'])) {
+      include "error-page.php";
         echo $errorPageContent_Start;
         ?>
         <p>Login to this page is allowed only to registered users!</p>
@@ -33,7 +33,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
 <body class="all-users user-page">
 
 <?php 
-  // include $header;
+  include $header;
 ?>  
 <div class="container-fluid">  
   <h1 class="page-title">List of all users</h1>
@@ -41,7 +41,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     <nav class="user-navigation col-4 col-md-3 col-lg-2">
       <ul class="desktop-nav navbar-nav flex-grow-1 flex-wrap justify-content-center">
         <li class="nav-item mr-4"><a href="index.php" class="nav-link">Home page</a></li>
-        <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $user['id'] ?>" class="nav-link">My page</a></li>
+        <li class="nav-item mr-4"><a href="user-page.php?id=<?php echo $user['id']; ?>" class="nav-link">My page</a></li>
         <li class="nav-item mr-4"><a href="all_users.php" class="nav-link">All users</a></li>
         <li class="nav-item mr-4"><a href="exit.php" class="nav-link">Log out</a></li>
       </ul>
