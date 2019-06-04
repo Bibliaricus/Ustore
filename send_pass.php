@@ -1,14 +1,13 @@
 <?php
-if (isset($_POST['forgot-pass-login'])) {$login = $_POST['forgot-pass-login'];if ($login == '') {unset($login);}} //заносим введенный пользователем логин в переменную $login, если он пустой,    то уничтожаем переменную
-if (isset($_POST['forgot-pass-email'])) {$email = $_POST['forgot-pass-email'];if ($email == '') {unset($email);}} //заносим введенный пользователем e-mail, если он    пустой, то уничтожаем переменную
-if (isset($login) and isset($email)) { //если существуют необходимые переменные
+if (isset($_POST['forgot-pass-login'])) {$login = $_POST['forgot-pass-login'];if ($login == '') {unset($login);}}
+if (isset($_POST['forgot-pass-email'])) {$email = $_POST['forgot-pass-email'];if ($email == '') {unset($email);}}
+if (isset($login) and isset($email)) {
 
-    include "bd.php"; // файл    bd.php должен быть в той же папке, что и все остальные, если это не так, то    просто измените путь
+    include "bd.php";
 
-    $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login' AND    email='$email' AND activation='1'"); //такой ли у пользователя е-мейл
+    $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login' AND    email='$email' AND activation='1'");
     $myrow = mysqli_fetch_array($result);
     if (empty($myrow['id']) or $myrow['id'] == '') {
-        //если активированного пользователя с таким логином и е-mail    адресом нет
         include "error-page.php";
         echo $errorPageContent_Start;
         ?>
@@ -17,18 +16,15 @@ if (isset($login) and isset($email)) { //если существуют необ�
         echo $errorPageContent_End;
         exit(footerInErrorPage());
     }
-    //если пользователь с таким логином и е-мейлом найден,    то необходимо сгенерировать для него случайный пароль, обновить его в базе и    отправить на е-мейл
-    $datenow = date('YmdHis'); //извлекаем    дату
-    $new_password = md5($datenow); // шифруем    дату
-    $new_password = substr($new_password, 2, 6); //извлекаем из шифра 6 символов начиная    со второго. Это и будет наш случайный пароль. Далее запишем его в базу,    зашифровав точно так же, как и обычно.
+    $datenow = date('YmdHis');
+    $new_password = md5($datenow);
+    $new_password = substr($new_password, 2, 6);
 
-    $new_password_sh = md5($new_password); //шифруем пароль
-    $new_password_sh = strrev($new_password_sh); // для надежности добавим реверс
+    $new_password_sh = md5($new_password);
+    $new_password_sh = strrev($new_password_sh);
     $new_password_sh = "b1p55f" . $new_password_sh . "b1p55f";
 
-    mysqli_query($db, "UPDATE users SET    password='$new_password_sh' WHERE login='$login'"); // обновили в базе
-
-    //формируем сообщение
+    mysqli_query($db, "UPDATE users SET    password='$new_password_sh' WHERE login='$login'");
 
     $message = <<<HERE
     <html>
@@ -53,8 +49,7 @@ HERE;
         <?php
         echo $errorPageContent_End;
         footerInErrorPage();
-} else { //если    данные еще не введены # from url ↑ http-equiv='Refresh' content='5;
-  // ---
+} else {
 
   include 'global_vars.php';
   include $html_head;?>
