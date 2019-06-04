@@ -1,8 +1,14 @@
 <?php
 session_start();
 if (empty($_SESSION['login']) or empty($_SESSION['password'])) {
+    include "error-page.php";
     //если не существует сессии с логином и паролем, значит на    этот файл попал невошедший пользователь. Ему тут не место. Выдаем сообщение    об ошибке, останавливаем скрипт
-    exit("Доступ на эту    страницу разрешен только зарегистрированным пользователям. Если вы    зарегистрированы, то войдите на сайт под своим логином и паролем<br><a    href='index.php'>Главная    страница</a>");
+    echo $errorPageContent_Start;
+    ?>
+    <p>Access to this page is allowed only to registered users. If you are registered, log in to the site with your username and password</p>
+    <?php
+    echo $errorPageContent_End;
+    exit(footerInErrorPage());
 }
 include "bd.php";
 $nowTimestamp = time();
