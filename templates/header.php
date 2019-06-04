@@ -77,7 +77,10 @@ function colsIfUserLogined($col_not_user, $col_user) {
             </li>
             <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
             <li class="nav-item">
-              <a class="nav-link" href="reg.php">Sign in or create account</a>
+              <a class="nav-link" href="reg.php">Create account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign-in.php">Sign in</a>
             </li>
             <?php } ?>
           </ul>            
@@ -230,7 +233,10 @@ function colsIfUserLogined($col_not_user, $col_user) {
             </li>
             <?php if (empty($_SESSION['login']) || empty($_SESSION['id']) ) {?>
             <li class="nav-item">
-              <a class="nav-link" href="reg.php">Sign in or create an account</a>
+              <a class="nav-link" href="reg.php">Create an account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign-in.php">Sign in an account</a>
             </li>
             <?php } ?>
           </ul>
