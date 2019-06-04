@@ -57,6 +57,11 @@ function colsIfUserLogined($col_not_user, $col_user) {
         <div class="fixed-mobile-header-menu collapse" id="fixed-mobile-header-menu">
           <span class="closebtn">&times;</span>
           <ul class="navbar-nav flex-grow-1 flex-wrap justify-content-center">
+            <?php if (!empty($_SESSION['login']) or !empty($_SESSION['id'])) { ?>
+            <li class="nav-item active">
+              <a class="nav-link" href="user-page.php?id=<?php echo $user['id']; ?>">My page</a>
+            </li>
+            <?php } ?>
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home Page</a>
             </li>
@@ -213,6 +218,11 @@ function colsIfUserLogined($col_not_user, $col_user) {
         <div class="mobile-header-menu collapse" id="mobile-header-menu">
           <span class="closebtn">&times;</span>
           <ul class="mobile-nav navbar-nav">
+            <?php if (!empty($_SESSION['login']) or !empty($_SESSION['id'])) { ?>
+            <li class="nav-item active">
+              <a class="nav-link" href="user-page.php?id=<?php echo $user['id']; ?>">My page</a>
+            </li>
+            <?php } ?>
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home Page</a>
             </li>
@@ -236,7 +246,7 @@ function colsIfUserLogined($col_not_user, $col_user) {
               <a class="nav-link" href="reg.php">Create an account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sign-in.php">Sign in an account</a>
+              <a class="nav-link" href="sign-in.php">Sign in</a>
             </li>
             <?php } ?>
           </ul>
