@@ -21,6 +21,16 @@ $errorPageContent_Start = <<<HERE
   <?php 
   ?>
 HERE;
+
+function errorPageContent_End() {
+  echo '<div class="error-page__buttons">';
+  echo '<a class="custom-btn" href="index.php">To the home page</a>';
+  if (empty($_SESSION['login']) || empty($_SESSION['id'])) {
+    echo '<a class="custom-btn" href="reg.php">Sign up</a>';
+  }
+  echo '</div></div>';
+}
+
 $errorPageContent_End = <<<HERE2
 <div class="error-page__buttons">
     <a class="custom-btn" href="index.php">To the home page</a>    
