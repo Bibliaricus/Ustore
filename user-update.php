@@ -9,11 +9,24 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     $myrow2 = mysqli_fetch_array($result2);
     if (empty($myrow2['id'])) {
         //Если не    действительны, то закрываем доступ
-        exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href='user-page.php?id=" . $_SESSION['id'] . "'>Зарегистрироваться.</a>");
+        include "error-page.php";
+        echo $errorPageContent_Start;
+        ?>
+        <p>Login to this page is allowed only to registered users!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
 } else {
     //Проверяем,    зарегистрирован ли вошедший
-    exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href='user-page.php?id=" . $_SESSION['id'] . "'>Зарегистрироваться.</a>");}
+    include "error-page.php";
+    echo $errorPageContent_Start;
+    ?>
+    <p>Login to this page is allowed only to registered users!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+    <?php
+    echo $errorPageContent_End;
+    exit(footerInErrorPage());
+}
 $old_login = $_SESSION['login']; //Старый логин нам    пригодиться
 $id = $_SESSION['id']; //идентификатор пользователя тоже нужен
 $ava = "avatars/no_photo.jpg"; //стандартное    изображение будет кстати
@@ -21,28 +34,60 @@ $ava = "avatars/no_photo.jpg"; //стандартное    изображени�
 ////////ИЗМЕНЕНИЕ    ЛОГИНА
 ////////////////////////
 
+$logi  = $_SESSION['login'];
+$password = $_SESSION['password'];
+$result = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'"); 
+$user = mysqli_fetch_array($result);
+
+include "error-page.php";
+
 if (isset($_POST['update-user-login'])) //Если существует логин
 {
     $login = $_POST['update-user-login'];
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
     $login = trim($login); //удаляем все лишнее
-    if ($login == '') {exit("Вы не ввели логин. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>");} //Если    логин пустой, то останавливаем
+    if ($login == '') {
+        echo $errorPageContent_Start;
+        ?>
+        <p>You have not entered a login.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
+        // exit("Вы не ввели логин. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>");
+    } //Если    логин пустой, то останавливаем
     if (strlen($login) < 3 or strlen($login) > 15) { //проверяем    длину
-        exit("Логин должен состоять не менее чем из 3 символов и не более чем из 15. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>"); //останавливаем выполнение сценариев
+        echo $errorPageContent_Start;
+        ?>
+        <p>Login must consist of at least 3 characters and at most 15.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
 //    проверка на существование пользователя с таким же логином
     $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
     $myrow = mysqli_fetch_array($result);
     if (!empty($myrow['id'])) {
-        exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>"); //останавливаем выполнение сценариев
+        echo $errorPageContent_Start;
+        ?>
+        <p>Sorry, the login you entered is already registered. Enter another login.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
     $result4 = mysqli_query($db, "UPDATE users SET login='$login' WHERE login='$old_login'"); //обновляем в базе логин пользователя
 
     if ($result4 == 'TRUE') { //если выполнено верно, то обновляем все сообщения,    которые отправлены ему
         mysqli_query($db, "UPDATE messages SET    author='$login' WHERE author='$old_login'");
         $_SESSION['login'] = $login; //Обновляем логин в сессии
-        echo "<html><head><meta    http-equiv='Refresh' content='5;    URL='user-page.php?id=" . $_SESSION['id'] . "'></head><body>Ваш логин изменен! Вы будете перемещены через 5 сек. Если не хотите ждать, то <a href='user-page.php?id=" . $_SESSION['id'] . "'>нажмите    сюда.</a></body></html>";} //отправляем    пользователя назад
+        echo $successPageContent_Start;
+        ?>
+        <p>Your login has been changed!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        footerInErrorPage();
+    }
+        // echo "<html><head><meta    http-equiv='Refresh' content='5;    URL='user-page.php?id=" . $_SESSION['id'] . "'></head><body>Ваш логин изменен! Вы будете перемещены через 5 сек. Если не хотите ждать, то <a href='user-page.php?id=" . $_SESSION['id'] . "'>нажмите    сюда.</a></body></html>";} //отправляем    пользователя назад
 }
 ////////////////////////
 ////////ИЗМЕНЕНИЕ    ПАРОЛЯ
@@ -53,9 +98,21 @@ else if (isset($_POST['update-user-password'])) //Если существует 
     $password = stripslashes($password);
     $password = htmlspecialchars($password);
     $password = trim($password); //удаляем все лишнее
-    if ($password == '') {exit("Вы не ввели пароль. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>");} //если    пароль не введен, то выдаем ошибку
+    if ($password == '') {
+        echo $errorPageContent_Start;
+        ?>
+        <p>You have not entered a password.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
+    }
     if (strlen($password) < 3 or strlen($password) > 15) { //проверка на    количество символов
-        exit("Пароль должен состоять не менее чем из 3 символов и не более чем из 15. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>"); //останавливаем выполнение сценариев
+        echo $errorPageContent_Start;
+        ?>
+        <p>The password must consist of at least 3 characters and at most 15.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
     $password = md5($password); //шифруем пароль
     $password = strrev($password); // для надежности добавим реверс
@@ -67,7 +124,14 @@ else if (isset($_POST['update-user-password'])) //Если существует 
 
     if ($result4 == 'TRUE') { //если верно, то обновляем его в сессии
         $_SESSION['password'] = $password;
-        echo "<html><head><meta http-equiv='Refresh' content='5; URL='user-page.php?id=" . $_SESSION['id'] . "'></head><body>Ваш пароль изменен! Вы будете перемещены через 5 сек. Если не хотите ждать, то <a href='user-page.php?id=" . $_SESSION['id'] . "'>нажмите    сюда.</a></body></html>";} //отправляем    пользователя назад
+        echo $successPageContent_Start;
+        ?>
+        <p>Your password has been changed!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        footerInErrorPage();
+    }
+        // echo "<html><head><meta http-equiv='Refresh' content='5; URL='user-page.php?id=" . $_SESSION['id'] . "'></head><body>Ваш пароль изменен! Вы будете перемещены через 5 сек. Если не хотите ждать, то <a href='user-page.php?id=" . $_SESSION['id'] . "'>нажмите    сюда.</a></body></html>";} //отправляем    пользователя назад
 }
 ////////////////////////
 ////////ИЗМЕНЕНИЕ    АВАТАРЫ
@@ -153,8 +217,14 @@ else if (isset($_FILES['update-user-avatar']['name'])) //отправлялас�
 
         } else {
             //в    случае несоответствия формата, выдаем соответствующее сообщение
-
-            exit("Аватар должен быть в формате <strong>JPG,GIF или PNG</strong>. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>");
+            include "error-page.php";
+            echo $errorPageContent_Start;
+            ?>
+            <p>The avatar must be in the format <strong> JPG, GIF or PNG </strong>.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+            <?php
+            echo $errorPageContent_End;
+            exit(footerInErrorPage());
+            // exit("Аватар должен быть в формате <strong>JPG,GIF или PNG</strong>. <a href='user-page.php?id=" . $_SESSION['id'] . "'>Назад.</a>");
 
         }
     }
