@@ -2683,6 +2683,9 @@ body.user-page {
     color: #000000;
     text-transform: uppercase;
     font-weight: 700;
+    &:hover, &:focus {
+      color: @main-red;
+    }
     &::after {
         background-color: #000000;
     }
@@ -2813,7 +2816,8 @@ body.user-page {
 }
 
 /* # All user page */
-.user-list {
+
+ul.user-list {
   list-style: none;
   padding: 0;
   .user-list__item {
@@ -2832,6 +2836,13 @@ body.user-page {
   }
   .custom-btn {
     margin: 0 2rem 0 auto;
+    background-color: #ffffff;
+    color: #000000;
+    padding: .7rem 1.1rem;
+    &:hover, &:focus {
+      background-color: #000000;
+      color: #ffffff;
+    }
   }
   a:not(.custom-btn) {
     border-radius: 50%;
