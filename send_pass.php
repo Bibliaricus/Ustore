@@ -9,7 +9,13 @@ if (isset($login) and isset($email)) { //если существуют необ�
     $myrow = mysqli_fetch_array($result);
     if (empty($myrow['id']) or $myrow['id'] == '') {
         //если активированного пользователя с таким логином и е-mail    адресом нет
-        exit("Пользователя с    таким e-mail адресом не обнаружено ни в одной базе ЦРУ :) <a    href='index.php'>Главная страница</a>");
+        include "error-page.php";
+        echo $errorPageContent_Start;
+        ?>
+        <p>No user with this email address was found.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
     //если пользователь с таким логином и е-мейлом найден,    то необходимо сгенерировать для него случайный пароль, обновить его в базе и    отправить на е-мейл
     $datenow = date('YmdHis'); //извлекаем    дату
@@ -24,10 +30,29 @@ if (isset($login) and isset($email)) { //если существуют необ�
 
     //формируем сообщение
 
-    $message = "Здравствуйте, " . $login . "! Мы сгененриоровали для Вас пароль, теперь Вы сможете    войти на сайт us, используя его. После входа желательно его сменить.    Пароль:\n" . $new_password; //текст сообщения
-    mail($email, "Восстановление пароля", $message); //отправляем сообщение
-
-    echo "<html><head><meta   URL=index.php'></head><body>На Ваш e-mail отправлено письмо с паролем. Вы    будете перемещены через 5 сек. Если не хотите ждать, то <a    href='index.php'>нажмите сюда.</a></body></html>"; //перенаправляем    пользователя
+    $message = <<<HERE
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Your new password</title>
+      </head>
+      <body>
+        <h1>Hello, $login</h1>
+        <p>We have generated a password for you, now you can enter in the cite using it. After entering it is desirable to change it. Password:</p> \n<span>$new_password</span>        
+        <br>
+        <p>Administration of Ustore.com</p>
+      </body>
+    </html>
+HERE;
+    include "error-page.php";
+        echo $successPageContent_Start;
+        ?>
+        <p>A password has been sent to your e-mail.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        footerInErrorPage();
 } else { //если    данные еще не введены # from url ↑ http-equiv='Refresh' content='5;
   // ---
 
@@ -41,9 +66,9 @@ if (isset($login) and isset($email)) { //если существуют необ�
 <p>Please enter your email address below to receive a password reset link.</p>
 <form action="#" method="POST" class="user-input-form">
   <label for="forgot-login">Enter you login:</label>
-  <input type="text" name="forgot-pass-login" id="forgot-login">
+  <input type="text" name="forgot-pass-login" id="forgot-login" required>
   <label for="forgot-email">Enter you e-mail:</label>
-  <input type="text" name="forgot-pass-email" id="forgot-email">
+  <input type="email" name="forgot-pass-email" id="forgot-email" required>
   <div class="register_button">
     <button class="custom-btn" name="submit">Send my password</button>
     <a class="custom-btn" href="<?php echo $_SERVER['HTTP_REFERER']?>">Back</a>
