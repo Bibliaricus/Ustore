@@ -12,7 +12,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
         ?>
         <p>Login to this page is allowed only to registered users!</p>
         <?php
-        echo $errorPageContent_End;
+        errorPageContent_End();
     exit(footerInErrorPage());
     }
 } else {
@@ -21,7 +21,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
         ?>
         <p>Login to this page is allowed only to registered users!</p>
         <?php
-        echo $errorPageContent_End;
+        errorPageContent_End();
   exit(footerInErrorPage());}
 ?>
 

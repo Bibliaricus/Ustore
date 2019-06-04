@@ -17,7 +17,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
         ?>
         <p>Login to this page is allowed only to registered users!</p>
         <?php
-        echo $errorPageContent_End;
+        errorPageContent_End();
         exit(footerInErrorPage());
     }
 } else {
@@ -25,7 +25,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
         ?>
         <p>Login to this page is allowed only to registered users!</p>
         <?php
-        echo $errorPageContent_End;
+        errorPageContent_End();
         exit(footerInErrorPage());}
 $id2 = $_SESSION['id'];
 
@@ -39,15 +39,15 @@ if ($login == $myrow['recipient']) {
     } else {
         echo $errorPageContent_Start;
         ?>
-        <p>Mistake! Your message has not been deleted. <a class="error-page__link" href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Try again!</a></p>
+        <p>Mistake! Your message has not been deleted. <a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Try again!</a></p>
         <?php 
-        echo $errorPageContent_End;
+        errorPageContent_End();
     }
 } else {
     echo $errorPageContent_Start;
     ?>
     <p>You are trying to delete a message not sent to you!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>    
     <?php 
-    echo $errorPageContent_End;
+    errorPageContent_End();
     exit(footerInErrorPage());
 }

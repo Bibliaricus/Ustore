@@ -6,7 +6,7 @@ if (empty($_SESSION['login']) or empty($_SESSION['password'])) {
     ?>
     <p>Access to this page is allowed only to registered users. If you are registered, log in to the site with your username and password</p>
     <?php
-    echo $errorPageContent_End;
+    errorPageContent_End();
     exit(footerInErrorPage());
 }
 include "bd.php";
