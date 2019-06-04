@@ -3,9 +3,23 @@
 session_start();
 include "bd.php"; // файл bd.php должен быть в той же папке, что и все    остальные, если это не так, то просто измените путь
 if (isset($_GET['id'])) {$id = $_GET['id'];} //id "хозяина" странички
-  else {exit("Вы не вошли на сайт. Залогиньтесь, мать вашу! <a href='index.php'>Главная страница</a>");} //если не    указали id, то выдаем ошибку
+  else {
+    include "error-page.php";
+    echo $errorPageContent_Start;
+    ?>
+    <p>You are not logged in. Please log-in.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+    <?php
+    echo $errorPageContent_End;
+    exit(footerInErrorPage());
+  }
 if (!preg_match("|^[\d]+$|", $id)) {
-  exit("<p>Неверный    формат запроса! Проверьте URL</p> <a href='index.php'>Главная страница</a>"); //если id не число, то выдаем    ошибку
+  include "error-page.php";
+  echo $errorPageContent_Start;
+  ?>
+  <p>Invalid request format! Check URL<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+  <?php
+  echo $errorPageContent_End;
+  exit(footerInErrorPage());
 }
 if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
   //если    существует логин и пароль в сессиях, то проверяем, действительны ли они
@@ -15,17 +29,35 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
   $user = mysqli_fetch_array($result2);
   if (empty($user['id'])) 
   {
-    //Если не действительны (может мы удалили этого пользователя из базы за плохое поведение)
-
-    exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");
+    include "error-page.php";
+    echo $errorPageContent_Start;
+    ?>
+    <p>Login to this page is allowed only to registered users!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+    <?php
+    echo $errorPageContent_End;
+    exit(footerInErrorPage());
   }
 } else {
     //Проверяем, зарегистрирован ли вошедший
-  exit("Вход на эту страницу разрешен только зарегистрированным пользователям! <a href=\"reg.php\">Зарегистрироваться.</a>");
+    include "error-page.php";
+    echo $errorPageContent_Start;
+    ?>
+    <p>Login to this page is allowed only to registered users!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+    <?php
+    echo $errorPageContent_End;
+    exit(footerInErrorPage());
 }
 $result = mysqli_query($db, "SELECT * FROM users WHERE id='$id'");
 $userAnother = mysqli_fetch_array($result); //Извлекаем все данные    пользователя с данным id
-if (empty($userAnother['login'])) {exit("Пользователя не существует! Возможно он был удален. <a href='index.php'>Главная страница</a>");} //если такого не существует
+if (empty($userAnother['login'])) {
+  include "error-page.php";
+  echo $errorPageContent_Start;
+  ?>
+  <p>User does not exist! It may have been deleted.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+  <?php
+  echo $errorPageContent_End;
+  exit(footerInErrorPage());
+} //если такого не существует
 ?>
 
 <?php 
