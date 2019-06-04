@@ -3,13 +3,26 @@
     if (isset($_POST['sign-up-password'])) { $password=$_POST['sign-up-password']; if ($password =='') { unset($password);} }
     if (isset($_POST['sign-up-email'])) {$email = $_POST['sign-up-email'];if ($email == '') {unset($email);}} //заносим введенный пользователем e-mail, если он    пустой, то уничтожаем переменную
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
+    include "error-page.php";    
     if (empty($login) or empty($password) or empty($email)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
-        exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");
+        echo $errorPageContent_Start;
+        ?>
+        <p>You have not entered all the information, go back and fill in all the fields!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        errorPageContent_End();
+        exit (footerInErrorPage());
     }
 
     if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $email)) //проверка    е-mail адреса регулярными выражениями на корректность
-        {exit("Неверно введен е-mail! <a href=" . $_SERVER['HTTP_REFERER'] . ".>Назад.</a>");}
+        {
+            echo $errorPageContent_Start;
+            ?>
+            <p>Invalid email!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+            <?php
+            errorPageContent_End();
+            exit (footerInErrorPage());
+        }
     //если логин и пароль введены, то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
@@ -21,10 +34,20 @@
 
   //добавляем проверку на длину логина и пароля
   if    (strlen($login) < 3 or strlen($login) > 15) {
-    exit    ("Логин должен состоять не менее чем из 3 символов и не более чем из 15. <a href='reg.php'>&larr; Назад.</a>");
+    echo $errorPageContent_Start;
+    ?>
+    <p>Login must consist of at least 3 characters and at most 15.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+    <?php
+    errorPageContent_End();
+    exit (footerInErrorPage());
     }
     if    (strlen($password) < 3 or strlen($password) > 15) {
-    exit    ("Пароль должен состоять не менее чем из 3 символов и не более чем из 15. <a href='reg.php'>&larr; Назад.</a>");
+        echo $errorPageContent_Start;
+        ?>
+        <p>Password must consist of at least 3 characters and at most 15.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        errorPageContent_End();
+        exit (footerInErrorPage());
     }          
     
   if (!empty($_POST['sign-up-avatar'])) //проверяем, отправил    ли пользователь изображение
@@ -100,7 +123,12 @@
           unlink($delfull); //удаляем оригинал загруженного    изображения, он нам больше не нужен. Задачей было - получить миниатюру.
       } else {
           //в случае    несоответствия формата, выдаем соответствующее сообщение
-          exit("Аватар должен быть в    формате <strong>JPG,GIF или PNG</strong>. <a href=\"reg.php\">Назад.</a>");
+          echo $errorPageContent_Start;
+            ?>
+            <p>Avatar must be in the format <strong> JPG, GIF or PNG</strong>.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+            <?php
+            errorPageContent_End();
+            exit (footerInErrorPage());
       }
       //конец процесса загрузки и присвоения переменной $avatar адреса    загруженной авы
   }
@@ -116,7 +144,12 @@
     $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
     $myrow = mysqli_fetch_array($result);    
     if (!empty($myrow['id'])) {
-        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>&larr; Назад.</a>");
+        echo $errorPageContent_Start;
+        ?>
+        <p>Sorry, the login you entered is already registered. Enter another login.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        errorPageContent_End();
+        exit (footerInErrorPage());
     }
  //    если такого нет, то сохраняем данные
 $result2 = mysqli_query($db, "INSERT INTO users (login,password,avatar,email,date)    VALUES('$login','$password','$avatar','$email',NOW())");
@@ -125,7 +158,7 @@ $result2 = mysqli_query($db, "INSERT INTO users (login,password,avatar,email,dat
         $result3 = mysqli_query($db, "SELECT id FROM users WHERE login='$login'"); //извлекаем    идентификатор пользователя. Благодаря ему у нас и будет уникальный код    активации, ведь двух одинаковых идентификаторов быть не может.
         $myrow3 = mysqli_fetch_array($result3);
         $activation = md5($myrow3['id']) . md5($login); //код активации аккаунта. Зашифруем    через функцию md5 идентификатор и логин. Такое сочетание пользователь вряд ли    сможет подобрать вручную через адресную строку.
-        $subject = "Подтверждение регистрации"; //тема сообщения
+        $subject = "Confirmation of registration"; //тема сообщения
         $message = <<<HERE
         <html>
           <head>
@@ -147,12 +180,21 @@ HERE;
         //         Перейдите    по ссылке, чтобы активировать ваш    аккаунт:\nhttp://localhost/test3/activation.php?login=" . $login . "&code=" . $activation . "\nС    уважением,\n
         //         Администрация    citename.ru"; //содержание сообщение
         mail($email, $subject, $message); //отправляем сообщение
-
-        echo "Вам на E-mail выслано письмо с cсылкой, для подтверждения регистрации.    Внимание! Ссылка действительна 1 час. <a href='index.php'>Главная    страница</a>"; //говорим о    отправленном письме пользователю
+        echo $successPageContent_Start;
+        ?>
+        <p>An e-mail with a reference has been sent to confirm the registration.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        errorPageContent_End();
+        footerInErrorPage();
     }
         // }
     // echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
     else {
-    echo "Ошибка! Вы не зарегистрированы. <a href='reg.php'>&larr; Назад.</a>";
+        echo $errorPageContent_Start;
+        ?>
+        <p>Mistake! You are not registred.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        errorPageContent_End();
+        footerInErrorPage();
     }
     ?>
