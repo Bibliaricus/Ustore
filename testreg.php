@@ -5,7 +5,13 @@ if (isset($_POST['sign-in-login'])) { $login = $_POST['sign-in-login']; if ($log
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
 if (empty($login) && empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
     {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <a href='index.php'>&larr; Назад.</a>");
+        include "error-page.php";
+        echo $errorPageContent_Start;
+        ?>
+        <p>You have not entered all the information, go back and fill in all the fields!<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
     }
     //если логин и пароль введены,то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
@@ -40,7 +46,13 @@ $myrow = mysqli_fetch_array($result);
     }
     else {
     //если пароли не сошлись
-    exit ("Извините, введённый вами login или пароль неверный. <a href='index.php'>&larr; Назад.</a>");
+        include "error-page.php";
+        echo $errorPageContent_Start;
+        ?>
+        <p>Sorry, the login or password you entered is incorrect.<a class="error-page__link" href="<?php if(empty($_SERVER['HTTP_REFERER'])) { echo "index.php"; } else { echo $_SERVER['HTTP_REFERER']; } ?>">Go back</a></p>
+        <?php
+        echo $errorPageContent_End;
+        exit(footerInErrorPage());
    }
 
     //Далее мы запоминаем данные в куки, для последующего входа.
