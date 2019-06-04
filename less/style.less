@@ -58,6 +58,7 @@ Version: 1.0
 # User page
 # All user page
 # Error page
+# Sign in page
 7. Responsive - index.html (indicate Responsive in this form for each page)
   7.1 Min-width: 1200px
   7.2 Max-width: 1200px
@@ -2904,6 +2905,20 @@ body:not(.home).error-page .page-header {
   }
 }
 
+/* # Sign in page */
+body.register.sign-in {
+  .register_button {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .checkbox-field {
+    text-align: center;
+    input {
+      width: auto;
+    }
+  }
+}
+
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
   /* 7.1 Min-width: 1200px */
   .test {position: fixed; top: 80px; left: 10px; color: tomato; z-index: 99999999; pointer-events: none;}
@@ -3170,6 +3185,12 @@ body:not(.home).error-page .page-header {
       }
       .user-avatar-field {
         flex-direction: column;
+      }
+    }
+
+    body.register.sign-in {
+      fieldset {
+        flex-basis: 95%;
       }
     }
 
