@@ -2580,9 +2580,8 @@ body.user-page input[type="FILE"] {
 body.user-page .custom-btn {
   color: #fff;
   background-color: #000;
+  margin: 0.7rem 0 1rem;
   padding: 0.5rem;
-  margin-top: 0.7rem;
-  margin-bottom: 1rem;
   font-size: 0.75rem;
   border: 1px solid #000;
   cursor: pointer;
