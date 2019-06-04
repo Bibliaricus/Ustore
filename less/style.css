@@ -2473,6 +2473,8 @@ footer h4 {
   text-transform: uppercase;
   font-size: 33px;
   margin-top: 3.5rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
 }
 body.register .register_button {
   display: flex;
@@ -2703,6 +2705,10 @@ body.user-page .user-message-textarea {
   box-shadow: 0 0 3px 3px #8d8d8d;
 }
 /* # Error page */
+body.error-page .header-bottom {
+  margin-top: 0;
+  padding-top: 1.2rem;
+}
 .error-page__message {
   display: flex;
   flex-direction: column;
@@ -2717,6 +2723,7 @@ body.user-page .user-message-textarea {
 }
 .error-page__message p {
   font-size: 1.5rem;
+  padding: 0 2rem;
 }
 body:not(.home).error-page .page-header {
   margin-bottom: 0;
@@ -2734,6 +2741,16 @@ body:not(.home).error-page .page-header {
 .custom-btn:first-child:focus {
   background-color: #000000;
   border-color: #000;
+}
+.error-page__link {
+  margin-left: 1rem;
+  color: #e74948;
+  text-decoration: underline;
+}
+.error-page__link:hover,
+.error-page__link:focus {
+  color: #000;
+  text-decoration: underline;
 }
 /* 7. Responsive - index.html (indicate Responsive in this form for each page) */
 /* 7.1 Min-width: 1200px */
@@ -3190,6 +3207,14 @@ body:not(.home).error-page .page-header {
   }
   .fixed-header .avatar-link {
     display: none;
+  }
+  .error-page__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .error-page__buttons .custom-btn {
+    margin: 0.5rem 0;
+    text-align: center;
   }
   .user-list .user-list__item {
     flex-direction: column;

@@ -2594,6 +2594,8 @@ Version: 1.0
   text-transform: uppercase;
   font-size: 33px;
   margin-top: 3.5rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
 }
 
 body.register {  
@@ -2841,6 +2843,13 @@ body.user-page {
 }
 
 /* # Error page */
+body.error-page {
+  .header-bottom {
+    margin-top: 0;
+    padding-top: 1.2rem;
+  }
+}
+
 .error-page__message {
   display: flex;
   flex-direction: column;
@@ -2854,6 +2863,7 @@ body.user-page {
   color: #000;
   p {
     font-size: 1.5rem;
+    padding: 0 2rem;
   }
 }
 body:not(.home).error-page .page-header {
@@ -2870,6 +2880,16 @@ body:not(.home).error-page .page-header {
       background-color: #000000;
       border-color: #000;      
     }
+  }
+}
+
+.error-page__link {
+  margin-left: 1rem;
+  color: @main-red;
+  text-decoration: underline;
+  &:hover, &:focus {
+    color: #000;
+    text-decoration: underline;
   }
 }
 
@@ -3461,6 +3481,15 @@ body:not(.home).error-page .page-header {
     .fixed-header  {
       .avatar-link {
         display: none;
+      }
+    }
+
+    .error-page__buttons {
+      display: flex;
+      flex-direction: column;
+      .custom-btn {
+        margin: 0.5rem 0;
+        text-align: center;
       }
     }
     
