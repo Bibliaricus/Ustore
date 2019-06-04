@@ -3243,8 +3243,9 @@ body.register.sign-in .checkbox-field input {
     margin: 0.5rem 0;
     text-align: center;
   }
-  .user-list .user-list__item {
+  ul.user-list .user-list__item {
     flex-direction: column;
+    width: 100%;
   }
   .header-top__navbar {
     padding-left: 0;
