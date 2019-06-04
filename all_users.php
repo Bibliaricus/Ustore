@@ -1,12 +1,12 @@
 <?php
 session_start();
 include "bd.php";
-if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
-    include "error-page.php";
+if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {    
     $login = $_SESSION['login'];
     $password = $_SESSION['password'];
     $result2 = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'");
     $user = mysqli_fetch_array($result2);
+    include "error-page.php";
     if (empty($user['id'])) {
         echo $errorPageContent_Start;
         ?>
@@ -33,7 +33,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
 <body class="all-users user-page">
 
 <?php 
-  include $header;
+  // include $header;
 ?>  
 <div class="container-fluid">  
   <h1 class="page-title">List of all users</h1>
