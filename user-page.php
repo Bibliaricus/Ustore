@@ -1,8 +1,7 @@
 <?php
-//    вся процедура работает на сессиях. Именно в ней хранятся данные пользователя,    пока он находится на сайте. Очень важно запустить их в самом начале    странички!!!
 session_start();
-include "bd.php"; // файл bd.php должен быть в той же папке, что и все    остальные, если это не так, то просто измените путь
-if (isset($_GET['id'])) {$id = $_GET['id'];} //id "хозяина" странички
+include "bd.php";
+if (isset($_GET['id'])) {$id = $_GET['id'];}
   else {
     include "error-page.php";
     echo $errorPageContent_Start;
@@ -22,7 +21,6 @@ if (!preg_match("|^[\d]+$|", $id)) {
   exit(footerInErrorPage());
 }
 if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
-  //если    существует логин и пароль в сессиях, то проверяем, действительны ли они
   $login = $_SESSION['login'];
   $password = $_SESSION['password'];
   $result2 = mysqli_query($db, "SELECT id,avatar  FROM users WHERE login='$login' AND password='$password'");
@@ -38,7 +36,6 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     exit(footerInErrorPage());
   }
 } else {
-    //Проверяем, зарегистрирован ли вошедший
     include "error-page.php";
     echo $errorPageContent_Start;
     ?>
@@ -48,7 +45,7 @@ if (!empty($_SESSION['login']) and !empty($_SESSION['password'])) {
     exit(footerInErrorPage());
 }
 $result = mysqli_query($db, "SELECT * FROM users WHERE id='$id'");
-$userAnother = mysqli_fetch_array($result); //Извлекаем все данные    пользователя с данным id
+$userAnother = mysqli_fetch_array($result);
 if (empty($userAnother['login'])) {
   include "error-page.php";
   echo $errorPageContent_Start;
@@ -57,7 +54,7 @@ if (empty($userAnother['login'])) {
   <?php
   echo $errorPageContent_End;
   exit(footerInErrorPage());
-} //если такого не существует
+}
 ?>
 
 <?php 
@@ -132,16 +129,16 @@ if ($userAnother['login'] == $login) {
 
 <?php
   $tmp = mysqli_query($db, "SELECT * FROM messages WHERE recipient='$login' ORDER BY id DESC");
-  $messages = mysqli_fetch_array($tmp); //извлекаем сообщения    пользователя, сортируем по идентификатору в обратном порядке, т.е. самые    новые сообщения будут вверху
+  $messages = mysqli_fetch_array($tmp);
   if (!empty($messages['id'])) {
-    do//выводим    все сообщения в цикле
+    do
     {
       $author = $messages['author'];
-      $result4 = mysqli_query($db, "SELECT avatar,id FROM users WHERE login='$author'"); //извлекаем аватар автора
+      $result4 = mysqli_query($db, "SELECT avatar,id FROM users WHERE login='$author'");
       $myrow4 = mysqli_fetch_array($result4);
       $avatar = $myrow4['avatar'];
       $defaultAvatar = 'avatars/no_photo.jpg';
-      if (!empty($myrow4['avatar'])) { //если такового нет, то выводим стандартный (может этого пользователя уже давно удалили)
+      if (!empty($myrow4['avatar'])) {
         $authorAvatar = $avatar;
       } else { $authorAvatar = $defaultAvatar;}
       ?>
@@ -174,7 +171,6 @@ if ($userAnother['login'] == $login) {
     </div>
   <?php
 } else {
-  //если    страничка чужая, то выводим только некторые данные и форму для отправки    личных сообщений
 
   $exitTimeQuery = mysqli_query($db, "SELECT exit_time FROM users WHERE id='$id'");
   $userExitTime = mysqli_fetch_array($exitTimeQuery);
