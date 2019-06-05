@@ -29,7 +29,8 @@
       </p>
       <p>
         <label for="avatar">Select your avatar: </label>
-        <input type="file" name="sign-up-avatar" id="avatar">        
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000000">
+        <input type="file" name="sign-up-avatar" id="avatar">
         <small>Image format: jpg, gif or png. Max weight: 2 MB.</small>
         <small>Not required.</small>
       </p>
