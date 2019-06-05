@@ -154,6 +154,7 @@ if ($userAnother['login'] == $login) {
       </header>
       <div class="user-message__body"><?php echo $messages['message'] ?></div>
       <a href="drop_post.php?id=<?php echo $messages['id'] ?>" class="user-message__del-btn custom-btn">Delete message</a>
+      <a href="user-page.php?id=<?php echo $myrow4['id'] ?>" class="user-message__del-btn custom-btn">Reply</a>
     </article>
     
       <?php
