@@ -2,7 +2,8 @@
     if (isset($_POST['sign-up-login'])) { $login = $_POST['sign-up-login']; if ($login == '') { unset($login);} }
     if (isset($_POST['sign-up-password'])) { $password=$_POST['sign-up-password']; if ($password =='') { unset($password);} }
     if (isset($_POST['sign-up-email'])) {$email = $_POST['sign-up-email'];if ($email == '') {unset($email);}}
-    include "error-page.php";    
+    // if (isset($_POST['sign-up-avatar'])) {$fupload = $_POST['sign-up-avatar']; echo "First fupload is: \n"; var_dump($fupload); if ($fupload == '') {unset($fupload);}}
+    include "error-page.php";   
     if (empty($login) or empty($password) or empty($email))
     {
         echo $errorPageContent_Start;
@@ -46,10 +47,10 @@
         exit (footerInErrorPage());
     }          
     
-  if (!empty($_POST['sign-up-avatar']))
+  if (!empty($_FILES['sign-up-avatar']))
   {
-      $fupload = $_POST['sign-up-avatar'];
-      $fupload = trim($fupload);
+      $fupload = $_FILES['sign-up-avatar'];
+    //   $fupload = trim($fupload);
       if ($fupload == '' or empty($fupload)) {
           unset($fupload);
       }
@@ -59,7 +60,7 @@
   } else {
       $path_to_90_directory = 'avatars/';
 
-      if (preg_match('/[.](JPG)|(jpg)|(gif)|(GIF)|(png)|(PNG)$/', $_FILES['sign-up-avatar']['name']))
+      if (preg_match('/[.](JPG)|(jpg)|(jpeg)|(JPEG)|(gif)|(GIF)|(png)|(PNG)$/', $_FILES['sign-up-avatar']['name']))
       {
           $filename = $_FILES['sign-up-avatar']['name'];
           $source = $_FILES['sign-up-avatar']['tmp_name'];
